@@ -1,6 +1,5 @@
 /* eslint-disable unicorn/no-global-object-property-assignment */
 
-// TODO React-Query - Toaster
 import {
   MutationCache,
   QueryCache,
@@ -9,7 +8,6 @@ import {
 } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
 
-// TODO React-Query
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -26,16 +24,16 @@ const queryClient = new QueryClient({
 });
 window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 
-const AppProviders = () => {
+const AppProviders = ({ children }) => {
   return (
-    // TODO React-Query
     <QueryClientProvider client={queryClient}>
-      {/* TODO Toast Bg && TC */}
       <Toaster
         toastOptions={{
-          style: { background: "COLOR", color: "COLOR" },
+          style: { background: "#060b26", color: "#fff" },
         }}
       />
+
+      {children}
     </QueryClientProvider>
   );
 };

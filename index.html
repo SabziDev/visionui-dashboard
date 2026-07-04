@@ -17,16 +17,12 @@
 
 <!doctype html>
 
-<!-- TODO light-mode? -->
-<!-- TODO App lang - dir -->
-<html lang="LANGUAGE" dir="DIRECTION" data-theme="light">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- TODO Browser-UI-Color? -->
-    <meta name="theme-color" content="COLOR" />
-    <!-- TODO App Favicon ( best size for favicon: 16×16 ) -->
+    <meta name="theme-color" content="#0075ff" />
     <link rel="icon" type="image/png" href="./app-favicon.png" />
 
     <style>
@@ -36,8 +32,7 @@
         justify-content: center;
         position: fixed;
         inset: 0;
-        /* TODO Preloader BG */
-        background-color: #fff;
+        background-color: #060b26;
         z-index: 9999;
       }
       .app-preloader__pulse {
@@ -45,8 +40,7 @@
         height: 100px;
         margin: 100px auto;
         border-radius: 100%;
-        /* TODO Preloader Pulse BG */
-        background-color: COLOR;
+        background-color: #0075ff;
         opacity: 0.8;
         animation: app-preloader-pulse 1.8s infinite ease-in-out;
       }
@@ -65,9 +59,8 @@
     <link rel="stylesheet" href="./src/input.css" />
   </head>
 
-  <!-- TODO App BG - TC - Font -->
   <!-- TODO Add overflow-x-hidden after final responsive -->
-  <body class="bg-COLOR text-COLOR font-Name overflow-hidden">
+  <body class="bg-navy font-PlusJakartaSansRegular overflow-hidden">
     <div id="app-preloader">
       <div class="app-preloader__pulse"></div>
     </div>

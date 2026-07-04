@@ -1,42 +1,43 @@
-/* eslint-disable custom/sort-object-props */
-
-// TODO Import lazy Component
-// import { lazy } from "react";
+import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import MainLayout from "./layouts/MainLayout/MainLayout";
+import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
-// TODO Lazy Component
-// const Name = lazy(() => import("./pages/public/Name/page"));
-import Home from "./pages/public/Home/page";
+import Dashboard from "./pages/private/Dashboard/page";
+import Signin from "./pages/public/Signin/page";
+import Signup from "./pages/public/Signup/page";
 
-// const preventReloadPageOnSamePath = () => {
-//   return {
-//     shouldRevalidate: ({ currentUrl, nextUrl }) =>
-//       currentUrl.pathname !== nextUrl.pathname,
-//   };
-// };
+const Billing = lazy(() => import("./pages/private/Billing/page"));
+const Profile = lazy(() => import("./pages/private/Profile/page"));
+const Tables = lazy(() => import("./pages/private/Tables/page"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <PrivateRoute />,
 
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Dashboard />,
       },
       {
-        path: "home",
+        path: "dashboard",
         element: <Navigate to="/" replace />,
       },
 
-      // TODO Routes
-      // {
-      //   path: "NAME",
-      //   element: <Name />,
-      // },
+      {
+        path: "tables",
+        element: <Tables />,
+      },
+      {
+        path: "billing",
+        element: <Billing />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
 
       {
         path: "*",
@@ -47,6 +48,15 @@ const router = createBrowserRouter([
         },
       },
     ],
+  },
+
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 

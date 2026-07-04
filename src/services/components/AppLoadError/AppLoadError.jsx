@@ -35,25 +35,19 @@ const AppLoadError = () => {
       </svg>
 
       <h1 className="mb-2 text-3xl font-bold text-amber-700">
-        {/* TODO AppLoadError Title */}
-        مشکلی پیش آمد
-        {/* Something went wrong */}
+        Something went wrong
       </h1>
 
       <p className="mb-8 max-w-md text-lg text-gray-300">
-        {/* TODO AppLoadError Desc */}
-        لطفا صفحه را رفرش کنید
-        {/* Please refresh the page */}
+        Please refresh the page
       </p>
 
       <button
         type="button"
         onClick={() => window.location.reload()}
-        className="shadow-xl hover:shadow-2xl z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 active:scale-[0.96]"
+        className="z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 shadow-xl hover:shadow-2xl active:scale-[0.96]"
       >
-        {/* TODO AppLoadError Btn-Text */}
-        تلاش مجدد
-        {/* Try Again */}
+        Try Again
       </button>
     </div>,
     document.body,

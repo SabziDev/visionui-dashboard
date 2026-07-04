@@ -2,7 +2,7 @@ import pagesMeta from "@public/data/pages-meta/pages-meta";
 
 import Head from "@/pages/components/Head";
 
-const Home = () => {
+const Signin = () => {
   return (
     <>
       <Head>
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Signin;
