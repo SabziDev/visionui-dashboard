@@ -5,12 +5,12 @@ import { getStatsApi } from "@/services/statsApi";
 const useStatsQuery = () => {
   const queryKey = ["stats"];
 
-  const { data, ...rest } = useQuery({
+  const { data: stats, ...rest } = useQuery({
     queryKey,
     queryFn: () => getStatsApi(),
   });
 
-  return { data, ...rest };
+  return { stats, ...rest };
 };
 
 export { useStatsQuery };

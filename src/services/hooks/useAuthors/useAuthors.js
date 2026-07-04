@@ -5,12 +5,12 @@ import { getAuthorsApi } from "@/services/authorsApi";
 const useAuthorsQuery = () => {
   const queryKey = ["authors"];
 
-  const { data, ...rest } = useQuery({
+  const { data: authors, ...rest } = useQuery({
     queryKey,
     queryFn: () => getAuthorsApi(),
   });
 
-  return { data, ...rest };
+  return { authors, ...rest };
 };
 
 export { useAuthorsQuery };
