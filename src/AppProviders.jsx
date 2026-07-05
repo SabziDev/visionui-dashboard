@@ -29,7 +29,7 @@ const AppProviders = ({ children }) => {
     <QueryClientProvider client={queryClient}>
       <Toaster
         toastOptions={{
-          style: { background: "#060b26", color: "#fff" },
+          style: { background: "#0075ff", color: "#fff" },
         }}
       />
 

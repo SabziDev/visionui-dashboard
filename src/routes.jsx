@@ -5,7 +5,6 @@ import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
 import Signin from "./pages/public/Signin/page";
-import Signup from "./pages/public/Signup/page";
 
 const Billing = lazy(() => import("./pages/private/Billing/page"));
 const Profile = lazy(() => import("./pages/private/Profile/page"));
@@ -53,10 +52,6 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
   },
 ]);
 
