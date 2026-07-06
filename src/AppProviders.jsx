@@ -8,6 +8,8 @@ import {
 } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
 
+import "./i18n";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

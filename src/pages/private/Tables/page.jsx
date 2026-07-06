@@ -1,13 +1,15 @@
-import pagesMeta from "@public/data/pages-meta/pages-meta";
+import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
 const Tables = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>{pagesMeta.home.title}</title>
-        <meta name="description" content={pagesMeta.home.desc} />
+        <title>{t("pagesMeta.tables.title")}</title>
+        <meta name="description" content={t("pagesMeta.tables.desc")} />
       </Head>
 
       <h1>Home</h1>

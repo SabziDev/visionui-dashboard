@@ -1,8 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 import useCookie from "@/hooks/useCookie";
+import { i18n } from "@/i18n";
+import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
 import loginSchema from "@/validators/loginValidator";
 
@@ -11,26 +15,27 @@ import PasswordInput from "./Inputs/PasswordInput";
 import RememberMe from "./RememberMe/RememberMe";
 import SubmitBtn from "./SubmitBtn/SubmitBtn";
 
-const copyTextToClipboard = (text) => {
-  navigator.clipboard.writeText(text);
-
-  toast.success("Text successfully copied to clipboard!", {
-    position: "top-left",
-  });
-};
-
 const delaySubmit = (ms) =>
   new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 
 const Form = () => {
-  const { admins } = useAdminsQuery();
+  const { t } = useTranslation();
+
+  const copyTextToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+
+    toast.success(t("pages.public.signin.copyToast"), {
+      position: "top-left",
+    });
+  };
+
+  const { admins, isError } = useAdminsQuery();
   const [, setStoredAdmin] = useCookie({
     key: "admin",
     defaultValue: null,
   });
-
   const {
     register,
     handleSubmit,
@@ -46,35 +51,60 @@ const Form = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const submitForm = async (data) => {
-    toast.success("Logging into the panel...", { duration: Infinity });
-    await delaySubmit(3000);
+  if (isError) {
+    return <AppLoadError />;
+  }
 
-    if (data.rememberMe) {
-      await setStoredAdmin({
-        value: admins[0],
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 30 * 6,
+  const submitForm = async (data) => {
+    const toastId = toast.loading(t("pages.public.signin.loggingToast"));
+
+    try {
+      await delaySubmit(1500);
+
+      toast.success(t("pages.public.signin.loggingToast"), {
+        id: toastId,
+        duration: 6000,
       });
-    } else {
-      await setStoredAdmin({
-        value: admins[0],
+
+      if (data.rememberMe) {
+        await setStoredAdmin({
+          value: admins[0],
+          expires: Date.now() + 1000 * 60 * 60 * 24 * 30 * 6,
+        });
+      } else {
+        await setStoredAdmin({
+          value: admins[0],
+        });
+      }
+
+      await new Promise(() => {
+        "";
+      });
+    } catch {
+      toast.loading(t("pages.public.signin.loggingToast"), { id: toastId });
+
+      await new Promise(() => {
+        "";
       });
     }
   };
 
   return (
     <div className="flex-justify-center flex-col items-start">
-      <span className="font-PlusJakartaSansBold text-3xl">
-        Nice to see you!
+      <span className="font-VazirBold text-3xl">
+        {t("pages.public.signin.form.title")}
       </span>
-      <p className="mt-1.5 font-PlusJakartaSansMedium text-sm text-gray-400">
-        Enter your email and password to sign in
+      <p className="mt-1.5 font-VazirMedium text-sm text-gray-400">
+        {t("pages.public.signin.form.desc")}
       </p>
 
       <form
         noValidate
         onSubmit={handleSubmit(submitForm)}
-        className="mt-9 flex-justify-center flex-col items-start"
+        className={clsx([
+          "mt-9 flex-justify-center flex-col",
+          i18n.language === "fa" ? "items-end" : "items-start",
+        ])}
       >
         <EmailInput
           register={register}

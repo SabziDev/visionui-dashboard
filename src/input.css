@@ -7,12 +7,9 @@
   --color-blue: #0075ff;
   --color-green: #01b574;
 
-  --font-PlusJakartaSansRegular:
-    "PlusJakartaSans-Regular", Arial, Helvetica, sans-serif;
-  --font-PlusJakartaSansMedium:
-    "PlusJakartaSans-Medium", Arial, Helvetica, sans-serif;
-  --font-PlusJakartaSansBold:
-    "PlusJakartaSans-Bold", Arial, Helvetica, sans-serif;
+  --font-VazirRegular: "Vazir-Regular", Arial, Helvetica, sans-serif;
+  --font-VazirMedium: "Vazir-Medium", Arial, Helvetica, sans-serif;
+  --font-VazirBold: "Vazir-Bold", Arial, Helvetica, sans-serif;
 }
 /* ============================================= -- Theme Configuration -- ============================================= */
 
@@ -57,30 +54,28 @@
   }
 
   @font-face {
-    font-family: "PlusJakartaSans-Regular";
+    font-family: "Vazir-Regular";
     font-display: swap;
 
     src:
-      local("PlusJakartaSans-Regular"),
-      url("/fonts/PlusJakartaSans/PlusJakartaSans-Regular.ttf")
-        format("truetype");
+      local("Vazir"),
+      url("/fonts/Vazir/Vazir.woff2") format("woff2");
   }
   @font-face {
-    font-family: "PlusJakartaSans-Medium";
+    font-family: "Vazir-Medium";
     font-display: swap;
 
     src:
-      local("PlusJakartaSans-Medium"),
-      url("/fonts/PlusJakartaSans/PlusJakartaSans-Medium.ttf")
-        format("truetype");
+      local("Vazir-Medium"),
+      url("/fonts/Vazir/Vazir-Medium.woff2") format("woff2");
   }
   @font-face {
-    font-family: "PlusJakartaSans-Bold";
+    font-family: "Vazir-Bold";
     font-display: swap;
 
     src:
-      local("PlusJakartaSans-Bold"),
-      url("/fonts/PlusJakartaSans/PlusJakartaSans-Bold.ttf") format("truetype");
+      local("Vazir-Bold"),
+      url("/fonts/Vazir/Vazir-Bold.woff2") format("woff2");
   }
 }
 @utility container {

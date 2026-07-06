@@ -1,4 +1,4 @@
-import pagesMeta from "@public/data/pages-meta/pages-meta";
+import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
@@ -6,11 +6,13 @@ import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>{pagesMeta.signin.title}</title>
-        <meta name="description" content={pagesMeta.signin.desc} />
+        <title>{t("pagesMeta.signin.title")}</title>
+        <meta name="description" content={t("pagesMeta.signin.desc")} />
       </Head>
 
       <div className="flex-justify-center gap-x-0 max-lg:relative 2xl:gap-x-25">
@@ -18,10 +20,10 @@ const Signin = () => {
           <BgImg />
           <div className="absolute inset-0 m-auto flex-center flex-col">
             <p className="text-sm tracking-[0.18em] xl:text-xl">
-              INSPIRED BY THE FUTURE:
+              {t("pages.public.signin.desc")}
             </p>
-            <h1 className="font-PlusJakartaSansBold text-2xl tracking-[0.18em] xl:text-4xl">
-              THE VISION UI DASHBOARD
+            <h1 className="font-VazirBold text-2xl tracking-[0.18em] xl:text-4xl">
+              {t("pages.public.signin.title")}
             </h1>
           </div>
         </div>
