@@ -19,6 +19,11 @@ const copyTextToClipboard = (text) => {
   });
 };
 
+const delaySubmit = (ms) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
 const Form = () => {
   const { admins } = useAdminsQuery();
   const [, setStoredAdmin] = useCookie({
@@ -42,6 +47,9 @@ const Form = () => {
   });
 
   const submitForm = async (data) => {
+    toast.success("Logging into the panel...", { duration: Infinity });
+    await delaySubmit(3000);
+
     if (data.rememberMe) {
       await setStoredAdmin({
         value: admins[0],
@@ -55,27 +63,36 @@ const Form = () => {
   };
 
   return (
-    <form
-      noValidate
-      onSubmit={handleSubmit(submitForm)}
-      className="mt-9 flex-justify-center flex-col items-start"
-    >
-      <EmailInput
-        register={register}
-        errors={errors}
-        copyTextToClipboard={copyTextToClipboard}
-      />
+    <div className="flex-justify-center flex-col items-start">
+      <span className="font-PlusJakartaSansBold text-3xl">
+        Nice to see you!
+      </span>
+      <p className="mt-1.5 font-PlusJakartaSansMedium text-sm text-gray-400">
+        Enter your email and password to sign in
+      </p>
 
-      <PasswordInput
-        register={register}
-        errors={errors}
-        copyTextToClipboard={copyTextToClipboard}
-      />
+      <form
+        noValidate
+        onSubmit={handleSubmit(submitForm)}
+        className="mt-9 flex-justify-center flex-col items-start"
+      >
+        <EmailInput
+          register={register}
+          errors={errors}
+          copyTextToClipboard={copyTextToClipboard}
+        />
 
-      <RememberMe register={register} />
+        <PasswordInput
+          register={register}
+          errors={errors}
+          copyTextToClipboard={copyTextToClipboard}
+        />
 
-      <SubmitBtn isSubmitting={isSubmitting} />
-    </form>
+        <RememberMe register={register} />
+
+        <SubmitBtn isSubmitting={isSubmitting} />
+      </form>
+    </div>
   );
 };
 
