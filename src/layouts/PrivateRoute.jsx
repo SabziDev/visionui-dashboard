@@ -1,15 +1,15 @@
+import { use } from "react";
 import { Navigate, useOutlet } from "react-router";
 
-const isACCESSIBLE = false;
+import AuthContext from "@/contexts/Auth";
 
 const PrivateRoute = () => {
   const outlet = useOutlet();
+  const { admin, isAdminLoading } = use(AuthContext);
 
-  // if (!isACCESSIBLE) {
-  //   return <Navigate to="/" replace />;
-  // }
+  if (isAdminLoading) return;
 
-  return outlet;
+  return admin ? outlet : <Navigate to="/signin" replace />;
 };
 
 export default PrivateRoute;

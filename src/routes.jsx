@@ -37,21 +37,21 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
-
-      {
-        path: "*",
-        element: <NotFound />,
-        handle: {
-          isPage404: true,
-          isHideLayout: true,
-        },
-      },
     ],
   },
 
   {
     path: "/signin",
     element: <Signin />,
+  },
+
+  {
+    path: "*",
+    element: <NotFound />,
+    handle: {
+      isPage404: true,
+      isHideLayout: true,
+    },
   },
 ]);
 

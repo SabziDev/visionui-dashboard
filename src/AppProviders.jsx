@@ -34,7 +34,6 @@ const AppProviders = ({ children }) => {
           style: { background: "#0075ff", color: "#fff" },
         }}
       />
-
       {children}
     </QueryClientProvider>
   );
