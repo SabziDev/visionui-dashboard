@@ -50,10 +50,6 @@ const Form = () => {
         setTimeout(resolve, 1500);
       });
 
-      toast.success(t("pages.public.signin.loggingToast"), {
-        id: toastId,
-      });
-
       if (data.rememberMe) {
         await setAdmin({
           value: admins[0],
@@ -65,12 +61,18 @@ const Form = () => {
         });
       }
 
+      toast.success(t("pages.public.signin.loggingToast"), {
+        id: toastId,
+      });
       await new Promise(() => {
         null;
       });
     } catch {
+      toast.error(t("pages.public.signin.loggingToast"), {
+        id: toastId,
+      });
       await new Promise(() => {
-        "";
+        null;
       });
     }
   };
