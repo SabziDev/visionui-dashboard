@@ -16,6 +16,25 @@ const en = {
     },
   },
 
+  layouts: {
+    header: {
+      searchInput: {
+        placeholder: "Type here...",
+      },
+
+      pagesTitle: {
+        dashboard: "Dashboard",
+        tables: "Tables",
+        billing: "Billing",
+        profile: "Profile",
+      },
+    },
+
+    sidebar: {
+      title: "VISION UI PANEL",
+    },
+  },
+
   pages: {
     private: {},
 

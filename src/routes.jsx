@@ -19,23 +19,43 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+        handle: {
+          pageTitle: "layouts.header.pagesTitle.dashboard",
+          pagePath: "dashboard",
+        },
       },
       {
         path: "dashboard",
         element: <Navigate to="/" replace />,
+        handle: {
+          pageTitle: "layouts.header.pagesTitle.dashboard",
+          pagePath: "dashboard",
+        },
       },
 
       {
         path: "tables",
         element: <Tables />,
+        handle: {
+          pageTitle: "layouts.header.pagesTitle.tables",
+          pagePath: "tables",
+        },
       },
       {
         path: "billing",
         element: <Billing />,
+        handle: {
+          pageTitle: "layouts.header.pagesTitle.billing",
+          pagePath: "billing",
+        },
       },
       {
         path: "profile",
         element: <Profile />,
+        handle: {
+          pageTitle: "layouts.header.pagesTitle.profile",
+          pagePath: "profile",
+        },
       },
     ],
   },

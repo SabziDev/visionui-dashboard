@@ -16,6 +16,25 @@ const fa = {
     },
   },
 
+  layouts: {
+    header: {
+      searchInput: {
+        placeholder: "اینجا تایپ کنید...",
+      },
+
+      pagesTitle: {
+        dashboard: "داشبورد",
+        tables: "جداول",
+        billing: "صورت حساب",
+        profile: "پروفایل",
+      },
+    },
+
+    sidebar: {
+      title: "پنل VISION UI",
+    },
+  },
+
   pages: {
     private: {},
 

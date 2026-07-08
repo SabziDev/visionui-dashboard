@@ -15,14 +15,14 @@ const Signin = () => {
         <meta name="description" content={t("pagesMeta.signin.desc")} />
       </Head>
 
-      <div className="flex-justify-center gap-x-0 max-lg:relative 2xl:gap-x-25">
+      <div className="flex-justify-center gap-x-0 bg-navy max-lg:relative 2xl:gap-x-25">
         <div className="relative w-1/2 max-lg:hidden">
           <BgImg />
           <div className="absolute inset-0 m-auto flex-center flex-col">
-            <p className="text-sm tracking-[0.18em] xl:text-xl">
+            <p className="text-sm tracking-ultra-wide xl:text-xl">
               {t("pages.public.signin.desc")}
             </p>
-            <h1 className="font-VazirBold text-2xl tracking-[0.18em] xl:text-4xl">
+            <h1 className="font-VazirBold text-2xl tracking-ultra-wide xl:text-4xl">
               {t("pages.public.signin.title")}
             </h1>
           </div>

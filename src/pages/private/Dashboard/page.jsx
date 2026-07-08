@@ -6,14 +6,10 @@ const Dashboard = () => {
   const { t } = useTranslation();
 
   return (
-    <>
-      <Head>
-        <title>{t("pagesMeta.dashboard.title")}</title>
-        <meta name="description" content={t("pagesMeta.dashboard.desc")} />
-      </Head>
-
-      <h1>Dash</h1>
-    </>
+    <Head>
+      <title>{t("pagesMeta.dashboard.title")}</title>
+      <meta name="description" content={t("pagesMeta.dashboard.desc")} />
+    </Head>
   );
 };
 

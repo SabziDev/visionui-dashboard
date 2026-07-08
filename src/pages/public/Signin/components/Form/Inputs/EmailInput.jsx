@@ -12,7 +12,7 @@ const EmailInput = ({ register, errors, copyTextToClipboard }) => {
         type="email"
         placeholder={t("pages.public.signin.form.inputs.email.placeholder")}
         className={clsx([
-          "mb-2 w-87.5 rounded-[20px] border-2 px-5 py-4 placeholder:text-gray-400",
+          "mb-2 w-87.5 rounded-[20px] border-2 px-5 py-4",
           errors.email ? "border-red-500 ring-red-500" : "border-blue",
           i18n.language === "fa" && "text-left placeholder:text-right",
         ])}
