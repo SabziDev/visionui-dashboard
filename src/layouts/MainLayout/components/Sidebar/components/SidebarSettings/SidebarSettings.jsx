@@ -14,26 +14,32 @@ const SidebarSettings = () => {
   const { t } = useTranslation();
 
   return (
-    <ul className="mt-1 flex-center flex-col gap-1">
-      <SidebarSettingsItem
-        Icon={IoLanguage}
-        onClick={() =>
-          i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")
-        }
-      >
-        <div>
-          <span>{t("layouts.sidebar.menu.accountPages.switchLanguage")}</span>
-          <span>{i18n.language === "fa" ? "انگلیسی" : "Persian"}</span>
-        </div>
-      </SidebarSettingsItem>
+    <div>
+      <span className="ms-4 font-VazirMedium">
+        {t("layouts.sidebar.menu.accountPages.title")}
+      </span>
 
-      <SidebarSettingsItem
-        Icon={TbLogout}
-        onClick={() => setAdmin({ value: null })}
-      >
-        <span>{t("layouts.sidebar.menu.accountPages.logout")}</span>
-      </SidebarSettingsItem>
-    </ul>
+      <ul className="mt-1 flex-center flex-col gap-1">
+        <SidebarSettingsItem
+          Icon={IoLanguage}
+          onClick={() =>
+            i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")
+          }
+        >
+          <div>
+            <span>{t("layouts.sidebar.menu.accountPages.switchLanguage")}</span>
+            <span>{i18n.language === "fa" ? "انگلیسی" : "Persian"}</span>
+          </div>
+        </SidebarSettingsItem>
+
+        <SidebarSettingsItem
+          Icon={TbLogout}
+          onClick={() => setAdmin({ value: null })}
+        >
+          <span>{t("layouts.sidebar.menu.accountPages.logout")}</span>
+        </SidebarSettingsItem>
+      </ul>
+    </div>
   );
 };
 
