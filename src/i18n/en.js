@@ -4,6 +4,18 @@ const en = {
       title: "Visionui-Dashboard",
       desc: "A dashboard for manage business",
     },
+    tables: {
+      title: "Tables",
+      desc: "Tables",
+    },
+    billing: {
+      title: "Billing",
+      desc: "Billing",
+    },
+    profile: {
+      title: "Admin-Profile",
+      desc: "Admin-Profile",
+    },
 
     signin: {
       title: "Sign-in to dashboard - visionui",

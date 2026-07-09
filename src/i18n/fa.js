@@ -4,6 +4,18 @@ const fa = {
       title: "داشبورد Visionui",
       desc: "یک داشبورد برای مدیریت کسب و کار",
     },
+    tables: {
+      title: "جداول",
+      desc: "جداول",
+    },
+    billing: {
+      title: "صورت حساب",
+      desc: "صورت حساب",
+    },
+    profile: {
+      title: "پروفایل ادمین",
+      desc: "پروفایل ادمین",
+    },
 
     signin: {
       title: "ورود به داشبورد - visionui",
