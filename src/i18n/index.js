@@ -15,10 +15,24 @@ const resources = {
   },
 };
 
+const initialLanguage = localStorage.getItem("lang") ?? "en";
+
+const updateDocumentLanguage = (language) => {
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
+};
+
+updateDocumentLanguage(initialLanguage);
+
+i18n.on("languageChanged", (language) => {
+  localStorage.setItem("lang", language);
+  updateDocumentLanguage(language);
+});
+
 i18n.use(initReactI18next).init({
   resources,
 
-  lng: "en",
+  lng: initialLanguage,
 
   interpolation: {
     escapeValue: false,

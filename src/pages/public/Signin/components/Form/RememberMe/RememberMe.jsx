@@ -1,7 +1,4 @@
-import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-
-import { i18n } from "@/i18n";
 
 const RememberMe = ({ register }) => {
   const { t } = useTranslation();
@@ -9,10 +6,7 @@ const RememberMe = ({ register }) => {
   return (
     <label
       htmlFor="remember-me"
-      className={clsx([
-        "mt-6 flex-center cursor-pointer gap-x-2.5",
-        i18n.language === "fa" && "ltr",
-      ])}
+      className="mt-6 flex-center cursor-pointer gap-x-2.5 rtl:ltr"
     >
       <input
         id="remember-me"

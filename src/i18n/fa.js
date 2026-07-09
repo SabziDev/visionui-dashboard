@@ -19,7 +19,7 @@ const fa = {
   layouts: {
     header: {
       searchInput: {
-        placeholder: "اینجا تایپ کنید...",
+        placeholder: "...جستجو",
       },
 
       pagesTitle: {
@@ -32,6 +32,25 @@ const fa = {
 
     sidebar: {
       title: "پنل VISION UI",
+
+      menu: {
+        dashboard: "داشبورد",
+        tables: "جداول",
+        billing: "صورت حساب",
+        profile: "پروفایل",
+
+        accountPages: {
+          title: "تنظیمات",
+          switchLanguage: "تغییر به ",
+          logout: "خروج",
+        },
+      },
+
+      needHelp: {
+        title: "به کمک نیاز دارید؟",
+        desc: "لطفاً مستندات ما را بررسی کنید.",
+        btn: "مستندات",
+      },
     },
   },
 
@@ -54,10 +73,10 @@ const fa = {
             errMessage: ["لطفا از ", " برای ورود استفاده کنید."],
 
             email: {
-              placeholder: "آدرس ایمیل...",
+              placeholder: "آدرس ایمیل",
             },
             password: {
-              placeholder: "گذرواژه...",
+              placeholder: "گذرواژه",
             },
             rememberMe: {
               label: "مرا به خاطر بسپار",

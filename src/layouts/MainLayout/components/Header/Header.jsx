@@ -9,6 +9,7 @@ import AuthContext from "@/contexts/Auth";
 const Header = () => {
   const { admin } = use(AuthContext);
   const urlMatches = useMatches();
+
   const { t } = useTranslation();
 
   const currentUrlMatch = urlMatches.at(-1);

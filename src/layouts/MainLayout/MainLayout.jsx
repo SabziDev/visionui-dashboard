@@ -21,7 +21,7 @@ const MainLayout = () => {
       <div className="flex">
         <Sidebar />
 
-        <div className="mt-5.5 ml-70 w-full">
+        <div className="mt-5.5 w-full ltr ltr:ml-70 rtl:mr-70">
           {!isHideLayout && <Header />}
 
           <main id="main-root" className="mt-7.5">

@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router";
 
 import AuthContext from "@/contexts/Auth";
-import { i18n } from "@/i18n";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
 import loginSchema from "@/validators/loginValidator";
@@ -100,8 +99,7 @@ const Form = () => {
         noValidate
         onSubmit={handleSubmit(submitForm)}
         className={clsx([
-          "mt-9 flex-justify-center flex-col",
-          i18n.language === "fa" ? "items-end" : "items-start",
+          "mt-9 flex-justify-center flex-col ltr:items-start rtl:items-end",
         ])}
       >
         <EmailInput

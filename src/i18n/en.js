@@ -19,7 +19,7 @@ const en = {
   layouts: {
     header: {
       searchInput: {
-        placeholder: "Type here...",
+        placeholder: "Search...",
       },
 
       pagesTitle: {
@@ -32,6 +32,25 @@ const en = {
 
     sidebar: {
       title: "VISION UI PANEL",
+
+      menu: {
+        dashboard: "Dashboard",
+        tables: "Tables",
+        billing: "Billing",
+        profile: "Profile",
+
+        accountPages: {
+          title: "Settings",
+          switchLanguage: "Switch to ",
+          logout: "Log out",
+        },
+      },
+
+      needHelp: {
+        title: "Need help?",
+        desc: "Please check our docs",
+        btn: "DOCUMENTATION",
+      },
     },
   },
 

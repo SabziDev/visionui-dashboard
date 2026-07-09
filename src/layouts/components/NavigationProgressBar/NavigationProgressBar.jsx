@@ -3,9 +3,10 @@ import { useLocation, useNavigation } from "react-router";
 import LoadingBar from "react-top-loading-bar";
 
 const progressBarProps = {
-  color: "#0075ff",
+  color: "#060b26",
   shadow: false,
   height: 4,
+  containerClassName: "ltr",
   loaderSpeed: 500,
   waitingTime: 1500,
 };
