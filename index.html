@@ -26,7 +26,8 @@
     <link rel="icon" type="image/png" href="./app-favicon.png" />
 
     <style>
-      #app-preloader {
+      #app-preloader,
+      #route-preloader {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -35,17 +36,18 @@
         background-color: #060b26;
         z-index: 9999;
       }
-      .app-preloader__pulse {
+      .app-preloader__pulse,
+      .route-preloader__pulse {
         width: 100px;
         height: 100px;
         margin: 100px auto;
         border-radius: 100%;
         background-color: #0075ff;
         opacity: 0.8;
-        animation: app-preloader-pulse 1.8s infinite ease-in-out;
+        animation: preloader-pulse 1.8s infinite ease-in-out;
       }
 
-      @keyframes app-preloader-pulse {
+      @keyframes preloader-pulse {
         0% {
           transform: scale(0);
         }
@@ -60,7 +62,7 @@
   </head>
 
   <!-- TODO Add overflow-x-hidden after final responsive -->
-  <body class="bgs-navy text-white font-VazirRegular overflow-hidden">
+  <body class="text-white font-VazirRegular overflow-hidden">
     <div id="app-preloader">
       <div class="app-preloader__pulse"></div>
     </div>

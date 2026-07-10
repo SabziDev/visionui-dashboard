@@ -12,7 +12,7 @@ const Header = () => {
 
   const currentUrlMatch = urlMatches.at(-1);
 
-  const { pageTitle, pagePath } = currentUrlMatch.handle;
+  const { pageTitle, pagePath } = currentUrlMatch.handle ?? {};
 
   return (
     <header>

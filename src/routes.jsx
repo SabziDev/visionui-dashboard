@@ -1,6 +1,7 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
+import RoutePreloader from "./layouts/components/RoutePreloader/RoutePreloader";
 import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
@@ -27,15 +28,15 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Navigate to="/" replace />,
-        handle: {
-          pageTitle: "layouts.header.pagesTitle.dashboard",
-          pagePath: "dashboard",
-        },
       },
 
       {
         path: "tables",
-        element: <Tables />,
+        element: (
+          <Suspense fallback={<RoutePreloader />}>
+            <Tables />
+          </Suspense>
+        ),
         handle: {
           pageTitle: "layouts.header.pagesTitle.tables",
           pagePath: "tables",
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "billing",
-        element: <Billing />,
+        element: (
+          <Suspense fallback={<RoutePreloader />}>
+            <Billing />
+          </Suspense>
+        ),
         handle: {
           pageTitle: "layouts.header.pagesTitle.billing",
           pagePath: "billing",
@@ -51,7 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: (
+          <Suspense fallback={<RoutePreloader />}>
+            <Profile />
+          </Suspense>
+        ),
         handle: {
           pageTitle: "layouts.header.pagesTitle.profile",
           pagePath: "profile",
