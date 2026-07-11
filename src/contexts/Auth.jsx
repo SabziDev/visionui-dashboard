@@ -8,16 +8,12 @@ const AuthContext = createContext(null);
 AuthContext.displayName = "AuthContext";
 
 const AuthContextProvider = ({ children }) => {
-  const [admin, setAdmin, isAdminLoading] = useCookie({
+  const [admin, setAdmin] = useCookie({
     key: "admin",
     defaultValue: null,
   });
 
-  return (
-    <AuthContext value={{ admin, setAdmin, isAdminLoading }}>
-      {children}
-    </AuthContext>
-  );
+  return <AuthContext value={{ admin, setAdmin }}>{children}</AuthContext>;
 };
 
 export { AuthContextProvider };

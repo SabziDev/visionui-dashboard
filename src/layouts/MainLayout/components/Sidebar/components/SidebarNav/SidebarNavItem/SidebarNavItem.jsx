@@ -3,12 +3,12 @@ import { NavLink } from "react-router";
 
 const SidebarNavItem = ({ children, to, Icon }) => {
   return (
-    <li>
+    <li className="w-full">
       <NavLink
         to={to}
         className={({ isActive }) =>
           clsx([
-            "flex-items-center w-60 gap-4 rounded-2xl px-4 py-2.5 font-VazirMedium",
+            "flex-items-center gap-4 rounded-2xl px-4 py-2.5 font-VazirMedium",
             isActive && "bg-[#1A1F37]",
           ])
         }

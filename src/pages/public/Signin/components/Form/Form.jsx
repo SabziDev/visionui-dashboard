@@ -17,7 +17,7 @@ import RememberMe from "./RememberMe/RememberMe";
 import SubmitBtn from "./SubmitBtn/SubmitBtn";
 
 const Form = () => {
-  const { admin, setAdmin, isAdminLoading } = use(AuthContext);
+  const { admin, setAdmin } = use(AuthContext);
 
   const { admins, isError } = useAdminsQuery();
 
@@ -39,7 +39,6 @@ const Form = () => {
   const { t } = useTranslation();
 
   if (isError) return <AppLoadError />;
-  if (isAdminLoading) return;
 
   const submitForm = async (data) => {
     const toastId = toast.loading(t("pages.public.signin.loggingToast"));
@@ -50,12 +49,13 @@ const Form = () => {
       });
 
       if (data.rememberMe) {
-        await setAdmin({
+        const SIX_MONTHS = 60 * 60 * 24 * 30 * 6;
+        setAdmin({
           value: admins[0],
-          expires: Date.now() + 1000 * 60 * 60 * 24 * 30 * 6,
+          maxAge: SIX_MONTHS,
         });
       } else {
-        await setAdmin({
+        setAdmin({
           value: admins[0],
         });
       }

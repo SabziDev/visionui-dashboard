@@ -6,9 +6,7 @@ import AuthContext from "@/contexts/Auth";
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const { admin, isAdminLoading } = use(AuthContext);
-
-  if (isAdminLoading) return;
+  const { admin } = use(AuthContext);
 
   return admin ? <MainLayout /> : <Navigate to="/signin" replace />;
 };

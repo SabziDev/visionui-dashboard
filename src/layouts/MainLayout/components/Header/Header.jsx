@@ -5,7 +5,7 @@ import Badges from "./components/Badges/Badges";
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 import SearchInput from "./components/SearchInput/SearchInput";
 
-const Header = () => {
+const Header = ({ onShowSidebar }) => {
   const urlMatches = useMatches();
 
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ const Header = () => {
           <div className="flex-center gap-x-8">
             <SearchInput />
 
-            <Badges />
+            <Badges onShowSidebar={onShowSidebar} />
           </div>
         </div>
       </div>

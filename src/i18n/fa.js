@@ -67,7 +67,24 @@ const fa = {
   },
 
   pages: {
-    private: {},
+    private: {
+      dashboard: {
+        todayStats: {
+          money: {
+            title: "درآمد امروز",
+          },
+          users: {
+            title: "کاربران امروز",
+          },
+          clients: {
+            title: "مشتری های جدید",
+          },
+          sales: {
+            title: "فروش کلی",
+          },
+        },
+      },
+    },
 
     public: {
       signin: {

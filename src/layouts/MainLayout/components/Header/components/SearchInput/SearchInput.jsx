@@ -7,7 +7,7 @@ const SearchInput = () => {
   return (
     <label
       htmlFor="search"
-      className="flex-items-center h-12 w-60 justify-start gap-x-2 rounded-2xl border border-slate-500/50 px-3 py-3.5"
+      className="hidden h-12 w-60 rounded-2xl border border-slate-500/50 px-3 py-3.5 md:flex-items-center md:justify-start md:gap-x-2"
     >
       <IoSearch className="size-5 cursor-pointer" />
       <input

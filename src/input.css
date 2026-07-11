@@ -21,7 +21,7 @@
     @apply scroll-smooth selection:bg-navy selection:text-blue;
   }
   html::-webkit-scrollbar {
-    @apply w-2.5;
+    @apply size-2.5;
   }
   html::-webkit-scrollbar-thumb {
     @apply bg-blue;
@@ -33,7 +33,7 @@
     @apply bg-transparent;
   }
   *:not(html) ::-webkit-scrollbar {
-    @apply w-1.5;
+    @apply size-1.5;
   }
   *:not(html) ::-webkit-scrollbar-thumb {
     @apply bg-blue rounded-full;
@@ -101,6 +101,14 @@
 }
 @utility rtl {
   direction: rtl;
+}
+
+@utility bg-linear {
+  background: linear-gradient(
+    to bottom,
+    rgb(6 11 38 / 74%),
+    rgb(26 31 55 / 50%)
+  );
 }
 /*? ============================================= -- Custom Utilities -- ============================================= */
 

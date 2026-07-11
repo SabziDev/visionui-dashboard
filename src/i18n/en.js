@@ -67,7 +67,24 @@ const en = {
   },
 
   pages: {
-    private: {},
+    private: {
+      dashboard: {
+        todayStats: {
+          money: {
+            title: "Today’s Money",
+          },
+          users: {
+            title: "Today’s Users",
+          },
+          clients: {
+            title: "New Clients",
+          },
+          sales: {
+            title: "Total Sales",
+          },
+        },
+      },
+    },
 
     public: {
       signin: {

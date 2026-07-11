@@ -1,6 +1,6 @@
 const SidebarSettingsItem = ({ children, Icon, onClick }) => {
   return (
-    <li>
+    <li className="w-full">
       <button
         type="button"
         onClick={onClick}
@@ -10,7 +10,7 @@ const SidebarSettingsItem = ({ children, Icon, onClick }) => {
           <Icon className="size-6" />
         </span>
 
-        {children}
+        <span>{children}</span>
       </button>
     </li>
   );
