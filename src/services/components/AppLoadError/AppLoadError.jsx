@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 const AppLoadError = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     document.documentElement.classList.add("overflow-hidden");
   }, []);
@@ -37,11 +40,11 @@ const AppLoadError = () => {
       </svg>
 
       <h1 className="mb-2 text-3xl font-bold text-amber-700">
-        Something went wrong
+        {t("components.appLoadError.title")}
       </h1>
 
       <p className="mb-8 max-w-md text-lg text-gray-300">
-        Please refresh the page
+        {t("components.appLoadError.desc")}
       </p>
 
       <button
@@ -49,7 +52,7 @@ const AppLoadError = () => {
         onClick={() => window.location.reload()}
         className="z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 shadow-xl hover:shadow-2xl active:scale-[0.96]"
       >
-        Try Again
+        {t("components.appLoadError.btn")}
       </button>
     </div>,
     document.body,

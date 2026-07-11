@@ -28,6 +28,15 @@ const fa = {
     },
   },
 
+  components: {
+    appLoadError: {
+      title: "مشکلی پیش آمد",
+      desc: "لطفا صفحه را رفرش کنید",
+
+      btn: "تلاش مجدد",
+    },
+  },
+
   layouts: {
     header: {
       searchInput: {

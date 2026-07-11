@@ -28,6 +28,15 @@ const en = {
     },
   },
 
+  components: {
+    appLoadError: {
+      title: "Something went wrong",
+      desc: "Please refresh the page",
+
+      btn: "Try Again",
+    },
+  },
+
   layouts: {
     header: {
       searchInput: {
