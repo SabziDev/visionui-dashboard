@@ -1,7 +1,7 @@
 import api from "./axios/api";
 
-const getAuthorsApi = async () => {
-  const res = await api.get("/authors");
+const getAuthorsApi = async ({ signal }) => {
+  const res = await api.get("/authors", { signal });
 
   return res.data;
 };

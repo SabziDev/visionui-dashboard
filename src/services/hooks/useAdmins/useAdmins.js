@@ -7,7 +7,7 @@ const useAdminsQuery = () => {
 
   const { data: admins, ...rest } = useQuery({
     queryKey,
-    queryFn: () => getAdminsApi(),
+    queryFn: ({ signal }) => getAdminsApi({ signal }),
   });
 
   return { admins, ...rest };
