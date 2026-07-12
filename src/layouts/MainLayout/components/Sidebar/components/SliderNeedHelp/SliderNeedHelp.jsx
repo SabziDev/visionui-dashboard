@@ -7,7 +7,7 @@ const SliderNeedHelp = () => {
   return (
     <div className="relative mx-auto mt-6 h-44 w-55 rounded-2xl p-4">
       <img
-        src="/images/shapes/layouts/main/sidebar/bg.png"
+        src="/images/shapes/layouts/main/sidebar/bg.webp"
         alt="halo-shape"
         className="absolute inset-0 -z-1"
       />

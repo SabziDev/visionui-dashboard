@@ -1,9 +1,27 @@
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IoIosGlobe } from "react-icons/io";
 import { IoCartSharp, IoDocumentTextOutline, IoWallet } from "react-icons/io5";
 
 const ToadyStat = ({ data }) => {
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prev) => {
+        if (prev >= data.value.count) {
+          clearInterval(interval);
+
+          return prev;
+        }
+
+        return prev + 200;
+      });
+    }, 0);
+
+    return () => clearInterval(interval);
+  }, [data.value.count]);
+
   const VALUE_PREFIX = {
     money: "%",
     sales: "%",
@@ -30,7 +48,7 @@ const ToadyStat = ({ data }) => {
         <div className="mt-0.5 flex-center gap-1 ltr">
           <div className="font-VazirBold text-lg">
             <span>{VALUE_PREFIX[data.type] ?? null}</span>
-            <span>{data.value.count.toLocaleString()}</span>
+            <span>{counter.toLocaleString()}</span>
           </div>
 
           <span
