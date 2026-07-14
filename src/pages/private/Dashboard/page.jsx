@@ -1,10 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { FaRegFaceLaugh } from "react-icons/fa6";
-import { PolarAngleAxis, RadialBar, RadialBarChart } from "recharts";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 import Head from "@/pages/components/Head";
 
+import ReferralTracking from "./components/ReferralTracking/ReferralTracking";
+import SatisfactionRate from "./components/SatisfactionRate/SatisfactionRate";
 import ToadyStats from "./components/ToadyStats/ToadyStats";
+import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -18,43 +20,13 @@ const Dashboard = () => {
 
       <ToadyStats />
 
-      <div className="relative size-53">
-        <RadialBarChart
-          width={220}
-          height={220}
-          cx="50%"
-          cy="50%"
-          innerRadius="80%"
-          outerRadius="100%"
-          barSize={12}
-          data={[{ value: 85 }]}
-          startAngle={270}
-          endAngle={-90}
-        >
-          <defs>
-            <linearGradient id="progressGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#0075FF" stopOpacity={1} />
-              <stop offset="100%" stopColor="#060b26" stopOpacity={1} />
-            </linearGradient>
-          </defs>
+      <div className="flex flex-col justify-between gap-6 md:items-center 2xl:flex-row en:ltr fa:rtl">
+        <WelcomeCard />
 
-          <PolarAngleAxis
-            type="number"
-            domain={[0, 100]}
-            angleAxisId={0}
-            tick={false}
-          />
-          <RadialBar
-            dataKey="value"
-            cornerRadius={50}
-            fill="url(#progressGradient)"
-            background={{ fill: "#22234b" }}
-          />
-        </RadialBarChart>
-
-        <div className="absolute top-1/2 left-1/2 -translate-1/2 bg-blue p-3 rounded-full">
-          <FaRegFaceLaugh className="size-6" />
-        </div>
+        <ScrollContainer className="flex-items-center gap-6 sm:justify-center">
+          <SatisfactionRate value={75} />
+          <ReferralTracking value={93} />
+        </ScrollContainer>
       </div>
     </>
   );

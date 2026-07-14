@@ -1,3 +1,6 @@
+// const { t } = useTranslation();
+// {t("pages.private.dashboard.welcomeCard.welcomeBack")}
+
 const en = {
   pagesMeta: {
     dashboard: {
@@ -91,6 +94,25 @@ const en = {
           sales: {
             title: "Total Sales",
           },
+        },
+
+        welcomeCard: {
+          welcomeBack: "Welcome back,",
+          greeting: "Glad to see you again!Ask me anything.",
+          btn: "Tap to record",
+        },
+
+        satisfactionRate: {
+          title: "Satisfaction Rate",
+          desc: "From all projects",
+          btn: "Based on likes",
+        },
+
+        referralTracking: {
+          title: "Referral Tracking",
+          desc: "From last month to today",
+          invited: "Invited people",
+          totalScore: "Total Score",
         },
       },
     },

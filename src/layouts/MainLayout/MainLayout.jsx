@@ -26,14 +26,14 @@ const MainLayout = () => {
           setIsShowSidebar={setIsShowSidebar}
         />
 
-        <div className="mt-5.5 w-full overflow-hidden ltr ltr:ml-0 lg:ltr:ml-65 2xl:ltr:ml-70 rtl:mr-0 lg:rtl:mr-65 2xl:rtl:mr-70">
+        <div className="mt-5.5 w-full overflow-hidden ltr en:ml-0 lg:en:ml-65 2xl:en:ml-70 fa:mr-0 lg:fa:mr-65 2xl:fa:mr-70">
           {!isHideLayout && <Header onShowSidebar={setIsShowSidebar} />}
 
           <main id="main-root" className="mt-7.5">
             {isPage404 ? (
               outlet
             ) : (
-              <div className="container *:mt-6">
+              <div className="container *:*:not-first:mt-6">
                 <AnimatedOutlet>{outlet}</AnimatedOutlet>
               </div>
             )}

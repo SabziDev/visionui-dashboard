@@ -1,11 +1,10 @@
-import { use } from "react";
 import { IoMdSettings } from "react-icons/io";
 import { IoMenu, IoNotificationsSharp, IoPerson } from "react-icons/io5";
 
-import AuthContext from "@/contexts/Auth";
+import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
 
 const Badges = ({ onShowSidebar }) => {
-  const { admin } = use(AuthContext);
+  const { admin } = useAdminsQuery();
 
   return (
     <>

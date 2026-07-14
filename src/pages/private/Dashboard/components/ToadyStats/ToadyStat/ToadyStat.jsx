@@ -1,26 +1,12 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IoIosGlobe } from "react-icons/io";
 import { IoCartSharp, IoDocumentTextOutline, IoWallet } from "react-icons/io5";
 
+import useCounter from "@/hooks/useCounter/useCounter";
+
 const ToadyStat = ({ data }) => {
-  const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prev) => {
-        if (prev >= data.value.count) {
-          clearInterval(interval);
-
-          return prev;
-        }
-
-        return prev + 200;
-      });
-    }, 0);
-
-    return () => clearInterval(interval);
-  }, [data.value.count]);
+  const counter = useCounter(data.value.count, 1200);
 
   const VALUE_PREFIX = {
     money: "%",
@@ -39,13 +25,13 @@ const ToadyStat = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex-items-center justify-between gap-4 rounded-2xl p-4 bg-linear ltr:ltr rtl:rtl">
+    <div className="flex-items-center justify-between gap-4 rounded-2xl p-4 bg-linear en:ltr fa:rtl">
       <div>
         <h6 className="font-VazirMedium text-sm text-nowrap text-gray-400">
           {t(`pages.private.dashboard.todayStats.${data.type}.title`)}
         </h6>
 
-        <div className="mt-0.5 flex-center gap-1 ltr">
+        <div className="mt-0.5 flex-items-center min-w-30 gap-1 ltr fa:justify-end">
           <div className="font-VazirBold text-lg">
             <span>{VALUE_PREFIX[data.type] ?? null}</span>
             <span>{counter.toLocaleString()}</span>

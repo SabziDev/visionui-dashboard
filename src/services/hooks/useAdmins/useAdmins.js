@@ -10,7 +10,7 @@ const useAdminsQuery = () => {
     queryFn: ({ signal }) => getAdminsApi({ signal }),
   });
 
-  return { admins, ...rest };
+  return { admin: admins?.[0], ...rest };
 };
 
 export { useAdminsQuery };

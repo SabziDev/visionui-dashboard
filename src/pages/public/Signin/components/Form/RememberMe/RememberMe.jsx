@@ -6,7 +6,7 @@ const RememberMe = ({ register }) => {
   return (
     <label
       htmlFor="remember-me"
-      className="mt-6 flex-center cursor-pointer gap-x-2.5 rtl:ltr"
+      className="mt-6 flex-center cursor-pointer gap-x-2.5 fa:ltr"
     >
       <input
         id="remember-me"

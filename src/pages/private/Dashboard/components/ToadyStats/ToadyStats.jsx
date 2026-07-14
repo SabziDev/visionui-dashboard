@@ -4,17 +4,13 @@ import Skelton from "@/components/Skelton/Skelton";
 
 import "react-indiana-drag-scroll/dist/style.css";
 
-import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
 import ToadyStat from "./ToadyStat/ToadyStat";
 
 const ToadyStats = () => {
-  const { stats, isPending, isError } = useStatsQuery();
+  const { stats, isPending } = useStatsQuery();
 
-  if (isError) {
-    return <AppLoadError />;
-  }
   if (isPending) {
     return (
       <Skelton className="gap-2 *:h-16 *:w-1/2">

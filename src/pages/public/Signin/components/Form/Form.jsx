@@ -4,7 +4,6 @@ import { use } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import { Navigate } from "react-router";
 
 import AuthContext from "@/contexts/Auth";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
@@ -17,9 +16,9 @@ import RememberMe from "./RememberMe/RememberMe";
 import SubmitBtn from "./SubmitBtn/SubmitBtn";
 
 const Form = () => {
-  const { admin, setAdmin } = use(AuthContext);
+  const { setAdminId } = use(AuthContext);
 
-  const { admins, isError } = useAdminsQuery();
+  const { admin, isError } = useAdminsQuery();
 
   const {
     register,
@@ -50,13 +49,13 @@ const Form = () => {
 
       if (data.rememberMe) {
         const SIX_MONTHS = 60 * 60 * 24 * 30 * 6;
-        setAdmin({
-          value: admins[0],
+        setAdminId({
+          value: admin.id,
           maxAge: SIX_MONTHS,
         });
       } else {
-        setAdmin({
-          value: admins[0],
+        setAdminId({
+          value: admin.id,
         });
       }
 
@@ -84,9 +83,7 @@ const Form = () => {
     });
   };
 
-  return admin ? (
-    <Navigate to="/" replace />
-  ) : (
+  return (
     <div className="flex-justify-center flex-col items-start">
       <span className="font-VazirBold text-3xl">
         {t("pages.public.signin.form.title")}
@@ -99,7 +96,7 @@ const Form = () => {
         noValidate
         onSubmit={handleSubmit(submitForm)}
         className={clsx([
-          "mt-9 flex-justify-center flex-col ltr:items-start rtl:items-end",
+          "mt-9 flex-justify-center flex-col en:items-start fa:items-end",
         ])}
       >
         <EmailInput

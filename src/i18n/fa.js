@@ -92,6 +92,26 @@ const fa = {
             title: "فروش کلی",
           },
         },
+
+        welcomeCard: {
+          welcomeBack: "خوش برگشتید،",
+          greeting:
+            "از دیدن دوباره‌اتان خوشحالیم! هر سوالی دارید از من بپرسید.",
+          btn: "بپرس",
+        },
+
+        satisfactionRate: {
+          title: "نرخ رضایت",
+          desc: "از تمام پروژه‌ها",
+          btn: "بر اساس لایک‌ها",
+        },
+
+        referralTracking: {
+          title: "پیگیری دعوت شده‌ها",
+          desc: "از ماه گذشته تا امروز",
+          invited: "فرد دعوت شده",
+          totalScore: "امتیاز کل",
+        },
       },
     },
 

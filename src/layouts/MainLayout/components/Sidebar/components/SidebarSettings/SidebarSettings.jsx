@@ -8,7 +8,7 @@ import AuthContext from "@/contexts/Auth";
 import SidebarSettingsItem from "./SidebarSettingsItem/SidebarSettingsItem";
 
 const SidebarSettings = () => {
-  const { setAdmin } = use(AuthContext);
+  const { setAdminId } = use(AuthContext);
 
   const { i18n } = useTranslation();
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ const SidebarSettings = () => {
 
         <SidebarSettingsItem
           Icon={TbLogout}
-          onClick={() => setAdmin({ value: null })}
+          onClick={() => setAdminId({ value: null })}
         >
           <span>{t("layouts.sidebar.menu.accountPages.logout")}</span>
         </SidebarSettingsItem>

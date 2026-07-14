@@ -10,7 +10,7 @@ const SidebarTitle = () => {
       <h1
         className={clsx([
           "mb-5 from-[#E0E1E2]/90 via-[#E0E1E2]/70 to-[#E0E1E2]/0 bg-clip-text text-center font-VazirBold tracking-ultra-wide text-transparent",
-          "ltr:bg-linear-to-r rtl:bg-linear-to-l",
+          "en:bg-linear-to-r fa:bg-linear-to-l",
         ])}
       >
         {t("layouts.sidebar.title")}

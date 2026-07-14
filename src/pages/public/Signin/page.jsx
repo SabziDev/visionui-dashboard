@@ -1,14 +1,25 @@
+import { use } from "react";
 import { useTranslation } from "react-i18next";
+import { Navigate } from "react-router";
 
+import AuthContext from "@/contexts/Auth";
 import Head from "@/pages/components/Head";
+import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
 
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
+  const { admin, isPending } = useAdminsQuery();
+  const { adminId } = use(AuthContext);
+
   const { t } = useTranslation();
 
-  return (
+  if (isPending) return;
+
+  return adminId === admin.id ? (
+    <Navigate to="/" replace />
+  ) : (
     <>
       <Head>
         <title>{t("pagesMeta.signin.title")}</title>

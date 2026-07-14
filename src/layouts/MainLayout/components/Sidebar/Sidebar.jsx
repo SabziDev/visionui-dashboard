@@ -29,7 +29,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
           "fixed z-100 m-2.5 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-300 2xl:w-70",
           isShowSidebar
             ? "max-lg:translate-x-0 max-lg:opacity-100"
-            : "max-lg:opacity-0 ltr:max-lg:-translate-x-full rtl:max-lg:translate-x-full",
+            : "max-lg:opacity-0 en:max-lg:-translate-x-full fa:max-lg:translate-x-full",
         ])}
       >
         <SidebarTitle />

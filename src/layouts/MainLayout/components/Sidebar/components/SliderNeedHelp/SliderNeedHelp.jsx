@@ -9,7 +9,7 @@ const SliderNeedHelp = () => {
       <img
         src="/images/shapes/layouts/main/sidebar/bg.webp"
         alt="halo-shape"
-        className="absolute inset-0 -z-1"
+        className="absolute inset-0 -z-1 select-none"
       />
 
       <div className="flex-center size-9 rounded-xl bg-white">
