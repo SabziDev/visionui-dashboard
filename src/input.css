@@ -21,8 +21,8 @@
 @layer base {
   html[lang="fa"] {
     --font-VazirRegular: "Vazir-Regular--fa", Arial, Helvetica, sans-serif;
-    --font-VazirMedium: "Vazir-Regular--fa", Arial, Helvetica, sans-serif;
-    --font-VazirBold: "Vazir-Regular--fa", Arial, Helvetica, sans-serif;
+    --font-VazirMedium: "Vazir-Medium--fa", Arial, Helvetica, sans-serif;
+    --font-VazirBold: "Vazir-Bold--fa", Arial, Helvetica, sans-serif;
   }
 
   html {
@@ -124,7 +124,6 @@
   }
 }
 @utility container {
-  /* TODO Container p-x */
   @apply mx-auto max-w-[1600px] px-5 lg:px-5;
 }
 /*! ============================================= -- Base Customization -- ============================================= */
@@ -170,3 +169,12 @@
   @apply flex items-end justify-end;
 }
 /** ============================================= -- Custom Components -- ============================================= */
+
+/* ============================================= -- Packages Customization -- ============================================= */
+@layer base {
+  /* Recharts */
+  .recharts-wrapper *:focus {
+    outline: none;
+  }
+}
+/* ============================================= -- Packages Customization -- ============================================= */

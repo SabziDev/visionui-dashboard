@@ -19,7 +19,7 @@ const Dashboard = () => {
 
       <ToadyStatsSection />
       <OverviewSection />
-      <div className="flex-center flex-col md:flex-row gap-6">
+      <div className="flex-center flex-col gap-6 xl:flex-row">
         <SalesOverviewSection />
         <ActiveUsersSection />
       </div>

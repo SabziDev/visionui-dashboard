@@ -1,3 +1,5 @@
+import ScrollContainer from "react-indiana-drag-scroll";
+
 import Skelton from "@/components/Skelton/Skelton";
 import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
@@ -18,12 +20,12 @@ const ActiveUsersBadges = () => {
   }
 
   return (
-    <div className="flex-items-center justify-between">
+    <ScrollContainer className="flex-items-center justify-between gap-6">
       {stats &&
         stats.generalData.map((stat) => (
           <ActiveUsersBadge key={stat.id} data={stat} />
         ))}
-    </div>
+    </ScrollContainer>
   );
 };
 
