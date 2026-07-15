@@ -114,6 +114,43 @@ const en = {
           invited: "Invited people",
           totalScore: "Total Score",
         },
+
+        salesOverview: {
+          title: "Sales overview",
+          desc: ["(+5) more", " in 2021"],
+
+          chartMonths: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+
+          tooltip: {
+            currentYear: "Current year",
+            lastYear: "Last year",
+          },
+        },
+
+        activeUsers: {
+          title: "Active Users",
+          desc: ["(+23)", "  than last week"],
+
+          badges: {
+            users: "Users",
+            clicks: "Clicks",
+            sales: "Sales",
+            items: "Items",
+          },
+        },
       },
     },
 

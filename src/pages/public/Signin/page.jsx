@@ -10,12 +10,12 @@ import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
-  const { admin, isPending } = useAdminsQuery();
+  const { admin, isPending, isError } = useAdminsQuery();
   const { adminId } = use(AuthContext);
 
   const { t } = useTranslation();
 
-  if (isPending) return;
+  if (isPending || isError) return;
 
   return adminId === admin.id ? (
     <Navigate to="/" replace />

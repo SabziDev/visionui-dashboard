@@ -4,12 +4,12 @@ import ReferralTracking from "./components/ReferralTracking/ReferralTracking";
 import SatisfactionRate from "./components/SatisfactionRate/SatisfactionRate";
 import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
 
-const Overview = () => {
+const OverviewSection = () => {
   return (
     <div className="flex flex-col justify-between gap-6 md:items-center 2xl:flex-row en:ltr fa:rtl">
       <WelcomeCard />
 
-      <ScrollContainer className="flex-items-center gap-6 sm:justify-center">
+      <ScrollContainer className="flex-items-center gap-6 sm:justify-center 2xl:w-full">
         <SatisfactionRate value={75} />
         <ReferralTracking value={93} />
       </ScrollContainer>
@@ -17,4 +17,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default OverviewSection;

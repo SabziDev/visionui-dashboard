@@ -6,14 +6,14 @@ import "react-indiana-drag-scroll/dist/style.css";
 
 import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
-import ToadyStat from "./ToadyStat/ToadyStat";
+import ToadyStat from "./components/ToadyStat/ToadyStat";
 
-const ToadyStats = () => {
-  const { stats, isPending } = useStatsQuery();
+const ToadyStatsSection = () => {
+  const { stats, isPending, isError } = useStatsQuery();
 
-  if (isPending) {
+  if (isPending || isError) {
     return (
-      <Skelton className="gap-2 *:h-16 *:w-1/2 xl:*:max-w-90">
+      <Skelton className="gap-2 bg-linear *:h-16 *:w-1/2 xl:*:max-w-90">
         <div />
         <div />
         <div />
@@ -30,4 +30,4 @@ const ToadyStats = () => {
   );
 };
 
-export default ToadyStats;
+export default ToadyStatsSection;

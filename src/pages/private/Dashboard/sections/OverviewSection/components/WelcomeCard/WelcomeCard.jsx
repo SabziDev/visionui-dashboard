@@ -6,11 +6,11 @@ import WelcomeCardBtn from "./WelcomeCardBtn/WelcomeCardBtn";
 import WelcomeCardContent from "./WelcomeCardContent/WelcomeCardContent";
 
 const WelcomeCard = () => {
-  const { admin, isPending } = useAdminsQuery();
+  const { admin, isPending, isError } = useAdminsQuery();
 
-  if (isPending) {
+  if (isPending || isError) {
     return (
-      <Skelton className="h-55 max-w-220 *:size-full sm:h-75 md:h-88">
+      <Skelton className="h-55 max-w-220 bg-linear *:size-full sm:h-75 md:h-88">
         <div />
       </Skelton>
     );
