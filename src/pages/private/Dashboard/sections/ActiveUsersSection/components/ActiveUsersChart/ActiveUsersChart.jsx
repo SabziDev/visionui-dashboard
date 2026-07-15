@@ -1,6 +1,6 @@
 import { Bar, BarChart, ResponsiveContainer, YAxis } from "recharts";
 
-const data = [
+const fakeData = [
   { value: 330 },
   { value: 230 },
   { value: 120 },
@@ -15,7 +15,7 @@ const data = [
 const ActiveUsersChart = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart responsive data={data}>
+      <BarChart responsive data={fakeData}>
         <YAxis
           tick={{
             fill: "#fff",

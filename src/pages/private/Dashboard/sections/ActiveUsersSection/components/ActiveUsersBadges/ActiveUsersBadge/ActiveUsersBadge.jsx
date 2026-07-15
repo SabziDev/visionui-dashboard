@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { IoIosRocket } from "react-icons/io";
 import { IoBuild, IoCartSharp, IoWallet } from "react-icons/io5";
 
@@ -6,6 +7,8 @@ const ActiveUsersBadge = ({ data }) => {
   const [width, setWidth] = useState(0);
 
   const badgeRef = useRef(null);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +43,9 @@ const ActiveUsersBadge = ({ data }) => {
           <Icon />
         </div>
         <span className="font-VazirMedium text-sm text-gray-400">
-          {data.type.charAt(0) + data.type.slice(1).toLowerCase()}
+          {t(
+            `pages.private.dashboard.activeUsers.badges.${data.type.toLowerCase()}`,
+          )}
         </span>
       </div>
 
