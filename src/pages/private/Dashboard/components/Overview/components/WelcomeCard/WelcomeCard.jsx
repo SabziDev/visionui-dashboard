@@ -10,7 +10,7 @@ const WelcomeCard = () => {
 
   if (isPending) {
     return (
-      <Skelton className="h-55 *:size-full">
+      <Skelton className="h-55 max-w-220 *:size-full sm:h-75 md:h-88">
         <div />
       </Skelton>
     );

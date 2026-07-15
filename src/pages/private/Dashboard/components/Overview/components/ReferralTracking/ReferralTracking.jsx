@@ -5,7 +5,7 @@ import useCounter from "@/hooks/useCounter/useCounter";
 import ReferralTrackingChart from "./ReferralTrackingChart/ReferralTrackingChart";
 
 const ReferralTracking = ({ value }) => {
-  const counter = useCounter(value, 800);
+  const counter = useCounter(145, 800);
 
   const { t } = useTranslation();
 

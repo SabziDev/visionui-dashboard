@@ -13,7 +13,7 @@ const ToadyStats = () => {
 
   if (isPending) {
     return (
-      <Skelton className="gap-2 *:h-16 *:w-1/2">
+      <Skelton className="gap-2 *:h-16 *:w-1/2 xl:*:max-w-90">
         <div />
         <div />
         <div />
