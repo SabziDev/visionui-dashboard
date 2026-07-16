@@ -8,9 +8,9 @@ import ActiveUsersBadge from "./ActiveUsersBadge/ActiveUsersBadge";
 const ActiveUsersBadges = () => {
   const { stats, isPending, isError } = useStatsQuery();
 
-  if (isPending || isError) {
+  if (!isPending || isError) {
     return (
-      <Skelton className="gap-2 bg-linear *:h-16 *:w-1/2 xl:*:max-w-90">
+      <Skelton className="gap-4 bg-linear *:h-16 *:flex-1">
         <div />
         <div />
         <div />
