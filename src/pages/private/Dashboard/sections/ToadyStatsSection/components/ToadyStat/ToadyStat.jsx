@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IoIosGlobe } from "react-icons/io";
 import { IoCartSharp, IoDocumentTextOutline, IoWallet } from "react-icons/io5";
 
-import useCounter from "@/hooks/useCounter/useCounter";
+import useCounter from "@/pages/private/Dashboard/hooks/useCounter/useCounter";
 
 const ToadyStat = ({ data }) => {
   const counter = useCounter(data.value.count, 1200);

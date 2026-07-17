@@ -1,23 +1,14 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import Skelton from "@/components/Skelton/Skelton";
 import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
 import ActiveUsersBadge from "./ActiveUsersBadge/ActiveUsersBadge";
+import ActiveUsersBadgesSkelton from "./ActiveUsersBadgesSkelton";
 
 const ActiveUsersBadges = () => {
-  const { stats, isPending, isError } = useStatsQuery();
+  const { stats, isPending } = useStatsQuery();
 
-  if (!isPending || isError) {
-    return (
-      <Skelton className="gap-4 bg-linear *:h-16 *:flex-1">
-        <div />
-        <div />
-        <div />
-        <div />
-      </Skelton>
-    );
-  }
+  if (isPending) return <ActiveUsersBadgesSkelton />;
 
   return (
     <ScrollContainer className="flex-items-center justify-between gap-6">

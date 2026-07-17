@@ -9,26 +9,19 @@ import {
   YAxis,
 } from "recharts";
 
-import Skelton from "@/components/Skelton/Skelton";
-
 import ChartTooltip from "./ChartTooltip/ChartTooltip";
+import SalesOverviewChartSkelton from "./SalesOverviewChartSkelton";
 
-const SalesOverviewChart = ({ data, isPending, isError }) => {
+const SalesOverviewChart = ({ data, isPending }) => {
   const { t } = useTranslation();
 
-  if (isPending || isError) {
-    return (
-      <Skelton className="*:h-87.5 *:w-full">
-        <div />
-      </Skelton>
-    );
-  }
+  if (isPending) return <SalesOverviewChartSkelton />;
 
   const months = t("pages.private.dashboard.salesOverview.chartMonths", {
     returnObjects: true,
   });
 
-  const finalData = data?.map((item, i) => ({
+  const finalData = data.map((item, i) => ({
     ...item,
     month: months[i],
   }));

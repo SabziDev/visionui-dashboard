@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
-const EmailInput = ({ register, errors, copyTextToClipboard }) => {
+const EmailInput = ({ register, inputErrors, copyTextToClipboard }) => {
   const { t } = useTranslation();
 
   return (
@@ -11,15 +11,15 @@ const EmailInput = ({ register, errors, copyTextToClipboard }) => {
         placeholder={t("pages.public.signin.form.inputs.email.placeholder")}
         className={clsx([
           "mb-2 w-87.5 rounded-[20px] border-2 px-5 py-4",
-          errors.email ? "border-red-500 ring-red-500" : "border-blue",
+          inputErrors.email ? "border-red-500 ring-red-500" : "border-blue",
         ])}
         {...register("email")}
       />
-      {errors.email && (
+      {inputErrors.email && (
         <div className="w-full text-red-500">
           {t("pages.public.signin.form.inputs.errMessage.0")}
           <span
-            onClick={() => copyTextToClipboard("SabziDev@gmail.com")}
+            onClick={() => copyTextToClipboard("sabzidev@gmail.com")}
             className="cursor-copy text-blue"
           >
             SabziDev@gmail.com

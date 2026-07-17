@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
-const PasswordInput = ({ register, errors, copyTextToClipboard }) => {
+const PasswordInput = ({ register, inputErrors, copyTextToClipboard }) => {
   const { t } = useTranslation();
 
   return (
@@ -11,11 +11,11 @@ const PasswordInput = ({ register, errors, copyTextToClipboard }) => {
         placeholder={t("pages.public.signin.form.inputs.password.placeholder")}
         className={clsx([
           "mt-6 mb-2 w-87.5 rounded-[20px] border-2 px-5 py-4",
-          errors.password ? "border-red-500 ring-red-500" : "border-blue",
+          inputErrors.password ? "border-red-500 ring-red-500" : "border-blue",
         ])}
         {...register("password")}
       />
-      {errors.password && (
+      {inputErrors.password && (
         <div className="w-full text-red-500">
           {t("pages.public.signin.form.inputs.errMessage.0")}
           <span

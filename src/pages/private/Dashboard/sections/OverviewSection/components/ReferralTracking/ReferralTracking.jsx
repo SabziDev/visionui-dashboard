@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import useCounter from "@/hooks/useCounter/useCounter";
+import useCounter from "@/pages/private/Dashboard/hooks/useCounter/useCounter";
 
 import ReferralTrackingChart from "./ReferralTrackingChart/ReferralTrackingChart";
 

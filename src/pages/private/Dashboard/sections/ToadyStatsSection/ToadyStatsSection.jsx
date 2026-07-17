@@ -1,26 +1,15 @@
 import ScrollContainer from "react-indiana-drag-scroll";
-
-import Skelton from "@/components/Skelton/Skelton";
-
 import "react-indiana-drag-scroll/dist/style.css";
 
 import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
 import ToadyStat from "./components/ToadyStat/ToadyStat";
+import ToadyStatsSectionSkelton from "./ToadyStatsSectionSkelton";
 
 const ToadyStatsSection = () => {
-  const { stats, isPending, isError } = useStatsQuery();
+  const { stats, isPending } = useStatsQuery();
 
-  if (isPending || isError) {
-    return (
-      <Skelton className="gap-2 bg-linear *:h-16 *:w-1/2 xl:*:max-w-90">
-        <div />
-        <div />
-        <div />
-        <div />
-      </Skelton>
-    );
-  }
+  if (isPending) return <ToadyStatsSectionSkelton />;
 
   return (
     <ScrollContainer className="flex-items-center justify-between gap-2 *:flex-1 xl:gap-6">

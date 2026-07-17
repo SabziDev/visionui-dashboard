@@ -6,7 +6,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import SalesOverviewChart from "./components/SalesOverviewChart/SalesOverviewChart";
 
 const SalesOverviewSection = () => {
-  const { stats, isPending, isError } = useStatsQuery();
+  const { stats, isPending } = useStatsQuery();
 
   const { t } = useTranslation();
 
@@ -18,11 +18,9 @@ const SalesOverviewSection = () => {
         afterDesc={t("pages.private.dashboard.salesOverview.desc.1")}
       />
 
-      <SalesOverviewChart
-        data={stats?.salesOverview}
-        isPending={isPending}
-        isError={isError}
-      />
+      {stats && (
+        <SalesOverviewChart data={stats.salesOverview} isPending={isPending} />
+      )}
     </div>
   );
 };

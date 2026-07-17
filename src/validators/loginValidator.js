@@ -1,13 +1,19 @@
 import * as z from "zod";
 
 const loginSchema = z.object({
-  email: z.literal("SabziDev@gmail.com", {
-    error: "INVALID_EMAIL",
-  }),
+  email: z
+    .string({ error: "ایمیل باید یک متن باشد!" })
+    .trim()
+    .toLowerCase()
+    .refine((value) => value === "sabzidev@gmail.com", {
+      message: "INVALID_EMAIL",
+    }),
 
-  password: z.literal("admin", {
-    error: "INVALID_PASSWORD",
-  }),
+  password: z
+    .string({ error: "گذرواژه باید یک متن باشد!" })
+    .refine((value) => value === "admin", {
+      message: "INVALID_PASSWORD",
+    }),
 
   rememberMe: z.boolean(),
 });

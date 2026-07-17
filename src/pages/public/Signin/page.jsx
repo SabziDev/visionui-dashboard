@@ -2,20 +2,23 @@ import { use } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router";
 
+import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
 import Head from "@/pages/components/Head";
+import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
 
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
-  const { admin, isPending, isError } = useAdminsQuery();
+  const { admin, isPending, isError: hasQueryError } = useAdminsQuery();
   const { adminId } = use(AuthContext);
 
   const { t } = useTranslation();
 
-  if (isPending || isError) return;
+  if (isPending) return <Preloader />;
+  if (hasQueryError) return <AppLoadError />;
 
   return adminId === admin.id ? (
     <Navigate to="/" replace />

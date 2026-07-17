@@ -31,6 +31,11 @@ const en = {
     },
   },
 
+  errors: {
+    connection: "Unable to connect to the server",
+    default: "Something went wrong! Please try again",
+  },
+
   components: {
     appLoadError: {
       title: "Something went wrong",

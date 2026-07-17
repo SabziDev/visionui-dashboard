@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
 
-import "./i18n";
+import { i18n } from "./i18n";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,10 +18,12 @@ const queryClient = new QueryClient({
   },
 
   queryCache: new QueryCache({
-    onError: (err) => err.isShowToast !== false && toast.error(err.message),
+    onError: (err) =>
+      err.isShowToast !== false && toast.error(i18n.t(err.message)),
   }),
   mutationCache: new MutationCache({
-    onError: (err) => err.isShowToast !== false && toast.error(err.message),
+    onError: (err) =>
+      err.isShowToast !== false && toast.error(i18n.t(err.message)),
   }),
 });
 window.__TANSTACK_QUERY_CLIENT__ = queryClient;

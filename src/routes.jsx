@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import RoutePreloader from "./layouts/components/RoutePreloader/RoutePreloader";
+import Preloader from "./components/Preloader/Preloader";
 import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "tables",
         element: (
-          <Suspense fallback={<RoutePreloader />}>
+          <Suspense fallback={<Preloader />}>
             <Tables />
           </Suspense>
         ),
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "billing",
         element: (
-          <Suspense fallback={<RoutePreloader />}>
+          <Suspense fallback={<Preloader />}>
             <Billing />
           </Suspense>
         ),
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: (
-          <Suspense fallback={<RoutePreloader />}>
+          <Suspense fallback={<Preloader />}>
             <Profile />
           </Suspense>
         ),

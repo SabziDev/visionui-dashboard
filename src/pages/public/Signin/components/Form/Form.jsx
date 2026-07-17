@@ -1,79 +1,18 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
-import { use } from "react";
-import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import AuthContext from "@/contexts/Auth";
-import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
-import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
-import loginSchema from "@/validators/loginValidator";
-
+import useAuthForm from "../../hooks/useAuthForm/useAuthForm";
 import EmailInput from "./Inputs/EmailInput";
 import PasswordInput from "./Inputs/PasswordInput";
 import RememberMe from "./RememberMe/RememberMe";
 import SubmitBtn from "./SubmitBtn/SubmitBtn";
 
 const Form = () => {
-  const { setAdminId } = use(AuthContext);
-
-  const { admin, isError } = useAdminsQuery();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-
-      rememberMe: true,
-    },
-
-    resolver: zodResolver(loginSchema),
-  });
+  const { register, handleSubmit, submitForm, isSubmitting, inputErrors } =
+    useAuthForm();
 
   const { t } = useTranslation();
-
-  if (isError) return <AppLoadError />;
-
-  const submitForm = async (data) => {
-    const toastId = toast.loading(t("pages.public.signin.loggingToast"));
-
-    try {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 1500);
-      });
-
-      if (data.rememberMe) {
-        const SIX_MONTHS = 60 * 60 * 24 * 30 * 6;
-        setAdminId({
-          value: admin.id,
-          maxAge: SIX_MONTHS,
-        });
-      } else {
-        setAdminId({
-          value: admin.id,
-        });
-      }
-
-      toast.success(t("pages.public.signin.loggingToast"), {
-        id: toastId,
-      });
-      await new Promise(() => {
-        null;
-      });
-    } catch {
-      toast.error(t("pages.public.signin.loggingToast"), {
-        id: toastId,
-      });
-      await new Promise(() => {
-        null;
-      });
-    }
-  };
 
   const copyTextToClipboard = (text) => {
     navigator.clipboard.writeText(text);
@@ -101,13 +40,13 @@ const Form = () => {
       >
         <EmailInput
           register={register}
-          errors={errors}
+          inputErrors={inputErrors}
           copyTextToClipboard={copyTextToClipboard}
         />
 
         <PasswordInput
           register={register}
-          errors={errors}
+          inputErrors={inputErrors}
           copyTextToClipboard={copyTextToClipboard}
         />
 

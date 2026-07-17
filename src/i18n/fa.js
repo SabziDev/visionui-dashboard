@@ -28,6 +28,11 @@ const fa = {
     },
   },
 
+  errors: {
+    connection: "خطا در برقراری ارتباط با سرور",
+    default: "عملیات ناموفق! دوباره تلاش کنید",
+  },
+
   components: {
     appLoadError: {
       title: "مشکلی پیش آمد",
