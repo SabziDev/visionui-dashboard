@@ -10,7 +10,7 @@ const ReferralTracking = ({ value }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative flex h-88 w-87.5 flex-col gap-y-2 rounded-2xl px-7 py-6.5 primary-gradient 2xl:w-full">
+    <div className="relative flex h-88 w-87.5 flex-col gap-y-2 rounded-2xl px-7 py-6.5 bg-primary-gradient 2xl:w-full">
       <div className="flex-justify-center flex-col">
         <span className="font-VazirBold text-lg">
           {t("pages.private.dashboard.referralTracking.title")}

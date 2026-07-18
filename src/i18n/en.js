@@ -30,19 +30,9 @@ const en = {
       desc: "The page you are looking for does not exist or has been moved. Please check the address or go to the home page.",
     },
   },
-
   errors: {
     connection: "Unable to connect to the server",
     default: "Something went wrong! Please try again",
-  },
-
-  components: {
-    appLoadError: {
-      title: "Something went wrong",
-      desc: "Please refresh the page",
-
-      btn: "Try Again",
-    },
   },
 
   layouts: {
@@ -82,7 +72,6 @@ const en = {
       },
     },
   },
-
   pages: {
     private: {
       dashboard: {
@@ -193,6 +182,34 @@ const en = {
     notFound: {
       btn: "Return Home",
     },
+  },
+  components: {
+    appLoadError: {
+      title: "Something went wrong",
+      desc: "Please refresh the page",
+
+      btn: "Try Again",
+    },
+
+    table: {
+      title: "Projects",
+      desc: "30 done this month",
+
+      cols: {
+        company: "COMPANIES",
+        budget: "BUDGET",
+        completion: "COMPLETION",
+      },
+      notSet: "Not set",
+    },
+  },
+
+  projects: {
+    adobexd: "Chakra Soft UI Version",
+    fixErrors: "Fix Platform Errors",
+    spotify: "Launch our Mobile App",
+    addNewPricingPage: "Add the New Pricing Page",
+    redesign: "Redesign New Online Shop",
   },
 };
 

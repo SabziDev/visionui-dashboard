@@ -9,19 +9,22 @@ import {
   YAxis,
 } from "recharts";
 
-import ChartTooltip from "./ChartTooltip/ChartTooltip";
-import SalesOverviewChartSkelton from "./SalesOverviewChartSkelton";
+import { useStatsQuery } from "@/services/hooks/useStats/useStats";
 
-const SalesOverviewChart = ({ data, isPending }) => {
+import ChartTooltip from "./ChartTooltip/ChartTooltip";
+import SalesOverviewChartSkeleton from "./SalesOverviewChartSkeleton";
+
+const SalesOverviewChart = () => {
+  const { stats, isPending } = useStatsQuery();
   const { t } = useTranslation();
 
-  if (isPending) return <SalesOverviewChartSkelton />;
+  if (isPending) return <SalesOverviewChartSkeleton />;
 
   const months = t("pages.private.dashboard.salesOverview.chartMonths", {
     returnObjects: true,
   });
 
-  const finalData = data.map((item, i) => ({
+  const finalData = stats.salesOverview.map((item, i) => ({
     ...item,
     month: months[i],
   }));

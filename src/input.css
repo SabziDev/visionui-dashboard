@@ -143,7 +143,7 @@
     rgb(26 31 55 / 50%)
   );
 }
-@utility primary-gradient {
+@utility bg-primary-gradient {
   background: linear-gradient(
     to top left,
     rgb(10 14 35 / 30%),

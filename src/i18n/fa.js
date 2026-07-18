@@ -27,19 +27,9 @@ const fa = {
       desc: "صفحه ای که به دنبال آن هستید وجود ندارد یا منتقل شده است. لطفا آدرس را بررسی کنید یا به صفحه خانه بروید.",
     },
   },
-
   errors: {
     connection: "خطا در برقراری ارتباط با سرور",
     default: "عملیات ناموفق! دوباره تلاش کنید",
-  },
-
-  components: {
-    appLoadError: {
-      title: "مشکلی پیش آمد",
-      desc: "لطفا صفحه را رفرش کنید",
-
-      btn: "تلاش مجدد",
-    },
   },
 
   layouts: {
@@ -79,7 +69,6 @@ const fa = {
       },
     },
   },
-
   pages: {
     private: {
       dashboard: {
@@ -191,6 +180,34 @@ const fa = {
     notFound: {
       btn: "بازگشت به صفحه اصلی",
     },
+  },
+  components: {
+    appLoadError: {
+      title: "مشکلی پیش آمد",
+      desc: "لطفا صفحه را رفرش کنید",
+
+      btn: "تلاش مجدد",
+    },
+
+    table: {
+      title: "پروژه ها",
+      desc: "30 مورد در این ماه انجام شد",
+
+      cols: {
+        company: "شرکت ها",
+        budget: "بودجه",
+        completion: "تکمیل",
+      },
+      notSet: "تنظیم نشده",
+    },
+  },
+
+  projects: {
+    adobexd: "ورژن Chakra Soft UI",
+    fixErrors: "رفع خطاهای پلتفرم",
+    spotify: "اپلیکیشن موبایل ما را راه‌اندازی کنید",
+    addNewPricingPage: "صفحه جدید قیمت‌گذاری را اضافه کنید",
+    redesign: "طراحی مجدد فروشگاه آنلاین جدید",
   },
 };
 

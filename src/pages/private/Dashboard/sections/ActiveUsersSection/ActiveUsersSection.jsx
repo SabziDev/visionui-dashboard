@@ -8,7 +8,7 @@ const ActiveUsersSection = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="h-111.25 w-full max-w-175 rounded-2xl p-4 primary-gradient">
+    <div className="h-111.25 w-full max-w-162.5 rounded-2xl p-4 bg-primary-gradient">
       <div className="mx-auto mb-6 h-55.5 w-full max-w-155 rounded-2xl bg-navy py-4">
         <ActiveUsersChart />
       </div>
