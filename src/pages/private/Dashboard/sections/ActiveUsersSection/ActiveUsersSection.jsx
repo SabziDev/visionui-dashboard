@@ -1,25 +1,26 @@
-import { useTranslation } from "react-i18next";
+import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
 
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import ActiveUsersBadges from "./components/ActiveUsersBadges/ActiveUsersBadges";
 import ActiveUsersChart from "./components/ActiveUsersChart/ActiveUsersChart";
 
 const ActiveUsersSection = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="h-111.25 w-full max-w-162.5 rounded-2xl p-4 bg-primary-gradient">
+    <div className="flex h-117 w-full max-w-162.5 flex-col justify-between rounded-2xl px-5.5 py-7 bg-primary-gradient">
       <div className="mx-auto mb-6 h-55.5 w-full max-w-155 rounded-2xl bg-navy py-4">
         <ActiveUsersChart />
       </div>
 
-      <SectionTitle
-        title={t("pages.private.dashboard.activeUsers.title")}
-        beforeDesc={t("pages.private.dashboard.activeUsers.desc.0")}
-        afterDesc={t("pages.private.dashboard.activeUsers.desc.1")}
-      />
-
-      <ActiveUsersBadges />
+      <div>
+        <SectionTitle
+          title="pages.private.dashboard.activeUsers.title"
+          desc={{
+            beforeValue: "pages.private.dashboard.activeUsers.desc.0",
+            afterValue: "pages.private.dashboard.activeUsers.desc.1",
+          }}
+          isSplitDesc
+        />
+        <ActiveUsersBadges />
+      </div>
     </div>
   );
 };

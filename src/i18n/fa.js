@@ -71,6 +71,20 @@ const fa = {
   },
   pages: {
     private: {
+      components: {
+        projectsTable: {
+          title: "پروژه ها",
+          desc: "30 مورد در این ماه انجام شد",
+
+          cols: {
+            company: "شرکت ها",
+            budget: "بودجه",
+            completion: "تکمیل",
+          },
+          notSet: "تنظیم نشده",
+        },
+      },
+
       dashboard: {
         todayStats: {
           money: {
@@ -86,27 +100,23 @@ const fa = {
             title: "فروش کلی",
           },
         },
-
         welcomeCard: {
           welcomeBack: "خوش برگشتید،",
           greeting:
             "از دیدن دوباره‌اتان خوشحالیم! هر سوالی دارید از من بپرسید.",
           btn: "بپرس",
         },
-
         satisfactionRate: {
           title: "نرخ رضایت",
           desc: "از تمام پروژه‌ها",
           btn: "بر اساس لایک‌ها",
         },
-
         referralTracking: {
           title: "پیگیری دعوت شده‌ها",
           desc: "از ماه گذشته تا امروز",
           invited: "فرد دعوت شده",
           totalScore: "امتیاز کل",
         },
-
         salesOverview: {
           title: "نمای کلی فروش",
           desc: ["(+5) مورد دیگر", " در 2021"],
@@ -131,7 +141,6 @@ const fa = {
             lastYear: "سال گذشته",
           },
         },
-
         activeUsers: {
           title: "کاربران فعال",
           desc: ["(+23)", "  نسبت به هفته گذشته"],
@@ -142,6 +151,31 @@ const fa = {
             sales: "فروش ها",
             items: "آیتم ها",
           },
+        },
+        ordersOverview: {
+          title: "نمای کلی سفارشات",
+          desc: "+30% در این ماه",
+        },
+      },
+      tables: {
+        authorTable: {
+          title: "لیست نویسندگان",
+
+          function: {
+            manager: { job: "مدیر", side: "سازمان" },
+            programmer: { job: "برنامه نویس", side: "دولوپر" },
+            executive: { job: "اجرایی", side: "پروژه ها" },
+            designer: { job: "طراح", side: "طراح UI/UX" },
+          },
+
+          cols: {
+            author: "نویسنده",
+            function: "حوزه کاری",
+            status: "وضعیت",
+            employed: "تاریخ استخدام",
+          },
+          online: "آنلاین",
+          offline: "آفلاین",
         },
       },
     },
@@ -187,18 +221,6 @@ const fa = {
       desc: "لطفا صفحه را رفرش کنید",
 
       btn: "تلاش مجدد",
-    },
-
-    table: {
-      title: "پروژه ها",
-      desc: "30 مورد در این ماه انجام شد",
-
-      cols: {
-        company: "شرکت ها",
-        budget: "بودجه",
-        completion: "تکمیل",
-      },
-      notSet: "تنظیم نشده",
     },
   },
 

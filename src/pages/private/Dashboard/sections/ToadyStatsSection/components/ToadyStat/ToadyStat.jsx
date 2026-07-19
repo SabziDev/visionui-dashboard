@@ -9,7 +9,7 @@ const ToadyStat = ({ data }) => {
   const counter = useCounter(data.value.count, 1200);
 
   const VALUE_PREFIX = {
-    MONEY: "%",
+    MONEY: "$",
     SALES: "%",
     CLIENTS: "+",
   };
@@ -25,7 +25,7 @@ const ToadyStat = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex-items-center justify-between gap-4 rounded-2xl p-4 bg-linear en:ltr fa:rtl">
+    <div className="flex-items-center justify-between gap-4 rounded-2xl bg-[linear-gradient(to_bottom,rgb(6_11_38/30%),rgb(26_31_55/80%))] p-4 en:ltr fa:rtl">
       <div>
         <h6 className="font-VazirMedium text-sm text-nowrap text-gray-400">
           {t(

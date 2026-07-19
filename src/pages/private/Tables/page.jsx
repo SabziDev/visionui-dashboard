@@ -2,7 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import Table from "../components/Table/Table";
+import ProjectsTable from "../Dashboard/components/ProjectsTable/ProjectsTable";
+import AuthorsTable from "./sections/AuthorsTable/AuthorsTable";
 
 const Tables = () => {
   const { t } = useTranslation();
@@ -14,7 +15,10 @@ const Tables = () => {
         <meta name="description" content={t("pagesMeta.tables.desc")} />
       </Head>
 
-      <Table />
+      <div className="space-y-6 fa:rtl">
+        <AuthorsTable />
+        <ProjectsTable />
+      </div>
     </>
   );
 };

@@ -74,6 +74,20 @@ const en = {
   },
   pages: {
     private: {
+      components: {
+        projectsTable: {
+          title: "Projects",
+          desc: "30 done this month",
+
+          cols: {
+            company: "COMPANIES",
+            budget: "BUDGET",
+            completion: "COMPLETION",
+          },
+          notSet: "Not set",
+        },
+      },
+
       dashboard: {
         todayStats: {
           money: {
@@ -89,26 +103,22 @@ const en = {
             title: "Total Sales",
           },
         },
-
         welcomeCard: {
           welcomeBack: "Welcome back,",
           greeting: "Glad to see you again!Ask me anything.",
           btn: "Tap to record",
         },
-
         satisfactionRate: {
           title: "Satisfaction Rate",
           desc: "From all projects",
           btn: "Based on likes",
         },
-
         referralTracking: {
           title: "Referral Tracking",
           desc: "From last month to today",
           invited: "Invited people",
           totalScore: "Total Score",
         },
-
         salesOverview: {
           title: "Sales overview",
           desc: ["(+5) more", " in 2021"],
@@ -133,7 +143,6 @@ const en = {
             lastYear: "Last year",
           },
         },
-
         activeUsers: {
           title: "Active Users",
           desc: ["(+23)", "  than last week"],
@@ -144,6 +153,31 @@ const en = {
             sales: "Sales",
             items: "Items",
           },
+        },
+        ordersOverview: {
+          title: "Orders overview",
+          desc: "+30% this month",
+        },
+      },
+      tables: {
+        authorTable: {
+          title: "Authors Table",
+
+          function: {
+            manager: { job: "Manager", side: "Organization" },
+            programmer: { job: "Programmer", side: "Developer" },
+            executive: { job: "Executive", side: "Projects" },
+            designer: { job: "Designer", side: "UI/UX Design" },
+          },
+
+          cols: {
+            author: "AUTHOR",
+            function: "FUNCTION",
+            status: "STATUS",
+            employed: "EMPLOYED",
+          },
+          online: "Online",
+          offline: "Offline",
         },
       },
     },
@@ -189,18 +223,6 @@ const en = {
       desc: "Please refresh the page",
 
       btn: "Try Again",
-    },
-
-    table: {
-      title: "Projects",
-      desc: "30 done this month",
-
-      cols: {
-        company: "COMPANIES",
-        budget: "BUDGET",
-        completion: "COMPLETION",
-      },
-      notSet: "Not set",
     },
   },
 

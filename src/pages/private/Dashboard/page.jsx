@@ -2,9 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import Table from "../components/Table/Table";
+import ProjectsTable from "./components/ProjectsTable/ProjectsTable";
 import ActiveUsersSection from "./sections/ActiveUsersSection/ActiveUsersSection";
-import OrdersOverviewSection from "./sections/OrdersOverviewSection/OrdersOverviewSection";
 import OverviewSection from "./sections/OverviewSection/OverviewSection";
 import SalesOverviewSection from "./sections/SalesOverviewSection/SalesOverviewSection";
 import ToadyStatsSection from "./sections/ToadyStatsSection/ToadyStatsSection";
@@ -25,10 +24,7 @@ const Dashboard = () => {
         <SalesOverviewSection />
         <ActiveUsersSection />
       </div>
-      <div className="flex-center flex-col gap-6 xl:flex-row fa:rtl">
-        <Table isShowMoreBtn />
-        <OrdersOverviewSection />
-      </div>
+      <ProjectsTable isShowMoreBtn />
     </>
   );
 };

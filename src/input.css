@@ -136,17 +136,10 @@
   direction: rtl;
 }
 
-@utility bg-linear {
-  background: linear-gradient(
-    to bottom,
-    rgb(6 11 38 / 74%),
-    rgb(26 31 55 / 50%)
-  );
-}
 @utility bg-primary-gradient {
   background: linear-gradient(
-    to top left,
-    rgb(10 14 35 / 30%),
+    to bottom right,
+    rgb(10 14 35 / 15%),
     rgb(6 11 40 / 94%)
   );
 }

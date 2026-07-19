@@ -1,9 +1,11 @@
 const staticPropertiesOrder = [
   "children",
   "key",
-  "ref",
   "id",
+  "ref",
+  "data",
   "title",
+  "desc",
   "htmlFor",
   "type",
   "name",
