@@ -3,6 +3,7 @@ const WelcomeCardBg = () => {
     <img
       src="/images/pictures/pages/private/dashnoard/braden-collum.webp"
       alt="braden-collum"
+      loading="lazy"
       className="absolute inset-0 size-full select-none fa:scale-x-[-1]"
     />
   );

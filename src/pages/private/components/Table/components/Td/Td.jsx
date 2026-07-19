@@ -12,6 +12,7 @@ const Td = ({ data, col }) => {
             <img
               src={data.imgSrc}
               alt={data.title}
+              loading="lazy"
               className="size-10 rounded-2xl"
             />
             <div className="flex-start flex-col">
@@ -25,7 +26,12 @@ const Td = ({ data, col }) => {
           </div>
         ) : (
           <div className="flex-items-center gap-4">
-            <img src={data.imgSrc} alt={data.title} className="size-5" />
+            <img
+              src={data.imgSrc}
+              alt={data.title}
+              loading="lazy"
+              className="size-5"
+            />
             <span className="text-sm">{t(data.title)}</span>
           </div>
         )}
