@@ -10,6 +10,7 @@ const ReferralTrackingChart = ({ value, counter }) => {
     <div className="mx-auto">
       <div className="relative">
         <RadialBarChart
+          data={[{ value }]}
           width={220}
           height={220}
           cx="50%"
@@ -17,7 +18,6 @@ const ReferralTrackingChart = ({ value, counter }) => {
           innerRadius="80%"
           outerRadius="100%"
           barSize={12}
-          data={[{ value }]}
           startAngle={270}
           endAngle={-90}
         >

@@ -15,7 +15,7 @@ const fakeData = [
 const ActiveUsersChart = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart responsive data={fakeData}>
+      <BarChart data={fakeData} responsive>
         <YAxis
           tick={{
             fill: "#fff",
