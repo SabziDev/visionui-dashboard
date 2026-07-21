@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getAdminsApi } from "@/services/adminsApi";
+import { getAdminApi } from "@/services/adminApi";
 
-const useAdminsQuery = () => {
+const useAdminQuery = () => {
   const queryKey = ["admins"];
 
   const { data: admins, ...rest } = useQuery({
     queryKey,
-    queryFn: ({ signal }) => getAdminsApi({ signal }),
+    queryFn: ({ signal }) => getAdminApi({ signal }),
   });
 
   return { admin: admins?.[0], ...rest };
 };
 
-export { useAdminsQuery };
+export { useAdminQuery };

@@ -2,6 +2,12 @@
 // {t("pages.private.dashboard.welcomeCard.welcomeBack")}
 
 const en = {
+  words: {
+    overview: "OVERVIEW",
+    h: "h",
+    min: "min",
+  },
+
   pagesMeta: {
     dashboard: {
       title: "Visionui-Dashboard",
@@ -178,6 +184,34 @@ const en = {
           },
           online: "Online",
           offline: "Offline",
+        },
+      },
+      profile: {
+        welocmeback: {
+          title: "Welcome back!",
+          desc: "Nice to see you, ",
+          btn: "Turn on your car",
+        },
+        carInfo: {
+          title: "Car Information",
+          desc: "Hello, your Car is ready!",
+
+          currentLoad: "Current load",
+          fullCharge: "Time to full charge",
+          batteryHealth: "Battery Health",
+          efficiency: "Efficiency",
+          consumption: "Consumption",
+          thisWeek: "This Week",
+        },
+        profileInfo: {
+          title: "Profile Information",
+          desc: "Hi, I’m Abolfazl Sabzmohammadi, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).",
+
+          fullName: "Full Name: ",
+          mobile: "Mobile: ",
+          email: "Email: ",
+          location: "Location :",
+          socialMedia: "Social Media: ",
         },
       },
     },

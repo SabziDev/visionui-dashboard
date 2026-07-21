@@ -5,13 +5,13 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
 import AuthContext from "@/contexts/Auth";
-import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
+import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 import loginSchema from "@/validators/loginValidator";
 
 const useAuthForm = () => {
   const { setAdminId } = use(AuthContext);
 
-  const { admin } = useAdminsQuery();
+  const { admin } = useAdminQuery();
 
   const {
     register,

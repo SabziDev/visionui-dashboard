@@ -138,7 +138,7 @@
 
 @utility bg-primary-gradient {
   background: linear-gradient(
-    to bottom right,
+    to top left,
     rgb(10 14 35 / 15%),
     rgb(6 11 40 / 94%)
   );

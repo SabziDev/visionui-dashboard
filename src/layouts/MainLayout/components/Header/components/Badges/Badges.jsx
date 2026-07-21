@@ -1,10 +1,10 @@
 import { IoMdSettings } from "react-icons/io";
 import { IoMenu, IoNotificationsSharp, IoPerson } from "react-icons/io5";
 
-import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
+import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 
 const Badges = ({ onShowSidebar }) => {
-  const { admin } = useAdminsQuery();
+  const { admin } = useAdminQuery();
 
   return (
     <>

@@ -4,12 +4,12 @@ import { Navigate } from "react-router";
 import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
-import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
+import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const { admin, isPending, isError } = useAdminsQuery();
+  const { admin, isPending, isError } = useAdminQuery();
   const { adminId } = use(AuthContext);
 
   if (isPending) return <Preloader />;

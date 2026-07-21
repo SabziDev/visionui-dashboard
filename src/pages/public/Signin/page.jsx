@@ -6,13 +6,13 @@ import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
 import Head from "@/pages/components/Head";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
-import { useAdminsQuery } from "@/services/hooks/useAdmins/useAdmins";
+import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
-  const { admin, isPending, isError: hasQueryError } = useAdminsQuery();
+  const { admin, isPending, isError: hasQueryError } = useAdminQuery();
   const { adminId } = use(AuthContext);
 
   const { t } = useTranslation();
