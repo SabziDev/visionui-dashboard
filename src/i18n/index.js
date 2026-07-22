@@ -15,24 +15,25 @@ const resources = {
   },
 };
 
-const initialLanguage = localStorage.getItem("lang") ?? "en";
+const supportedLanguages = ["en", "fa"];
+const initialLanguage = localStorage.getItem("lang");
 
-const updateDocumentLanguage = (language) => {
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
+const language = supportedLanguages.includes(initialLanguage)
+  ? initialLanguage
+  : "en";
+
+const updateLanguage = (lang) => {
+  localStorage.setItem("lang", lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
 };
 
-updateDocumentLanguage(initialLanguage);
-
-i18n.on("languageChanged", (language) => {
-  localStorage.setItem("lang", language);
-  updateDocumentLanguage(language);
-});
+i18n.on("languageChanged", (lang) => updateLanguage(lang));
 
 i18n.use(initReactI18next).init({
   resources,
 
-  lng: initialLanguage,
+  lng: language,
 
   interpolation: {
     escapeValue: false,

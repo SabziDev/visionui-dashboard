@@ -5,7 +5,7 @@ const EmailInput = ({ register, inputErrors, copyTextToClipboard }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="mb-5 w-full min-w-70 max-w-87.5">
+    <div className="mb-5 w-full max-w-87.5 min-w-70 min-[500px]:min-w-87.5">
       <input
         type="email"
         placeholder={t("pages.public.signin.form.inputs.email.placeholder")}
