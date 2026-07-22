@@ -1,5 +1,5 @@
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
-import useCounter from "@/pages/private/Dashboard/hooks/useCounter/useCounter";
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
+import useCounter from "@/pages/private/hooks/useCounter/useCounter";
 
 import SatisfactionRateChart from "./SatisfactionRateChart/SatisfactionRateChart";
 

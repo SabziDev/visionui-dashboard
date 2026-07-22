@@ -1,5 +1,5 @@
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import Table from "@/pages/private/components/Table/Table";
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
 import { useAuthorsQuery } from "@/services/hooks/useAuthors/useAuthors";
 
 const AuthorsTable = () => {

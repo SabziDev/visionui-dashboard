@@ -1,21 +1,10 @@
+import stats from "@public/data/stats/stats";
 import { Bar, BarChart, ResponsiveContainer, YAxis } from "recharts";
-
-const fakeData = [
-  { value: 330 },
-  { value: 230 },
-  { value: 120 },
-  { value: 290 },
-  { value: 510 },
-  { value: 420 },
-  { value: 480 },
-  { value: 290 },
-  { value: 160 },
-];
 
 const ActiveUsersChart = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={fakeData} responsive>
+      <BarChart data={stats.activeUsers} responsive>
         <YAxis
           tick={{
             fill: "#fff",

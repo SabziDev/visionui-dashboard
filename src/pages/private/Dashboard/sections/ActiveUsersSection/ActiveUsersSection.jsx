@@ -1,4 +1,4 @@
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 
 import ActiveUsersBadges from "./components/ActiveUsersBadges/ActiveUsersBadges";
 import ActiveUsersChart from "./components/ActiveUsersChart/ActiveUsersChart";

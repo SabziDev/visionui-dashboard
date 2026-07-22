@@ -1,4 +1,4 @@
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 
 import ProfileInfoItem from "./components/ProfileInfoItem/ProfileInfoItem";

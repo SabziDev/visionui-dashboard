@@ -1,5 +1,4 @@
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
-
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 const OrdersOverviewSection = () => {
   return (
     <div className="h-115.5 w-full max-w-130 rounded-2xl px-5.5 py-7 bg-primary-gradient">

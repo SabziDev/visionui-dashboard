@@ -1,5 +1,4 @@
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
-
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import SalesOverviewChart from "./components/SalesOverviewChart/SalesOverviewChart";
 
 const SalesOverviewSection = () => {

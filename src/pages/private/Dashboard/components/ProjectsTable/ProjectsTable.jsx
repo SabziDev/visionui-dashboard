@@ -1,6 +1,6 @@
+import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import TableTitleMoreBtn from "@/pages/private/components/Table/components/TableTitleMoreBtn/TableTitleMoreBtn";
 import Table from "@/pages/private/components/Table/Table";
-import SectionTitle from "@/pages/private/Dashboard/components/SectionTitle/SectionTitle";
 import { useProjectsQuery } from "@/services/hooks/useProjects/useProjects";
 
 const ProjectsTable = ({ isShowMoreBtn = false }) => {

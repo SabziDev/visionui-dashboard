@@ -1,3 +1,4 @@
+import stats from "@public/data/stats/stats";
 import ScrollContainer from "react-indiana-drag-scroll";
 
 import ReferralTracking from "./components/ReferralTracking/ReferralTracking";
@@ -10,8 +11,8 @@ const OverviewSection = () => {
       <WelcomeCard />
 
       <ScrollContainer className="flex-items-center gap-6 sm:justify-center 2xl:w-full">
-        <SatisfactionRate value={75} />
-        <ReferralTracking value={93} />
+        <SatisfactionRate value={stats.satisfactionRate} />
+        <ReferralTracking value={stats.referralTracking} />
       </ScrollContainer>
     </div>
   );
