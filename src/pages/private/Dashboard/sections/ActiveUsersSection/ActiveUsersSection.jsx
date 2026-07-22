@@ -5,7 +5,7 @@ import ActiveUsersChart from "./components/ActiveUsersChart/ActiveUsersChart";
 
 const ActiveUsersSection = () => {
   return (
-    <div className="flex h-117 w-full max-w-162.5 flex-col justify-between rounded-2xl px-5.5 py-7 bg-primary-gradient">
+    <div className="flex h-117 w-full max-w-162.5 flex-col justify-between section-card">
       <div className="mx-auto mb-6 h-55.5 w-full max-w-155 rounded-2xl bg-navy py-4">
         <ActiveUsersChart />
       </div>

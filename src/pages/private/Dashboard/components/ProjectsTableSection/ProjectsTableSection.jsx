@@ -3,11 +3,11 @@ import TableTitleMoreBtn from "@/pages/private/components/Table/components/Table
 import Table from "@/pages/private/components/Table/Table";
 import { useProjectsQuery } from "@/services/hooks/useProjects/useProjects";
 
-const ProjectsTable = ({ isShowMoreBtn = false }) => {
+const ProjectsTableSection = ({ isShowMoreBtn = false }) => {
   const { projects, isPending } = useProjectsQuery();
 
   return (
-    <div className="w-full rounded-2xl px-5 pt-7 pb-2 bg-primary-gradient fa:rtl">
+    <section className="w-full section-card pb-2 fa:rtl">
       <div className="flex items-start justify-between">
         <SectionTitle
           title="pages.private.components.projectsTable.title"
@@ -34,8 +34,8 @@ const ProjectsTable = ({ isShowMoreBtn = false }) => {
         ]}
         isPending={isPending}
       />
-    </div>
+    </section>
   );
 };
 
-export default ProjectsTable;
+export default ProjectsTableSection;

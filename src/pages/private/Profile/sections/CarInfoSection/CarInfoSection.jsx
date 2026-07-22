@@ -13,7 +13,7 @@ const CarInfoSection = () => {
   const counter = useCounter(stats.carInfoCurrentLoad, 800);
 
   return (
-    <section className="order-3 w-full rounded-2xl px-5 py-7 bg-primary-gradient sm:col-span-2 2xl:order-2 2xl:h-95 2xl:sm:col-span-1">
+    <section className="section-card [grid-area:car] 2xl:h-95">
       <SectionTitle
         title="pages.private.profile.carInfo.title"
         desc={{ value: "pages.private.profile.carInfo.desc" }}
@@ -22,7 +22,7 @@ const CarInfoSection = () => {
       <div className="flex-items-center flex-col gap-12.5 sm:flex-row">
         <CarInfoChart value={stats.carInfoCurrentLoad} counter={counter} />
 
-        <ScrollContainer className="flex-items-center w-full gap-2 md:flex-wrap md:justify-end xl:flex-nowrap xl:justify-start 2xl:flex-wrap fa:rtl">
+        <ScrollContainer className="flex-items-center w-full gap-2 min-[1784px]:w-full! min-[1784px]:flex-wrap! md:flex-wrap md:justify-end xl:flex-nowrap xl:justify-start 2xl:w-100 fa:rtl">
           {stats.carInfoCards.map((card, i) => (
             <CarInfoCard
               key={i}

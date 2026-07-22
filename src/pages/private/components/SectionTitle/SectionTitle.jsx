@@ -10,26 +10,14 @@ const SectionTitle = ({
   const { t } = useTranslation();
 
   return (
-    <div className="mb-7 fa:rtl">
+    <div className="mb-4 fa:rtl">
       <h3 className="font-VazirBold text-lg">{t(title)}</h3>
 
-      {desc &&
-        (isShowTick ? (
-          <div className="flex-items-center gap-1">
-            <FaCircleCheck className="size-3.5 fill-green-500" />
-            <p className="mt-0.5 text-sm">
-              {isSplitDesc ? (
-                <>
-                  <span className="text-green-500">{t(desc.beforeValue)}</span>
-                  <span className="text-gray-400">{t(desc.afterValue)}</span>
-                </>
-              ) : (
-                <span className="text-gray-400">{t(desc.value)}</span>
-              )}
-            </p>
-          </div>
-        ) : (
-          <p className="text-sm">
+      {desc && (
+        <div className="flex-items-center gap-1">
+          {isShowTick && <FaCircleCheck className="size-3.5 fill-green-500" />}
+
+          <p className="mt-0.5 line-clamp-5 text-justify text-sm">
             {isSplitDesc ? (
               <>
                 <span className="text-green-500">{t(desc.beforeValue)}</span>
@@ -39,7 +27,8 @@ const SectionTitle = ({
               <span className="text-gray-400">{t(desc.value)}</span>
             )}
           </p>
-        ))}
+        </div>
+      )}
     </div>
   );
 };

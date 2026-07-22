@@ -2,10 +2,11 @@ import clsx from "clsx";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
+import RadioBtn from "@/pages/components/RadioBtn/RadioBtn";
+
 import useAuthForm from "../../hooks/useAuthForm/useAuthForm";
 import EmailInput from "./Inputs/EmailInput";
 import PasswordInput from "./Inputs/PasswordInput";
-import RememberMe from "./RememberMe/RememberMe";
 import SubmitBtn from "./SubmitBtn/SubmitBtn";
 
 const Form = () => {
@@ -35,7 +36,7 @@ const Form = () => {
         noValidate
         onSubmit={handleSubmit(submitForm)}
         className={clsx([
-          "mt-9 flex-justify-center flex-col en:items-start fa:items-end",
+          "mt-10 flex-justify-center flex-col en:items-start fa:items-start",
         ])}
       >
         <EmailInput
@@ -50,7 +51,11 @@ const Form = () => {
           copyTextToClipboard={copyTextToClipboard}
         />
 
-        <RememberMe register={register} />
+        <RadioBtn
+          id="rememberMe"
+          title="pages.public.signin.form.inputs.rememberMe.label"
+          register={register}
+        />
 
         <SubmitBtn isSubmitting={isSubmitting} />
       </form>

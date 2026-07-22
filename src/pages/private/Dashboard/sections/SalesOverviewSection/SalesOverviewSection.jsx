@@ -1,9 +1,10 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
+
 import SalesOverviewChart from "./components/SalesOverviewChart/SalesOverviewChart";
 
 const SalesOverviewSection = () => {
   return (
-    <div className="h-117 w-full max-w-230 rounded-2xl px-5.5 py-7 pb-110 bg-primary-gradient ltr">
+    <div className="h-117 w-full max-w-230 section-card pb-110 ltr">
       <SectionTitle
         title="pages.private.dashboard.salesOverview.title"
         desc={{

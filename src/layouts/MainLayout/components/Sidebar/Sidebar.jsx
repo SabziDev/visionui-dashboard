@@ -38,7 +38,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
           <SidebarNav />
 
           <div>
-            <SidebarSettings />
+            <SidebarSettings setIsShowSidebar={setIsShowSidebar} />
 
             <SliderNeedHelp />
           </div>

@@ -161,6 +161,10 @@
 @utility flex-end {
   @apply flex items-end justify-end;
 }
+
+@utility section-card {
+  @apply rounded-2xl bg-primary-gradient px-5.5 py-7;
+}
 /** ============================================= -- Custom Components -- ============================================= */
 
 /* ============================================= -- Packages Customization -- ============================================= */

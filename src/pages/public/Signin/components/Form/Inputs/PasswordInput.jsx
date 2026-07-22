@@ -5,12 +5,12 @@ const PasswordInput = ({ register, inputErrors, copyTextToClipboard }) => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="mb-5 w-full min-w-70 max-w-87.5">
       <input
         type="password"
         placeholder={t("pages.public.signin.form.inputs.password.placeholder")}
         className={clsx([
-          "mt-6 mb-2 w-87.5 rounded-[20px] border-2 px-5 py-4",
+          "mb-2.5 w-full rounded-[20px] border-2 px-5 py-4",
           inputErrors.password ? "border-red-500 ring-red-500" : "border-blue",
         ])}
         {...register("password")}
@@ -27,7 +27,7 @@ const PasswordInput = ({ register, inputErrors, copyTextToClipboard }) => {
           {t("pages.public.signin.form.inputs.errMessage.1")}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

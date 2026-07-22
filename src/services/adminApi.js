@@ -6,4 +6,12 @@ const getAdminApi = async ({ signal }) => {
   return res.data;
 };
 
-export { getAdminApi };
+const updateAdminApi = async ({ data, adminId }) => {
+  const res = await api.patch(`/admins/${adminId}`, {
+    settings: data,
+  });
+
+  return res.data;
+};
+
+export { getAdminApi, updateAdminApi };

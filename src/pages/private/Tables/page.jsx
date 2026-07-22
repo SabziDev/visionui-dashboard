@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import ProjectsTable from "../Dashboard/components/ProjectsTable/ProjectsTable";
-import AuthorsTable from "./sections/AuthorsTable/AuthorsTable";
+import ProjectsTableSection from "../Dashboard/components/ProjectsTableSection/ProjectsTableSection";
+import AuthorsTableSection from "./sections/AuthorsTableSection/AuthorsTableSection";
 
 const Tables = () => {
   const { t } = useTranslation();
@@ -16,8 +16,8 @@ const Tables = () => {
       </Head>
 
       <div className="space-y-6 fa:rtl">
-        <AuthorsTable />
-        <ProjectsTable />
+        <AuthorsTableSection />
+        <ProjectsTableSection />
       </div>
     </>
   );

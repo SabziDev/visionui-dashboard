@@ -1,5 +1,7 @@
 const fa = {
   words: {
+    toast: "عملیات با موفقیت انجام شد",
+
     overview: "نمای کلی",
     h: " ساعت و",
     min: " دقیقه",
@@ -210,6 +212,48 @@ const fa = {
           email: "ایمیل: ",
           location: "مکان: ",
           socialMedia: "شبکه های مجازی: ",
+        },
+        platformSettings: {
+          title: "تنظیمات پلتفرم",
+          account: "اکانت",
+          application: "اپلیکیشن",
+
+          radioBtns: {
+            emailMeWhenSomeoneFollowsMe:
+              "وقتی کسی من را دنبال کرد، به من ایمیل بزن",
+            emailMeWhenSomeoneAnswersTo:
+              "وقتی کسی به ... پاسخ داد، به من ایمیل بزن",
+            emailMeWhenSomeoneMentionsMe:
+              "وقتی کسی من را منشن می‌کند، به من ایمیل بزن",
+            newLaunchesAndProjects: "عرضه‌ها و پروژه‌های جدید",
+            monthlyProductUpdates: "به‌روزرسانی‌های ماهانه محصول",
+            subscribeToNewsletter: "عضویت در خبرنامه",
+            receiveMailsWeekly: "ایمیل‌ها را به‌صورت هفتگی دریافت کنید",
+          },
+        },
+        projects: {
+          title: "پروژه ها",
+          desc: "معماران خانه‌ها را طراحی می‌کنند.",
+
+          projectsData: {
+            proj1: {
+              title: "مدرن",
+              desc: "در حالی که اوبر با حجم عظیمی از آشفتگی‌های مدیریتی داخلی دسته‌وپنجه نرم می‌کند...",
+              name: "پروژه #1",
+            },
+            proj2: {
+              title: "اسکاندیناویایی",
+              desc: "موسیقی چیزی است که هر فردی درباره آن نظر خاص خود را دارد...",
+              name: "پروژه #2",
+            },
+            proj3: {
+              title: "مینیمالیست",
+              desc: "افراد مختلف سلیقه‌ها و انواع موسیقی متفاوتی دارند...",
+              name: "پروژه #3",
+            },
+
+            btn: "مشاهده بیشتر",
+          },
         },
       },
     },

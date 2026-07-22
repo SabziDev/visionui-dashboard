@@ -3,6 +3,8 @@
 
 const en = {
   words: {
+    toast: "Operation completed successfully",
+
     overview: "OVERVIEW",
     h: "h",
     min: "min",
@@ -212,6 +214,45 @@ const en = {
           email: "Email: ",
           location: "Location :",
           socialMedia: "Social Media: ",
+        },
+        platformSettings: {
+          title: "Platform Settings",
+          account: "ACCOUNT",
+          application: "APPLICATION",
+
+          radioBtns: {
+            emailMeWhenSomeoneFollowsMe: "Email me when someone follows me",
+            emailMeWhenSomeoneAnswersTo: "Email me when someone answers to...",
+            emailMeWhenSomeoneMentionsMe: "Email me when someone mentions me",
+            newLaunchesAndProjects: "New launches and projects",
+            monthlyProductUpdates: "Monthly product updates",
+            subscribeToNewsletter: "Subscribe to newsletter",
+            receiveMailsWeekly: "Receive mails weekly",
+          },
+        },
+        projects: {
+          title: "Projects",
+          desc: "Architects design houses",
+
+          projectsData: {
+            proj1: {
+              title: "Modern",
+              desc: "As Uber works through a huge amount of internal management turmoil...",
+              name: "Project #1",
+            },
+            proj2: {
+              title: "Scandinavian",
+              desc: "Music is something that every person has his or her own specific opinion about...",
+              name: "Project #2",
+            },
+            proj3: {
+              title: "Minimalist",
+              desc: "Different people have different taste, and various types of music...",
+              name: "Project #3",
+            },
+
+            btn: "VIEW MORE",
+          },
         },
       },
     },

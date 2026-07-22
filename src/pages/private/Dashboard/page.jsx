@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import ProjectsTable from "./components/ProjectsTable/ProjectsTable";
+import ProjectsTableSection from "./components/ProjectsTableSection/ProjectsTableSection";
 import ActiveUsersSection from "./sections/ActiveUsersSection/ActiveUsersSection";
 import OverviewSection from "./sections/OverviewSection/OverviewSection";
 import SalesOverviewSection from "./sections/SalesOverviewSection/SalesOverviewSection";
@@ -24,7 +24,7 @@ const Dashboard = () => {
         <SalesOverviewSection />
         <ActiveUsersSection />
       </div>
-      <ProjectsTable isShowMoreBtn />
+      <ProjectsTableSection isShowMoreBtn />
     </>
   );
 };

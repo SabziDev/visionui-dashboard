@@ -11,7 +11,7 @@ const OverviewSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="flex-items-center justify-between rounded-2xl p-5.5 bg-primary-gradient fa:rtl">
+    <section className="flex-items-center justify-between section-card fa:rtl">
       <OverviewProfile data={admin} isPending={isPending} />
 
       <div className="hidden gap-1 rounded-xl bg-blue px-8 py-2.5 select-none sm:flex-center">

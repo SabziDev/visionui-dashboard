@@ -2,11 +2,11 @@ import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import Table from "@/pages/private/components/Table/Table";
 import { useAuthorsQuery } from "@/services/hooks/useAuthors/useAuthors";
 
-const AuthorsTable = () => {
+const AuthorsTableSection = () => {
   const { authors, isPending } = useAuthorsQuery();
 
   return (
-    <div className="w-full rounded-2xl px-5 pt-7 pb-2 bg-primary-gradient">
+    <section className="w-full section-card pb-2.5">
       <SectionTitle title="pages.private.tables.authorTable.title" />
 
       <Table
@@ -25,8 +25,8 @@ const AuthorsTable = () => {
         ]}
         isPending={isPending}
       />
-    </div>
+    </section>
   );
 };
 
-export default AuthorsTable;
+export default AuthorsTableSection;

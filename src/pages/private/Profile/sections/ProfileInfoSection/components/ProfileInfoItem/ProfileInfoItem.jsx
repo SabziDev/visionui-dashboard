@@ -5,9 +5,9 @@ const ProfileInfoItem = ({ data, title, isPending }) => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="truncate">
       <span className="text-gray-400">{t(title)}</span>
-      <span className="font-VazirBold ltr inline-block text-[17px]">
+      <span className="inline-block font-VazirBold text-[17px] ltr">
         {isPending ? (
           <Skeleton
             borderRadius={4}

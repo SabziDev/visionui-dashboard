@@ -7,7 +7,7 @@ import AuthContext from "@/contexts/Auth";
 
 import SidebarSettingsItem from "./SidebarSettingsItem/SidebarSettingsItem";
 
-const SidebarSettings = () => {
+const SidebarSettings = ({ setIsShowSidebar }) => {
   const { setAdminId } = use(AuthContext);
 
   const { i18n } = useTranslation();
@@ -22,9 +22,10 @@ const SidebarSettings = () => {
       <ul className="mt-1 flex-center flex-col gap-1">
         <SidebarSettingsItem
           Icon={IoLanguage}
-          onClick={() =>
-            i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")
-          }
+          onClick={() => {
+            i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa");
+            setIsShowSidebar((state) => !state);
+          }}
         >
           <div>
             <span>{t("layouts.sidebar.menu.accountPages.switchLanguage")}</span>
