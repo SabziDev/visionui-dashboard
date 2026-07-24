@@ -1,4 +1,4 @@
-import api from "./axios/api";
+import api from "./axios/axios.instance";
 
 const getAuthorsApi = async ({ signal }) => {
   const res = await api.get("/authors", { signal });

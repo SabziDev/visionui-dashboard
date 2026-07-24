@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getProjectsApi } from "@/services/projectsApi";
+import { getProjectsApi } from "@/services/projects.api";
 
 const useProjectsQuery = () => {
   const queryKey = ["projects"];

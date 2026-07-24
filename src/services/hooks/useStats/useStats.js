@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getStatsApi } from "@/services/statsApi";
+import { getStatsApi } from "@/services/stats.api";
 
 const useStatsQuery = () => {
   const queryKey = ["stats"];

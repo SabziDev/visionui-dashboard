@@ -1,4 +1,4 @@
-import api from "./axios/api";
+import api from "./axios/axios.instance";
 
 const getProjectsApi = async ({ signal }) => {
   const res = await api.get("/projects", { signal });

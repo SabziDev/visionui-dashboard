@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { getAdminApi, updateAdminApi } from "@/services/adminApi";
+import { getAdminApi, updateAdminApi } from "@/services/admin.api";
 
 const useAdminQuery = () => {
   const queryKey = ["admins"];

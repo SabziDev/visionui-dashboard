@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getAuthorsApi } from "@/services/authorsApi";
+import { getAuthorsApi } from "@/services/authors.api";
 
 const useAuthorsQuery = () => {
   const queryKey = ["authors"];
