@@ -13,12 +13,12 @@ clean and responsive user interface.
 <div align="center">
   <span>
     Repo: 
-    <a href="https://github.com/SabziDev/visionui-dashboard">GITHUB</a>
+    <a href="https://github.com/SabziDev/visionui-dashboard">Link</a>
   </span>
   <span>|</span>
   <span>
-    Live Demo: 
-    <a href="#">Live Demo</a>
+    Demo: 
+    <a href="#">Link</a>
   </span>
 </div>
 
@@ -110,10 +110,15 @@ pnpm dev
 
 ------------------------------------------------------------------------
 
-## 👨‍💻 Developer
+## 👨‍💻 Developers
 
-Created by **ABOLFAZL SABZMOHAMMADI**
-
+Frontend Created by **ABOLFAZL SABZMOHAMMADI**
+<br />
 GitHub: [github.com/SabziDev](https://github.com/SabziDev)
 <br />
 Website: [SabziDev.com](https://SabziDev.com)
+
+
+figma: [link](https://www.figma.com/community/file/1060952013207459371/vision-ui-dashboard-react-mui-dashboard-free-version)
+
+
