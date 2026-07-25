@@ -15,6 +15,7 @@ clean and responsive user interface.
     Repo: 
     <a href="https://github.com/SabziDev/visionui-dashboard">GITHUB</a>
   </span>
+  <span>|</span>
   <span>
     Live Demo: 
     <a href="#">Live Demo</a>
