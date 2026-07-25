@@ -12,12 +12,12 @@ clean and responsive user interface.
 
 <div align="center">
   <span>
-    Repo: 
+    🔗 Repo: 
     <a href="https://github.com/SabziDev/visionui-dashboard">LINK</a>
   </span>
   <span>|</span>
   <span>
-    Demo: 
+    🔗 Demo: 
     <a href="#">LINK</a>
   </span>
 </div>
@@ -26,27 +26,27 @@ clean and responsive user interface.
 
 ## ✨ Features
 
--   Authentication
--   Displaying data with interactive charts
--   Dual-language panel
--   Skeleton UI Display States
--   Fully responsive design
+- Authentication
+- Displaying data with interactive charts
+- Dual-language panel
+- Skeleton UI Display States
+- Fully responsive design
 
-------------------------------------------------------------------------
+---
 
 ## ⚙️ Technologies
 
--   React
--   React Router
--   TanStack Query
--   i18n
--   Tailwind
+- React
+- React Router
+- TanStack Query
+- i18n
+- Tailwind
 
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
 
-``` text
+```text
 src/
 ├── components/
 ├── contexts/
@@ -57,7 +57,7 @@ src/
 ├── services/
 ├── validators/
 ├── routes.jsx
-├── input.css
+└── input.css
 ```
 
 ------------------------------------------------------------------------
@@ -66,25 +66,25 @@ src/
 
 Clone the repository:
 
-``` bash
+```bash
 git clone https://github.com/SabziDev/visionui-dashboard.git
 ```
 
 Go to the project folder:
 
-``` bash
+```bash
 cd visionui-dashboard
 ```
 
 Install dependencies:
 
-``` bash
+```bash
 pnpm i
 ```
 
 Run the project:
 
-``` bash
+```bash
 pnpm dev
 ```
 
@@ -92,21 +92,21 @@ pnpm dev
 
 ## 📦 Dependencies
 
-| Package | Description |
-| :--- | :--- |
-| react | Core UI library |
-| react-router | Client-side routing |
-| tanstack-query | Server-state management & caching |
-| axios | HTTP API client |
-| react-hook-form | Form handling & validation |
-| react-hot-toast | Toast notifications |
-| framer-motion | Animated-outlet & navigation progress bar |
-| recharts | Data visualization charts |
-| i18n | Multi-language support (Persian/English) |
-| react-loading-skeleton | Skeleton loading placeholders |
-| react-spinners | Loading spinners |
-| react-indiana-drag-scroll | Drag-to-scroll functionality |
-| tailwind | CSS framework |
+| Package                   | Description                               |
+| :------------------------ | :---------------------------------------- |
+| react                     | Core UI library                           |
+| react-router              | Client-side routing                       |
+| tanstack-query            | Server-state management & caching         |
+| axios                     | HTTP API client                           |
+| react-hook-form           | Form handling & validation                |
+| react-hot-toast           | Toast notifications                       |
+| framer-motion             | Animated-outlet & navigation progress bar |
+| recharts                  | Data visualization charts                 |
+| i18n                      | Multi-language support (Persian/English)  |
+| react-loading-skeleton    | Skeleton loading placeholders             |
+| react-spinners            | Loading spinners                          |
+| react-indiana-drag-scroll | Drag-to-scroll functionality              |
+| tailwind                  | CSS framework                             |
 
 ------------------------------------------------------------------------
 
@@ -118,7 +118,4 @@ GitHub: [github.com/SabziDev](https://github.com/SabziDev)
 <br />
 Website: [SabziDev.com](https://SabziDev.com)
 
-
 figma: [link](https://www.figma.com/community/file/1060952013207459371/vision-ui-dashboard-react-mui-dashboard-free-version)
-
-
