@@ -7,7 +7,7 @@ clean and responsive user interface.
 ## 👀 Preview
 
 <div align="center">
-<img src="./docs/images/screenshot.webp" alt="Vision Ui screenshot" height="600" width="70%"/>
+<img src="./docs/images/screenshot.webp" alt="Vision Ui screenshot" height="600" width="100%"/>
 </div>
 
 <div align="center">
