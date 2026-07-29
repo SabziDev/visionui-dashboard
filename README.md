@@ -12,7 +12,7 @@ clean and responsive user interface.
 
 <div align="center">
   <span>
-    🔗 Repo: 
+    🔗 GitHub: 
     <a href="https://github.com/SabziDev/visionui-dashboard">LINK</a>
   </span>
   <span>|</span>
