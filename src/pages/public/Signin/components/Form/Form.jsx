@@ -2,7 +2,7 @@ import clsx from "clsx";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import RadioBtn from "@/pages/components/RadioBtn/RadioBtn";
+import CheckboxInput from "@/pages/components/CheckboxInput/CheckboxInput";
 
 import useAuthForm from "../../hooks/useAuthForm/useAuthForm";
 import EmailInput from "./Inputs/EmailInput";
@@ -51,7 +51,7 @@ const Form = () => {
           copyTextToClipboard={copyTextToClipboard}
         />
 
-        <RadioBtn
+        <CheckboxInput
           id="rememberMe"
           title="pages.public.signin.form.inputs.rememberMe.label"
           register={register}

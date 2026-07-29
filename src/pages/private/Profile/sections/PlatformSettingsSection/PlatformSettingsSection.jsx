@@ -7,7 +7,7 @@ const PlatformSettingsSection = () => {
   const { admin, isPending } = useAdminQuery();
 
   return (
-    <section className="section-card fa:rtl">
+    <section className="gradient-card fa:rtl">
       <SectionTitle title="pages.private.profile.platformSettings.title" />
 
       <div className="mt-auto h-full space-y-5">

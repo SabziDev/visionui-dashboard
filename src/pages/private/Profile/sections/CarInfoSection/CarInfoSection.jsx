@@ -13,7 +13,7 @@ const CarInfoSection = () => {
   const counter = useCounter(stats.carInfoCurrentLoad, 800);
 
   return (
-    <section className="section-card [grid-area:car] 2xl:h-95">
+    <section className="gradient-card [grid-area:car] 2xl:h-95">
       <SectionTitle
         title="pages.private.profile.carInfo.title"
         desc={{ value: "pages.private.profile.carInfo.desc" }}

@@ -7,7 +7,7 @@ const ProjectsTableSection = ({ isShowMoreBtn = false }) => {
   const { projects, isPending } = useProjectsQuery();
 
   return (
-    <section className="w-full section-card pb-2 fa:rtl">
+    <section className="w-full gradient-card pb-2 fa:rtl">
       <div className="flex items-start justify-between">
         <SectionTitle
           title="pages.private.components.projectsTable.title"

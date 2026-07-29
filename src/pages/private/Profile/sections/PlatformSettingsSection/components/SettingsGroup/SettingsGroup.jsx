@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import RadioBtn from "@/pages/components/RadioBtn/RadioBtn";
+import CheckboxInput from "@/pages/components/CheckboxInput/CheckboxInput";
 import { useAdminMutation } from "@/services/hooks/useAdmin/useAdmin";
 
 const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
@@ -31,7 +31,7 @@ const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
 
       <div className="mt-1.5 flex-start flex-col space-y-3">
         {data.settings[settingsSection].map((setting) => (
-          <RadioBtn
+          <CheckboxInput
             key={setting.key}
             id={setting.key}
             title={setting.title}

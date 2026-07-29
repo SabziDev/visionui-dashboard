@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import Skeleton from "@/components/Skeleton/Skeleton";
 
-const RadioBtn = ({
+const CheckboxInput = ({
   id = "",
   title = "",
   register,
@@ -36,4 +36,4 @@ const RadioBtn = ({
   );
 };
 
-export default RadioBtn;
+export default CheckboxInput;

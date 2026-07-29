@@ -7,7 +7,7 @@ const ProfileInfoSection = () => {
   const { admin, isPending } = useAdminQuery();
 
   return (
-    <section className="section-card [grid-area:profile] sm:h-95">
+    <section className="gradient-card [grid-area:profile] sm:h-95">
       <SectionTitle
         title="pages.private.profile.profileInfo.title"
         desc={{ value: admin.profile.bio }}

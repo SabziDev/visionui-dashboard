@@ -4,7 +4,7 @@ import SalesOverviewChart from "./components/SalesOverviewChart/SalesOverviewCha
 
 const SalesOverviewSection = () => {
   return (
-    <div className="h-117 w-full max-w-230 section-card pb-110 ltr">
+    <div className="h-117 w-full max-w-230 gradient-card pb-110 ltr">
       <SectionTitle
         title="pages.private.dashboard.salesOverview.title"
         desc={{

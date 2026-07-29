@@ -9,7 +9,7 @@ import ProjectsCard from "./components/ProjectsCard/ProjectsCard";
 
 const ProjectsSection = () => {
   return (
-    <section className="section-card">
+    <section className="gradient-card">
       <SectionTitle
         title="pages.private.profile.projects.title"
         desc={{ value: "pages.private.profile.projects.desc" }}

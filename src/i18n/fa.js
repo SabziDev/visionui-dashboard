@@ -1,10 +1,11 @@
 const fa = {
   words: {
     toast: "عملیات با موفقیت انجام شد",
-
     overview: "نمای کلی",
     h: " ساعت و",
     min: " دقیقه",
+    newest: "جدیدترین",
+    yesterday: "دیروز",
   },
 
   pagesMeta: {
@@ -160,10 +161,6 @@ const fa = {
             items: "آیتم ها",
           },
         },
-        ordersOverview: {
-          title: "نمای کلی سفارشات",
-          desc: "+30% در این ماه",
-        },
       },
       tables: {
         authorTable: {
@@ -184,6 +181,31 @@ const fa = {
           },
           online: "آنلاین",
           offline: "آفلاین",
+        },
+      },
+      billing: {
+        creditBalance: {
+          title: "مانده بستانکار",
+        },
+        paymentMethod: {
+          title: "روش پرداخت",
+
+          btn: "افزودن کارت جدید",
+        },
+        invoices: {
+          title: "صورت‌حساب‌ها",
+
+          btn: "مشاهده همه",
+        },
+        billingInformation: {
+          title: "اطلاعات صورت‌حساب",
+
+          companyName: "نام کمپانی",
+          emailAddress: "آدرس ایمیل",
+          vatNumber: "شماره مالیات بر ارزش افزوده",
+        },
+        yourTransactions: {
+          title: "تراکنش‌های شما",
         },
       },
       profile: {
@@ -218,7 +240,7 @@ const fa = {
           account: "اکانت",
           application: "اپلیکیشن",
 
-          radioBtns: {
+          checkboxInputs: {
             emailMeWhenSomeoneFollowsMe:
               "وقتی کسی من را دنبال کرد، به من ایمیل بزن",
             emailMeWhenSomeoneAnswersTo:

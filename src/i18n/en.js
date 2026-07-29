@@ -1,13 +1,14 @@
 // const { t } = useTranslation();
-// {t("pages.private.dashboard.welcomeCard.welcomeBack")}
+// {t("pages.private.billing.creditBalance.expirationDate")}
 
 const en = {
   words: {
     toast: "Operation completed successfully",
-
     overview: "OVERVIEW",
     h: "h",
     min: "min",
+    newest: "NEWEST",
+    yesterday: "YESTERDAY",
   },
 
   pagesMeta: {
@@ -162,10 +163,6 @@ const en = {
             items: "Items",
           },
         },
-        ordersOverview: {
-          title: "Orders overview",
-          desc: "+30% this month",
-        },
       },
       tables: {
         authorTable: {
@@ -186,6 +183,31 @@ const en = {
           },
           online: "Online",
           offline: "Offline",
+        },
+      },
+      billing: {
+        creditBalance: {
+          title: "Credit Balance",
+        },
+        paymentMethod: {
+          title: "Payment Method",
+
+          btn: "ADD A NEW CARD",
+        },
+        invoices: {
+          title: "Invoices",
+
+          btn: "VIEW ALL",
+        },
+        billingInformation: {
+          title: "Billing Information",
+
+          companyName: "Company Name",
+          emailAddress: "Email Address",
+          vatNumber: "VAT Number",
+        },
+        yourTransactions: {
+          title: "Your Transactions",
         },
       },
       profile: {
@@ -220,7 +242,7 @@ const en = {
           account: "ACCOUNT",
           application: "APPLICATION",
 
-          radioBtns: {
+          checkboxInputs: {
             emailMeWhenSomeoneFollowsMe: "Email me when someone follows me",
             emailMeWhenSomeoneAnswersTo: "Email me when someone answers to...",
             emailMeWhenSomeoneMentionsMe: "Email me when someone mentions me",
