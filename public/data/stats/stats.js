@@ -31,7 +31,7 @@ const stats = {
       value: "+20%",
       icon: {
         type: "CHART",
-        src: "/images/icons/green-chart.svg",
+        src: "/images/shapes/pages/private/profile/green-chart.svg",
       },
     },
     {
@@ -47,7 +47,7 @@ const stats = {
       value: "1.342km",
       icon: {
         type: "CHART",
-        src: "/images/icons/blue-chart.svg",
+        src: "/images/shapes/pages/private/profile/blue-chart.svg",
       },
     },
   ],
