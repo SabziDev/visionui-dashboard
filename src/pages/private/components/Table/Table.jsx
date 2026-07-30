@@ -14,7 +14,7 @@ const Table = ({ data, colsTitles, colsData, isPending }) => {
       {isPending ? (
         <TableSkeleton />
       ) : (
-        <table className="w-full min-w-140 en:text-left fa:text-right">
+        <table className="w-full min-w-140">
           <thead className="border-b-2 border-[#56577A]">
             <tr>
               {colsTitles.map((colsTitle, i) => (

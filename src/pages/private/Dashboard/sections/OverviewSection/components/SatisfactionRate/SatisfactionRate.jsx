@@ -7,7 +7,7 @@ const SatisfactionRate = ({ value }) => {
   const counter = useCounter(value, 800);
 
   return (
-    <div className="relative flex h-88 w-87.5 flex-col gap-y-2 rounded-2xl gradient-card">
+    <div className="relative flex h-88 w-87.5 flex-col gap-y-2 gradient-card rounded-2xl">
       <SectionTitle
         title="pages.private.dashboard.satisfactionRate.title"
         desc={{ value: "pages.private.dashboard.satisfactionRate.desc" }}

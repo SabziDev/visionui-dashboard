@@ -4,8 +4,6 @@ const fa = {
     overview: "نمای کلی",
     h: " ساعت و",
     min: " دقیقه",
-    newest: "جدیدترین",
-    yesterday: "دیروز",
   },
 
   pagesMeta: {
@@ -181,31 +179,6 @@ const fa = {
           },
           online: "آنلاین",
           offline: "آفلاین",
-        },
-      },
-      billing: {
-        creditBalance: {
-          title: "مانده بستانکار",
-        },
-        paymentMethod: {
-          title: "روش پرداخت",
-
-          btn: "افزودن کارت جدید",
-        },
-        invoices: {
-          title: "صورت‌حساب‌ها",
-
-          btn: "مشاهده همه",
-        },
-        billingInformation: {
-          title: "اطلاعات صورت‌حساب",
-
-          companyName: "نام کمپانی",
-          emailAddress: "آدرس ایمیل",
-          vatNumber: "شماره مالیات بر ارزش افزوده",
-        },
-        yourTransactions: {
-          title: "تراکنش‌های شما",
         },
       },
       profile: {

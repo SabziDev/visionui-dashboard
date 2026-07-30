@@ -13,7 +13,7 @@ const useAdminQuery = () => {
   return { admin: admins?.[0], ...rest };
 };
 
-const useAdminMutation = () => {
+const useUpdateAdminMutation = () => {
   const queryClient = useQueryClient();
 
   const queryKey = ["admins"];
@@ -38,4 +38,4 @@ const useAdminMutation = () => {
   return { updateAdmin, ...rest };
 };
 
-export { useAdminMutation, useAdminQuery };
+export { useAdminQuery, useUpdateAdminMutation };

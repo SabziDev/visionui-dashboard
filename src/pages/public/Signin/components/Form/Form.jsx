@@ -1,8 +1,7 @@
-import clsx from "clsx";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import CheckboxInput from "@/pages/components/CheckboxInput/CheckboxInput";
+import CheckboxInput from "@/components/CheckboxInput/CheckboxInput";
 
 import useAuthForm from "../../hooks/useAuthForm/useAuthForm";
 import EmailInput from "./Inputs/EmailInput";
@@ -35,9 +34,7 @@ const Form = () => {
       <form
         noValidate
         onSubmit={handleSubmit(submitForm)}
-        className={clsx([
-          "mt-10 flex-justify-center flex-col en:items-start fa:items-start",
-        ])}
+        className="mt-10 flex-justify-center flex-col items-start"
       >
         <EmailInput
           register={register}

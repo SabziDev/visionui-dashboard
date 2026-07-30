@@ -8,7 +8,7 @@ const ActiveUsersBadgeTitle = ({ title = "", Icon }) => {
       <div className="flex-center size-7 rounded-md bg-blue p-1.5 *:size-6">
         <Icon />
       </div>
-      <span className="font-VazirMedium text-sm text-gray-400">
+      <span className="w-max font-VazirMedium text-sm text-gray-400">
         {t(`pages.private.dashboard.activeUsers.badges.${title}`)}
       </span>
     </div>

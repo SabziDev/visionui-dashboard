@@ -1,7 +1,7 @@
 import Skeleton from "@/components/Skeleton/Skeleton";
 
 const TableSkeleton = () => (
-  <table className="mt-7 w-full min-w-140 en:text-left fa:text-right">
+  <table className="mt-7 w-full min-w-140">
     <thead className="border-b-2 border-[#56577A]">
       <tr>
         <th className="py-4">

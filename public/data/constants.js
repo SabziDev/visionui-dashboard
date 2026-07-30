@@ -1,3 +1,3 @@
-const API_BASE_URL = "http://192.168.1.109:3000";
+const API_BASE_URL = "https://visionui-api.vercel.app";
 
 export { API_BASE_URL };

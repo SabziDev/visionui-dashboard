@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import ProjectsTableSection from "./components/ProjectsTableSection/ProjectsTableSection";
+import ProjectsTableSection from "../sections/ProjectsTableSection/ProjectsTableSection";
 import ActiveUsersSection from "./sections/ActiveUsersSection/ActiveUsersSection";
 import OverviewSection from "./sections/OverviewSection/OverviewSection";
 import SalesOverviewSection from "./sections/SalesOverviewSection/SalesOverviewSection";

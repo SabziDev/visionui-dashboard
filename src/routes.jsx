@@ -7,7 +7,6 @@ import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
 import Signin from "./pages/public/Signin/page";
 
-const Billing = lazy(() => import("./pages/private/Billing/page"));
 const Profile = lazy(() => import("./pages/private/Profile/page"));
 const Tables = lazy(() => import("./pages/private/Tables/page"));
 
@@ -42,18 +41,7 @@ const router = createBrowserRouter([
           pagePath: "tables",
         },
       },
-      {
-        path: "billing",
-        element: (
-          <Suspense fallback={<Preloader />}>
-            <Billing />
-          </Suspense>
-        ),
-        handle: {
-          pageTitle: "layouts.header.pagesTitle.billing",
-          pagePath: "billing",
-        },
-      },
+
       {
         path: "profile",
         element: (

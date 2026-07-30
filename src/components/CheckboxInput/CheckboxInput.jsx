@@ -26,7 +26,7 @@ const CheckboxInput = ({
             className="peer sr-only"
             {...(register && { ...register(id) })}
           />
-          <div className="flex-items-center h-5 w-10 shrink-0 justify-between rounded-full bg-blue px-1 opacity-50 transition-all peer-checked:opacity-100 en:ltr en:peer-checked:pl-5.5 fa:rtl fa:peer-checked:pr-5.5">
+          <div className="flex-items-center h-5 w-10 shrink-0 justify-between rounded-full bg-blue px-1 opacity-50 transition-all peer-checked:ps-5.5 peer-checked:opacity-100 en:ltr fa:rtl">
             <span className="size-3.5 rounded-full bg-white" />
           </div>
           <span className="line-clamp-2 text-sm">{t(title)}</span>
