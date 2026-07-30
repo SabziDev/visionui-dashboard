@@ -10,6 +10,8 @@ const noInvalidIdAndClassNameValue = {
         fixable: "code",
         messages: {
           invalid: "{{attribute}} cannot be {{value}}!",
+          singleItemArray:
+            "{{attribute}} should not use an array with only one item!",
         },
       },
 
@@ -93,6 +95,9 @@ const noInvalidIdAndClassNameValue = {
                   if (result) {
                     ({ invalidValue, index: invalidElementIndex } = result);
                   }
+                  if (arg.elements.length === 1 && !invalidValue) {
+                    invalidValue = "single-item-array";
+                  }
                 } else if (arg.type === "Literal" && arg.value === "") {
                   invalidValue = "empty";
                 } else if (
@@ -119,7 +124,10 @@ const noInvalidIdAndClassNameValue = {
             context.report({
               data: { value: invalidValue, attribute },
               node,
-              messageId: "invalid",
+              messageId:
+                invalidValue === "single-item-array"
+                  ? "singleItemArray"
+                  : "invalid",
               fix: (fixer) => {
                 if (invalidElementIndex === -2) {
                   return fixer.remove(node);
