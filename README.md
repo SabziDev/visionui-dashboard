@@ -1,8 +1,9 @@
 # 🎯 Dashboard - VISION UI
+
 A modern web application dashboard built with React and JavaScript with a
 clean and responsive user interface.
 
-------------------------------------------------------------------------
+---
 
 ## 👀 Preview
 
@@ -18,11 +19,11 @@ clean and responsive user interface.
   <span>|</span>
   <span>
     🔗 Demo: 
-    <a href="#">LINK</a>
+    <a href="https://sabzidev-visionui-dashboard.vercel.app">LINK</a>
   </span>
 </div>
 
-------------------------------------------------------------------------
+---
 
 ## ✨ Features
 
@@ -42,7 +43,7 @@ clean and responsive user interface.
 - i18n
 - Tailwind
 
-------------------------------------------------------------------------
+---
 
 ## 📂 Project Structure
 
@@ -60,7 +61,7 @@ src/
 └── input.css
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🚀 Installation
 
@@ -88,7 +89,7 @@ Run the project:
 pnpm dev
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 📦 Dependencies
 
@@ -108,7 +109,7 @@ pnpm dev
 | react-indiana-drag-scroll | Drag-to-scroll functionality              |
 | tailwind                  | CSS framework                             |
 
-------------------------------------------------------------------------
+---
 
 ## 👨‍💻 Developers
 
