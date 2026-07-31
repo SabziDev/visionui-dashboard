@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @custom-variant hover (&:hover);
+@custom-variant firefox {
+  @supports (-moz-appearance: none) {
+    @slot;
+  }
+}
 @custom-variant en (&:where([lang=en], [lang=en] *));
 @custom-variant fa (&:where([lang=fa], [lang=fa] *));
 
