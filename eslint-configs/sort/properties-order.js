@@ -8,6 +8,7 @@ const staticPropertiesOrder = [
   "desc",
   "htmlFor",
   "type",
+  "inputMode",
   "name",
   "value",
   "placeholder",
