@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { IoHelp } from "react-icons/io5";
 
-const SliderNeedHelp = () => {
+const SidebarNeedHelp = () => {
   const { t } = useTranslation();
 
   return (
@@ -36,4 +36,4 @@ const SliderNeedHelp = () => {
   );
 };
 
-export default SliderNeedHelp;
+export default SidebarNeedHelp;

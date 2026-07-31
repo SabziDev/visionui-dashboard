@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { useLocation } from "react-router";
 
 import SidebarNav from "./components/SidebarNav/SidebarNav";
+import SidebarNeedHelp from "./components/SidebarNeedHelp/SidebarNeedHelp";
 import SidebarSettings from "./components/SidebarSettings/SidebarSettings";
 import SidebarTitle from "./components/SidebarTitle/SidebarTitle";
-import SliderNeedHelp from "./components/SliderNeedHelp/SliderNeedHelp";
 
 const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
       {isShowSidebar && (
         <span
           onClick={() => setIsShowSidebar((state) => !state)}
-          className="fixed inset-0 z-99 bg-black/60 lg:hidden"
+          className="fixed inset-0 z-99 h-screen bg-black/60 lg:hidden"
         />
       )}
 
@@ -40,7 +40,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
           <div>
             <SidebarSettings setIsShowSidebar={setIsShowSidebar} />
 
-            <SliderNeedHelp />
+            <SidebarNeedHelp />
           </div>
         </div>
       </aside>
