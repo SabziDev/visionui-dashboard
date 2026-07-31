@@ -31,10 +31,10 @@
   }
 
   :root {
-    interpolate-size: allow-keywords;
+    @apply scroll-smooth [interpolate-size:allow-keywords];
   }
   html {
-    @apply scroll-smooth firefox:scrollbar-thumb-blue selection:bg-navy selection:text-blue;
+    @apply selection:bg-navy selection:text-blue firefox:scrollbar-thumb-blue;
   }
   *:not(html) {
     @apply firefox:scrollbar-thin firefox:scrollbar-thumb-blue;
@@ -66,7 +66,7 @@
 
   input,
   textarea {
-    @apply outline-0! transition-shadow focus:ring-2 focus:ring-primary/20;
+    @apply outline-0! placeholder:text-gray-400 transition-shadow focus:ring-2 focus:ring-blue fa:ltr fa:placeholder:text-right;
   }
   input:-webkit-autofill {
     @apply [transition-property:color,background-color] duration-9999999;
@@ -83,7 +83,7 @@
 
   button:not(:disabled),
   [role="button"]:not(:disabled) {
-    cursor: pointer;
+    @apply cursor-pointer;
   }
 
   @font-face {
@@ -185,7 +185,7 @@
 @layer base {
   /* Recharts */
   .recharts-wrapper *:focus {
-    outline: none;
+    @apply outline-none;
   }
 }
 /* ============================================= -- Packages Customization -- ============================================= */
