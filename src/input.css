@@ -25,29 +25,35 @@
     --font-VazirBold: "Vazir-Bold--fa", Arial, Helvetica, sans-serif;
   }
 
+  :root {
+    interpolate-size: allow-keywords;
+  }
   html {
-    @apply scroll-smooth selection:bg-navy selection:text-blue;
+    @apply scroll-smooth firefox:scrollbar-thumb-blue selection:bg-navy selection:text-blue;
+  }
+  *:not(html) {
+    @apply firefox:scrollbar-thin firefox:scrollbar-thumb-blue;
   }
   html::-webkit-scrollbar {
     @apply size-2.5;
   }
-  html::-webkit-scrollbar-thumb {
-    @apply bg-blue;
-  }
-  html::-webkit-scrollbar-thumb:hover {
-    @apply bg-blue/80;
-  }
-  html::-webkit-scrollbar-corner {
-    @apply bg-transparent;
-  }
   *:not(html) ::-webkit-scrollbar {
     @apply size-1.5;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply bg-blue;
   }
   *:not(html) ::-webkit-scrollbar-thumb {
     @apply bg-blue rounded-full;
   }
+  html::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue/80;
+  }
   *:not(html) ::-webkit-scrollbar-thumb:hover {
     @apply bg-blue/80;
+  }
+  html::-webkit-scrollbar-corner {
+    @apply bg-transparent;
   }
   *:not(html) ::-webkit-scrollbar-corner {
     @apply bg-transparent;
