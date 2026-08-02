@@ -96,18 +96,19 @@ pnpm dev
 | Package                   | Description                               |
 | :------------------------ | :---------------------------------------- |
 | react                     | Core UI library                           |
+| tailwind                  | CSS framework                             |
 | react-router              | Client-side routing                       |
 | tanstack-query            | Server-state management & caching         |
 | axios                     | HTTP API client                           |
+| zod                       | Schema validation                         |
 | react-hook-form           | Form handling & validation                |
 | react-hot-toast           | Toast notifications                       |
-| framer-motion             | Animated-outlet & navigation progress bar |
-| recharts                  | Data visualization charts                 |
 | i18n                      | Multi-language support (Persian/English)  |
+| recharts                  | Data visualization charts                 |
+| react-indiana-drag-scroll | Drag-to-scroll functionality              |
+| motion                    | Page transition animations & navigation progress bar |
 | react-loading-skeleton    | Skeleton loading placeholders             |
 | react-spinners            | Loading spinners                          |
-| react-indiana-drag-scroll | Drag-to-scroll functionality              |
-| tailwind                  | CSS framework                             |
 
 ---
 
