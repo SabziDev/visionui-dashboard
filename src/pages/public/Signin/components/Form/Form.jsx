@@ -23,7 +23,7 @@ const Form = () => {
   };
 
   return (
-    <div className="flex-justify-center flex-col items-start">
+    <div className="flex-justify-center flex-col items-start py-6">
       <span className="font-VazirBold text-3xl">
         {t("pages.public.signin.form.title")}
       </span>
