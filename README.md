@@ -103,7 +103,7 @@ pnpm dev
 | zod                       | Schema validation                                    |
 | react-hook-form           | Form handling & validation                           |
 | react-hot-toast           | Toast notifications                                  |
-| i18n                      | Multi-language support (Persian/English)             |
+| i18next                   | Multi-language support (Persian/English)             |
 | recharts                  | Data visualization charts                            |
 | react-indiana-drag-scroll | Drag-to-scroll functionality                         |
 | motion                    | Page transition animations & navigation progress bar & ... |
