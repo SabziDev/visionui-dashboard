@@ -13,7 +13,7 @@ const CarInfoCard = ({ title, value, icon }) => {
       </div>
 
       {icon.type === "CHART" ? (
-        <img src={icon.src} alt="chart" />
+        <img src={icon.src} alt="chart" className="-me-3.5" />
       ) : (
         <div className="flex-center rounded-xl bg-blue p-3">
           <icon.Shape className="size-7" />
