@@ -38,10 +38,10 @@ clean and responsive user interface.
 ## ⚙️ Technologies
 
 - React
+- Tailwind
 - React Router
 - TanStack Query
 - i18n
-- Tailwind
 
 ---
 
@@ -93,31 +93,29 @@ pnpm dev
 
 ## 📦 Dependencies
 
-| Package                   | Description                               |
-| :------------------------ | :---------------------------------------- |
-| react                     | Core UI library                           |
-| tailwind                  | CSS framework                             |
-| react-router              | Client-side routing                       |
-| tanstack-query            | Server-state management & caching         |
-| axios                     | HTTP API client                           |
-| zod                       | Schema validation                         |
-| react-hook-form           | Form handling & validation                |
-| react-hot-toast           | Toast notifications                       |
-| i18n                      | Multi-language support (Persian/English)  |
-| recharts                  | Data visualization charts                 |
-| react-indiana-drag-scroll | Drag-to-scroll functionality              |
-| motion                    | Page transition animations & navigation progress bar |
-| react-loading-skeleton    | Skeleton loading placeholders             |
-| react-spinners            | Loading spinners                          |
+| Package                   | Description                                          |
+| :------------------------ | :--------------------------------------------------- |
+| react                     | Core UI library                                      |
+| tailwind                  | CSS framework                                        |
+| react-router              | Client-side routing                                  |
+| tanstack-query            | Server-state management & caching                    |
+| axios                     | HTTP API client                                      |
+| zod                       | Schema validation                                    |
+| react-hook-form           | Form handling & validation                           |
+| react-hot-toast           | Toast notifications                                  |
+| i18n                      | Multi-language support (Persian/English)             |
+| recharts                  | Data visualization charts                            |
+| react-indiana-drag-scroll | Drag-to-scroll functionality                         |
+| motion                    | Page transition animations & navigation progress bar & ... |
+| react-loading-skeleton    | Skeleton loading placeholders                        |
+| react-spinners            | Loading spinners                                     |
 
 ---
 
-## 👨‍💻 Developers
+## 👨‍💻 Developer
 
 Frontend Created by **ABOLFAZL SABZMOHAMMADI**
-<br />
+
 GitHub: [github.com/SabziDev](https://github.com/SabziDev)
 <br />
 Website: [SabziDev.com](https://SabziDev.com)
-
-figma: [link](https://www.figma.com/community/file/1060952013207459371/vision-ui-dashboard-react-mui-dashboard-free-version)
