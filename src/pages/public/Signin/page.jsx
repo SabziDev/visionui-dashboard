@@ -29,7 +29,7 @@ const Signin = () => {
         <meta name="description" content={t("pagesMeta.signin.desc")} />
       </Head>
 
-      <div className="absolute inset-0 flex-justify-center gap-x-0 bg-navy 2xl:gap-x-25">
+      <div className="fixed inset-0 flex-justify-center gap-x-0 bg-navy 2xl:gap-x-25">
         <div className="relative w-1/2 max-lg:hidden">
           <BgImg />
           <div className="absolute inset-0 m-auto flex-center flex-col">
