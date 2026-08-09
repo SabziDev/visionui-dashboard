@@ -2,7 +2,7 @@ const errorHandlers = (error) => {
   if (!error.response) {
     const connectionError = new Error("errors.connection");
 
-    return Promise.reject(connectionError);
+    throw connectionError;
   }
 
   const { data, status } = error.response;
@@ -13,7 +13,7 @@ const errorHandlers = (error) => {
       const defaultError = new Error(defaultMessage);
       defaultError.status = status;
 
-      return Promise.reject(defaultError);
+      throw defaultError;
     }
   }
 };
