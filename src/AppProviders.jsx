@@ -22,11 +22,13 @@ const queryClient = new QueryClient({
 
   queryCache: new QueryCache({
     onError: (err) =>
-      err.customFlags.isShowToast !== false && toast.error(i18n.t(err.message)),
+      err.customFlags?.isShowToast !== false &&
+      toast.error(i18n.t(err.message)),
   }),
   mutationCache: new MutationCache({
     onError: (err) =>
-      err.customFlags.isShowToast !== false && toast.error(i18n.t(err.message)),
+      err.customFlags?.isShowToast !== false &&
+      toast.error(i18n.t(err.message)),
     onSuccess: () => toast.success(i18n.t("words.toast")),
   }),
 });
