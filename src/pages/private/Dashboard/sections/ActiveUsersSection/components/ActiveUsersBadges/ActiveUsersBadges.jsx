@@ -11,7 +11,7 @@ const ActiveUsersBadges = () => {
   if (isPending) return <ActiveUsersBadgesSkeleton />;
 
   return (
-    <ScrollContainer className="flex-items-center justify-between gap-6">
+    <ScrollContainer className="flex-items-center fa:rtl justify-between gap-6">
       {stats.generalData.map((stat) => (
         <ActiveUsersBadge key={stat.id} data={stat} />
       ))}

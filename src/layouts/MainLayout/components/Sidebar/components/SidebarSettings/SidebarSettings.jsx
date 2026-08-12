@@ -1,45 +1,12 @@
-import { use } from "react";
-import { useTranslation } from "react-i18next";
-import { IoLanguage } from "react-icons/io5";
-import { TbLogout } from "react-icons/tb";
-
-import AuthContext from "@/contexts/Auth";
-
-import SidebarSettingsItem from "./SidebarSettingsItem/SidebarSettingsItem";
+import SidebarSettingsItemMenu from "./SidebarSettingsItem/SidebarSettingsItemMenu/SidebarSettingsItemMenu";
+import SidebarSettingsItemTitle from "./SidebarSettingsItem/SidebarSettingsItemTitle/SidebarSettingsItemTitle";
 
 const SidebarSettings = ({ setIsShowSidebar }) => {
-  const { setAdminId } = use(AuthContext);
-
-  const { i18n } = useTranslation();
-  const { t } = useTranslation();
-
   return (
     <div>
-      <span className="ms-4 font-VazirMedium">
-        {t("layouts.sidebar.menu.accountPages.title")}
-      </span>
+      <SidebarSettingsItemTitle />
 
-      <ul className="mt-1 flex-center flex-col gap-1">
-        <SidebarSettingsItem
-          Icon={IoLanguage}
-          onClick={() => {
-            i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa");
-            setIsShowSidebar((state) => !state);
-          }}
-        >
-          <div>
-            <span>{t("layouts.sidebar.menu.accountPages.switchLanguage")}</span>
-            <span>{i18n.language === "fa" ? "انگلیسی" : "Persian"}</span>
-          </div>
-        </SidebarSettingsItem>
-
-        <SidebarSettingsItem
-          Icon={TbLogout}
-          onClick={() => setAdminId({ value: null })}
-        >
-          <span>{t("layouts.sidebar.menu.accountPages.logout")}</span>
-        </SidebarSettingsItem>
-      </ul>
+      <SidebarSettingsItemMenu setIsShowSidebar={setIsShowSidebar} />
     </div>
   );
 };
