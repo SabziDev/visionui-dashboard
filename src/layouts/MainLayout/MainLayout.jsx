@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutlet } from "react-router";
 
 import AnimatedOutlet from "../components/AnimatedOutlet/AnimatedOutlet";
@@ -14,6 +14,12 @@ const MainLayout = () => {
   const outlet = useOutlet();
 
   const { isPage404, isHideLayout } = useCurrentPageStatus();
+
+  useEffect(() => {
+    if (isShowSidebar) document.body.classList.add("overflow-hidden");
+
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isShowSidebar]);
 
   return (
     <>
