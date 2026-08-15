@@ -27,6 +27,7 @@ const staticPropertiesOrder = [
   "rel",
   "to",
   "replace",
+  "viewTransition",
 ];
 const eventHandlerOrder = ["onClick", "onChange", "onKeyUp"];
 
