@@ -106,7 +106,7 @@ pnpm dev
 | i18next                   | Multi-language support (Persian/English)             |
 | recharts                  | Data visualization charts                            |
 | react-indiana-drag-scroll | Drag-to-scroll functionality                         |
-| motion                    | navigation progress bar and more                     |
+| motion                    | Navigation progress bar and more                     |
 | react-loading-skeleton    | Skeleton loading placeholders                        |
 | react-spinners            | Loading spinners                                     |
 
