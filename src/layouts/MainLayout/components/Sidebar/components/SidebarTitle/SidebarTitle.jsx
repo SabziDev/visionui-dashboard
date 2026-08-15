@@ -6,7 +6,7 @@ const SidebarTitle = () => {
   const { t } = useTranslation();
 
   return (
-    <Link to="/" className="w-full">
+    <Link to="/" viewTransition className="w-full">
       <h1
         className={clsx([
           "mb-5 from-[#E0E1E2]/90 via-[#E0E1E2]/70 to-[#E0E1E2]/0 bg-clip-text text-center font-VazirBold tracking-ultra-wide text-transparent",

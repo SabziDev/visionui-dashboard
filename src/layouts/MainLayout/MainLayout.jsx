@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutlet } from "react-router";
 
-import AnimatedOutlet from "../components/AnimatedOutlet/AnimatedOutlet";
 import LayoutBase from "../components/LayoutBase";
 import useCurrentPageStatus from "../hooks/useCurrentPageStatus";
 import Bg from "./components/Bg/Bg";
@@ -10,10 +9,10 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 const MainLayout = () => {
-  const [isShowSidebar, setIsShowSidebar] = useState(false);
   const outlet = useOutlet();
+  const { isHideLayout } = useCurrentPageStatus();
 
-  const { isPage404, isHideLayout } = useCurrentPageStatus();
+  const [isShowSidebar, setIsShowSidebar] = useState(false);
 
   useEffect(() => {
     if (isShowSidebar) document.body.classList.add("overflow-hidden");
@@ -36,13 +35,12 @@ const MainLayout = () => {
           {!isHideLayout && <Header onShowSidebar={setIsShowSidebar} />}
 
           <main id="main-root" className="mt-7.5">
-            {isPage404 ? (
-              outlet
-            ) : (
-              <div className="container *:*:not-first:mt-6">
-                <AnimatedOutlet>{outlet}</AnimatedOutlet>
-              </div>
-            )}
+            <div
+              id="main-root__container"
+              className="container *:not-first:mt-6"
+            >
+              {outlet}
+            </div>
           </main>
 
           {!isHideLayout && <Footer />}
