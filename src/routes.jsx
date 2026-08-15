@@ -20,8 +20,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
         handle: {
-          pageTitle: "layouts.header.pagesTitle.dashboard",
-          pagePath: "dashboard",
+          breadcrumb: {
+            pageTitle: "layouts.header.pagesTitle.dashboard",
+            pagePath: "dashboard",
+          },
         },
       },
       {
@@ -37,8 +39,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageTitle: "layouts.header.pagesTitle.tables",
-          pagePath: "tables",
+          breadcrumb: {
+            pageTitle: "layouts.header.pagesTitle.tables",
+            pagePath: "tables",
+          },
         },
       },
 
@@ -50,8 +54,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageTitle: "layouts.header.pagesTitle.profile",
-          pagePath: "profile",
+          breadcrumb: {
+            pageTitle: "layouts.header.pagesTitle.profile",
+            pagePath: "profile",
+          },
         },
       },
     ],

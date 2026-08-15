@@ -7,12 +7,11 @@ import SearchInput from "./components/SearchInput/SearchInput";
 
 const Header = ({ onShowSidebar }) => {
   const urlMatches = useMatches();
+  const currentUrlMatch = urlMatches.at(-1);
 
   const { t } = useTranslation();
 
-  const currentUrlMatch = urlMatches.at(-1);
-
-  const { pageTitle, pagePath } = currentUrlMatch.handle ?? {};
+  const { pageTitle, pagePath } = currentUrlMatch.handle.breadcrumb ?? {};
 
   return (
     <header>
