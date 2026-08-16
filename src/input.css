@@ -70,7 +70,7 @@
     @apply outline-none placeholder:text-gray-400 transition-shadow focus:ring-2 focus:ring-blue fa:ltr fa:placeholder:text-right;
   }
   input:-webkit-autofill {
-    @apply [transition-property:color,background-color] duration-9999999;
+    @apply transition-[color,background-color] duration-9999999;
   }
   input[type="number"]::-webkit-inner-spin-button {
     @apply appearance-none;
