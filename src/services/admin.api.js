@@ -6,8 +6,8 @@ const getAdminApi = async ({ signal }) => {
   return res.data;
 };
 
-const updateAdminApi = async ({ data, adminId }) => {
-  const res = await api.patch(`/admins/${adminId}`, {
+const updateAdminApi = async ({ data, id }) => {
+  const res = await api.patch(`/admins/${id}`, {
     settings: data,
   });
 
