@@ -2,12 +2,12 @@ import { useTranslation } from "react-i18next";
 
 import Head from "@/pages/components/Head";
 
-import CarInfoSection from "./sections/CarInfoSection/CarInfoSection";
-import OverviewSection from "./sections/OverviewSection/OverviewSection";
-import PlatformSettingsSection from "./sections/PlatformSettingsSection/PlatformSettingsSection";
-import ProfileInfoSection from "./sections/ProfileInfoSection/ProfileInfoSection";
-import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
-import WelcomebackSection from "./sections/WelcomebackSection/WelcomebackSection";
+import CarInfoSection from "./sections/CarInfoSection/section";
+import OverviewSection from "./sections/OverviewSection/section";
+import PlatformSettingsSection from "./sections/PlatformSettingsSection/section";
+import ProfileInfoSection from "./sections/ProfileInfoSection/section";
+import ProjectsSection from "./sections/ProjectsSection/section";
+import WelcomebackSection from "./sections/WelcomebackSection/section";
 
 const Profile = () => {
   const { t } = useTranslation();
