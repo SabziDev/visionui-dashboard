@@ -1,7 +1,8 @@
 /* eslint-disable unicorn/no-top-level-side-effects */
 
-import { API_BASE_URL } from "@public/data/constants";
 import axios from "axios";
+
+import { API_BASE_URL } from "@/data/constants";
 
 import errorHandlers from "./errorHandlers/errorHandlers";
 

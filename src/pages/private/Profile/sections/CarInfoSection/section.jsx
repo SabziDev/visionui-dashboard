@@ -1,8 +1,8 @@
 /* eslint-disable @eslint-react/no-array-index-key */
 
-import stats from "@public/data/stats/stats";
 import ScrollContainer from "react-indiana-drag-scroll";
 
+import stats from "@/data/stats/stats";
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import useCounter from "@/pages/private/hooks/useCounter/useCounter";
 

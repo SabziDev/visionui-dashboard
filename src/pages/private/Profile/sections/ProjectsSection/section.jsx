@@ -1,8 +1,8 @@
 /* eslint-disable @eslint-react/no-array-index-key */
 
-import projects from "@public/data/projects/projects";
 import ScrollContainer from "react-indiana-drag-scroll";
 
+import projects from "@/data/projects/projects";
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 
 import ProjectsCard from "./components/ProjectsCard/ProjectsCard";
