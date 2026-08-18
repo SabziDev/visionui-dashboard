@@ -1,6 +1,8 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { getAdminApi, updateAdminApi } from "@/services/admin.api";
+
+import useUpdateCache from "../useUpdateCache";
 
 const useAdminQuery = () => {
   const queryKey = ["admins"];
@@ -14,24 +16,14 @@ const useAdminQuery = () => {
 };
 
 const useUpdateAdminMutation = () => {
-  const queryClient = useQueryClient();
-
   const queryKey = ["admins"];
+  const updateCache = useUpdateCache({ type: "UPDATE", queryKey });
 
   const { mutate: updateAdmin, ...rest } = useMutation({
-    mutationFn: ({ data, adminId }) => updateAdminApi({ data, adminId }),
+    mutationFn: ({ id, data }) => updateAdminApi({ id, data }),
 
-    onSuccess: (_, { data, adminId }) => {
-      queryClient.setQueryData(queryKey, (cachedAdmins) =>
-        cachedAdmins.map((admin) =>
-          admin.id === adminId
-            ? {
-                ...admin,
-                settings: data,
-              }
-            : admin,
-        ),
-      );
+    onSuccess: (_, { id, data }) => {
+      updateCache({ id, data: { settings: data } });
     },
   });
 
