@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useOutlet } from "react-router";
+
+import useToggle from "@/hooks/useToggle";
 
 import LayoutBase from "../components/LayoutBase";
 import useCurrentPageStatus from "../hooks/useCurrentPageStatus";
@@ -12,13 +14,13 @@ const MainLayout = () => {
   const outlet = useOutlet();
   const { isHideLayout } = useCurrentPageStatus();
 
-  const [isShowSidebar, setIsShowSidebar] = useState(false);
+  const [isSidebarOpen, toggleSidebar] = useToggle(false);
 
   useEffect(() => {
-    if (isShowSidebar) document.body.classList.add("overflow-hidden");
+    if (isSidebarOpen) document.body.classList.add("max-lg:overflow-hidden");
 
-    return () => document.body.classList.remove("overflow-hidden");
-  }, [isShowSidebar]);
+    return () => document.body.classList.remove("max-lg:overflow-hidden");
+  }, [isSidebarOpen]);
 
   return (
     <>
@@ -26,13 +28,10 @@ const MainLayout = () => {
       <Bg />
 
       <div className="flex">
-        <Sidebar
-          isShowSidebar={isShowSidebar}
-          setIsShowSidebar={setIsShowSidebar}
-        />
+        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
         <div className="mt-5.5 w-full overflow-hidden ltr en:ml-0 lg:en:ml-65 2xl:en:ml-70 fa:mr-0 lg:fa:mr-65 2xl:fa:mr-70">
-          {!isHideLayout && <Header onShowSidebar={setIsShowSidebar} />}
+          {!isHideLayout && <Header onShowSidebar={toggleSidebar} />}
 
           <main id="main-root" className="mt-7.5">
             <div

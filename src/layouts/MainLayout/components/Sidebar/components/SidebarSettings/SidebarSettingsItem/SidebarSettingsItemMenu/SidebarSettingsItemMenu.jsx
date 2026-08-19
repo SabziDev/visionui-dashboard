@@ -6,7 +6,7 @@ import SidebarSettingsItem from "../SidebarSettingsItem";
 import { IoLanguage } from "react-icons/io5";
 import { TbLogout } from "react-icons/tb";
 
-const SidebarSettingsItemMenu = ({ setIsShowSidebar }) => {
+const SidebarSettingsItemMenu = ({ toggleSidebar }) => {
   const { setAdminId } = use(AuthContext);
 
   const { i18n } = useTranslation();
@@ -18,7 +18,7 @@ const SidebarSettingsItemMenu = ({ setIsShowSidebar }) => {
         Icon={IoLanguage}
         onClick={() => {
           i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa");
-          setIsShowSidebar(false);
+          toggleSidebar(false);
         }}
       >
         <div>

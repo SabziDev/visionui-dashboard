@@ -1,12 +1,12 @@
 import SidebarSettingsItemMenu from "./SidebarSettingsItem/SidebarSettingsItemMenu/SidebarSettingsItemMenu";
 import SidebarSettingsItemTitle from "./SidebarSettingsItem/SidebarSettingsItemTitle/SidebarSettingsItemTitle";
 
-const SidebarSettings = ({ setIsShowSidebar }) => {
+const SidebarSettings = ({ toggleSidebar }) => {
   return (
     <div>
       <SidebarSettingsItemTitle />
 
-      <SidebarSettingsItemMenu setIsShowSidebar={setIsShowSidebar} />
+      <SidebarSettingsItemMenu toggleSidebar={toggleSidebar} />
     </div>
   );
 };

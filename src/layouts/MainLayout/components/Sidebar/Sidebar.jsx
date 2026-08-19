@@ -2,32 +2,30 @@ import clsx from "clsx";
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
+import Overlay from "@/components/Overlay/Overlay";
+
 import SidebarNav from "./components/SidebarNav/SidebarNav";
 import SidebarNeedHelp from "./components/SidebarNeedHelp/SidebarNeedHelp";
 import SidebarSettings from "./components/SidebarSettings/SidebarSettings";
 import SidebarTitle from "./components/SidebarTitle/SidebarTitle";
 
-const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
+const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
 
-  useEffect(
-    () => setIsShowSidebar(false),
-    [location.pathname, setIsShowSidebar],
-  );
+  useEffect(() => toggleSidebar(false), [location.pathname, toggleSidebar]);
 
   return (
     <>
-      {isShowSidebar && (
-        <span
-          onClick={() => setIsShowSidebar((state) => !state)}
-          className="fixed inset-0 z-99 h-screen bg-black/60 lg:hidden"
-        />
-      )}
+      <Overlay
+        isShow={isSidebarOpen}
+        onClose={toggleSidebar}
+        className="lg:hidden"
+      />
 
       <aside
         className={clsx([
-          "fixed z-100 m-2.5 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-300 2xl:w-70",
-          isShowSidebar
+          "fixed z-100 m-2.5 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-250 2xl:w-70",
+          isSidebarOpen
             ? "max-lg:translate-x-0 max-lg:opacity-100"
             : "max-lg:opacity-0 en:max-lg:-translate-x-full fa:max-lg:translate-x-full",
         ])}
@@ -38,7 +36,7 @@ const Sidebar = ({ isShowSidebar, setIsShowSidebar }) => {
           <SidebarNav />
 
           <div>
-            <SidebarSettings setIsShowSidebar={setIsShowSidebar} />
+            <SidebarSettings toggleSidebar={toggleSidebar} />
 
             <SidebarNeedHelp />
           </div>

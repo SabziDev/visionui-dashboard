@@ -13,10 +13,11 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import { i18n } from "./i18n";
 
+const FIVE_MINUTES = 1000 * 60 * 5;
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5,
+      staleTime: FIVE_MINUTES,
     },
   },
 

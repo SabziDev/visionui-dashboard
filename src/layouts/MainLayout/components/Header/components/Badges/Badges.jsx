@@ -15,10 +15,7 @@ const Badges = ({ onShowSidebar }) => {
       <div className="flex-center gap-x-4 text-gray-500 *:cursor-pointer">
         <IoNotificationsSharp className="size-5" />
         <IoMdSettings className="hidden size-5 lg:block" />
-        <IoMenu
-          onClick={() => onShowSidebar((state) => !state)}
-          className="size-10! lg:hidden"
-        />
+        <IoMenu onClick={onShowSidebar} className="size-10! lg:hidden" />
       </div>
     </>
   );

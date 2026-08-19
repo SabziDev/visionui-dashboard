@@ -1,3 +1,4 @@
+/* eslint-disable max-depth */
 /* eslint-disable unicorn/consistent-function-scoping */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable complexity */
@@ -95,8 +96,31 @@ const noInvalidIdAndClassNameValue = {
                   if (result) {
                     ({ invalidValue, index: invalidElementIndex } = result);
                   }
-                  if (arg.elements.length === 1 && !invalidValue) {
-                    invalidValue = "single-item-array";
+                  if (
+                    isArrayExpression &&
+                    expression.type === "CallExpression" &&
+                    expression.callee.name === "clsx"
+                  ) {
+                    const clsxArg = expression.arguments[0];
+
+                    if (
+                      clsxArg?.type === "ArrayExpression" &&
+                      clsxArg.elements.length === 1 &&
+                      clsxArg.elements[0]?.type === "Literal"
+                    ) {
+                      context.report({
+                        data: { value: "single-item-array", attribute },
+                        node,
+                        messageId: "singleItemArray",
+                        fix: (fixer) =>
+                          fixer.replaceText(
+                            node.value,
+                            `{${clsxArg.elements[0].raw}}`,
+                          ),
+                      });
+
+                      return;
+                    }
                   }
                 } else if (arg.type === "Literal" && arg.value === "") {
                   invalidValue = "empty";
