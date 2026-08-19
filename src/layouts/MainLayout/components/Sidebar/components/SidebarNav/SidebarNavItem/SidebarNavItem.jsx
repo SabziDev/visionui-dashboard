@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { NavLink } from "react-router";
 
-const SidebarNavItem = ({ children, to, Icon }) => {
+const SidebarNavItem = ({ children, to, Icon, onCloseSidebar }) => {
   return (
-    <li className="w-full">
+    <li onClick={onCloseSidebar} className="w-full">
       <NavLink
         to={to}
         viewTransition

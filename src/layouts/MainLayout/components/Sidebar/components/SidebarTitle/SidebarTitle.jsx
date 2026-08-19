@@ -2,11 +2,11 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
-const SidebarTitle = () => {
+const SidebarTitle = ({ onCloseSidebar }) => {
   const { t } = useTranslation();
 
   return (
-    <Link to="/" viewTransition className="w-full">
+    <Link to="/" viewTransition onClick={onCloseSidebar} className="w-full">
       <h1
         className={clsx([
           "mb-5 from-[#E0E1E2]/90 via-[#E0E1E2]/70 to-[#E0E1E2]/0 bg-clip-text text-center font-VazirBold tracking-ultra-wide text-transparent",

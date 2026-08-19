@@ -1,6 +1,4 @@
 import clsx from "clsx";
-import { useEffect } from "react";
-import { useLocation } from "react-router";
 
 import Overlay from "@/components/Overlay/Overlay";
 
@@ -10,10 +8,6 @@ import SidebarSettings from "./components/SidebarSettings/SidebarSettings";
 import SidebarTitle from "./components/SidebarTitle/SidebarTitle";
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
-  const location = useLocation();
-
-  useEffect(() => toggleSidebar(false), [location.pathname, toggleSidebar]);
-
   return (
     <>
       <Overlay
@@ -30,10 +24,10 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             : "max-lg:opacity-0 en:max-lg:-translate-x-full fa:max-lg:translate-x-full",
         ])}
       >
-        <SidebarTitle />
+        <SidebarTitle onCloseSidebar={toggleSidebar} />
 
         <div className="mt-5.5 flex-justify-center size-full flex-col justify-between gap-10 overflow-x-hidden overflow-y-auto px-2">
-          <SidebarNav />
+          <SidebarNav onCloseSidebar={toggleSidebar} />
 
           <div>
             <SidebarSettings toggleSidebar={toggleSidebar} />
