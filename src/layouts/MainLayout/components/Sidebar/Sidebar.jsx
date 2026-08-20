@@ -7,11 +7,11 @@ import SidebarNeedHelp from "./components/SidebarNeedHelp/SidebarNeedHelp";
 import SidebarSettings from "./components/SidebarSettings/SidebarSettings";
 import SidebarTitle from "./components/SidebarTitle/SidebarTitle";
 
-const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
+const Sidebar = ({ isShowSidebar, toggleSidebar }) => {
   return (
     <>
       <Overlay
-        isShow={isSidebarOpen}
+        isShow={isShowSidebar}
         onClose={toggleSidebar}
         className="lg:hidden"
       />
@@ -19,7 +19,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       <aside
         className={clsx([
           "fixed z-100 m-2.5 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-250 2xl:w-70",
-          isSidebarOpen
+          isShowSidebar
             ? "max-lg:translate-x-0 max-lg:opacity-100"
             : "max-lg:opacity-0 en:max-lg:-translate-x-full fa:max-lg:translate-x-full",
         ])}
