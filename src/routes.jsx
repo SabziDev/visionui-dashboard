@@ -45,7 +45,6 @@ const router = createBrowserRouter([
           },
         },
       },
-
       {
         path: "profile",
         element: (
@@ -62,18 +61,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/signin",
     element: <Signin />,
   },
 
   {
-    path: "*",
+    path: "/*",
     element: <NotFound />,
-    handle: {
-      isHideLayout: true,
-    },
   },
 ]);
 
