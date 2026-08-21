@@ -76,7 +76,6 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
-
     handle: {
       pageMeta: {
         title: "pagesMeta.notFound.title",
@@ -88,7 +87,6 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFound />,
-
     handle: {
       pageMeta: {
         title: "pagesMeta.notFound.title",
