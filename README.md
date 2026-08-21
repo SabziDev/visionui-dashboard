@@ -55,9 +55,9 @@ src/
 ├── services/
 ├── validators/
 ├── contexts/
+├── i18n/
 ├── layouts/
 ├── pages/
-├── i18n/
 ├── input.css
 └── routes.jsx
 ```
