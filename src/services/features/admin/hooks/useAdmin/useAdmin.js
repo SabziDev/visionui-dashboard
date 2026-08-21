@@ -1,12 +1,12 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
-import { getAdminApi, updateAdminApi } from "@/services/admin.api";
+import useUpdateCache from "@/services/hooks/useUpdateCache";
 
-import useUpdateCache from "../useUpdateCache";
+import { getAdminApi, updateAdminApi } from "../../admin.api";
+
+const queryKey = ["admins"];
 
 const useAdminQuery = () => {
-  const queryKey = ["admins"];
-
   const { data: admins, ...rest } = useQuery({
     queryKey,
     queryFn: ({ signal }) => getAdminApi({ signal }),
@@ -16,7 +16,6 @@ const useAdminQuery = () => {
 };
 
 const useUpdateAdminMutation = () => {
-  const queryKey = ["admins"];
   const updateCache = useUpdateCache({ type: "UPDATE", queryKey });
 
   const { mutate: updateAdmin, ...rest } = useMutation({

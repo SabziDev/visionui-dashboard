@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getProjectsApi } from "@/services/projects.api";
+import { getProjectsApi } from "../../projects.api";
+
+const queryKey = ["projects"];
 
 const useProjectsQuery = () => {
-  const queryKey = ["projects"];
-
   const { data: projects, ...rest } = useQuery({
     queryKey,
     queryFn: ({ signal }) => getProjectsApi({ signal }),

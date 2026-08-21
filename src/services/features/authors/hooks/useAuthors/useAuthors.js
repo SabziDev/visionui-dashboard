@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getAuthorsApi } from "@/services/authors.api";
+import { getAuthorsApi } from "../../authors.api";
+
+const queryKey = ["authors"];
 
 const useAuthorsQuery = () => {
-  const queryKey = ["authors"];
-
   const { data: authors, ...rest } = useQuery({
     queryKey,
     queryFn: ({ signal }) => getAuthorsApi({ signal }),

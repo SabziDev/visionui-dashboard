@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getStatsApi } from "@/services/stats.api";
+import { getStatsApi } from "../../stats.api";
+
+const queryKey = ["stats"];
 
 const useStatsQuery = () => {
-  const queryKey = ["stats"];
-
   const { data: stats, ...rest } = useQuery({
     queryKey,
     queryFn: ({ signal }) => getStatsApi({ signal }),
