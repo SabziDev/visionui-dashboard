@@ -86,7 +86,6 @@ const config = defineConfig(
 
   {
     files: ["src/routes.{jsx,tsx}"],
-
     rules: {
       "react-refresh/only-export-components": "off",
 
