@@ -1,19 +1,12 @@
-import { useTranslation } from "react-i18next";
-
-import Head from "@/pages/components/Head";
+import Head from "@/layouts/components/Head";
 
 import ProjectsTableSection from "../sections/ProjectsTableSection/section";
 import AuthorsTableSection from "./sections/AuthorsTableSection/section";
 
 const Tables = () => {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Head>
-        <title>{t("pagesMeta.tables.title")}</title>
-        <meta name="description" content={t("pagesMeta.tables.desc")} />
-      </Head>
+      <Head />
 
       <div className="space-y-6 fa:rtl">
         <AuthorsTableSection />

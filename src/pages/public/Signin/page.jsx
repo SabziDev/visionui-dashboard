@@ -4,7 +4,7 @@ import { Navigate } from "react-router";
 
 import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
-import Head from "@/pages/components/Head";
+import Head from "@/layouts/components/Head";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
 
@@ -24,10 +24,7 @@ const Signin = () => {
     <Navigate to="/" replace />
   ) : (
     <>
-      <Head>
-        <title>{t("pagesMeta.signin.title")}</title>
-        <meta name="description" content={t("pagesMeta.signin.desc")} />
-      </Head>
+      <Head />
 
       <div className="fixed inset-0 flex-justify-center gap-x-0 bg-navy 2xl:gap-x-25">
         <div className="relative w-1/2 max-lg:hidden">

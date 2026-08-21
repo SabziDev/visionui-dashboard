@@ -1,17 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
-import Head from "../components/Head";
+import Head from "@/layouts/components/Head";
 
 const NotFound = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <Head>
-        <title>{t("pagesMeta.notFound.title")}</title>
-        <meta name="description" content={t("pagesMeta.notFound.desc")} />
-      </Head>
+      <Head />
 
       <div
         className="fixed inset-0 z-9999 flex-center flex-col overflow-hidden px-4 text-center select-none"

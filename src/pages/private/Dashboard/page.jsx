@@ -1,6 +1,4 @@
-import { useTranslation } from "react-i18next";
-
-import Head from "@/pages/components/Head";
+import Head from "@/layouts/components/Head";
 
 import ProjectsTableSection from "../sections/ProjectsTableSection/section";
 import ActiveUsersSection from "./sections/ActiveUsersSection/section";
@@ -9,14 +7,9 @@ import SalesOverviewSection from "./sections/SalesOverviewSection/section";
 import ToadyStatsSection from "./sections/ToadyStatsSection/section";
 
 const Dashboard = () => {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Head>
-        <title>{t("pagesMeta.dashboard.title")}</title>
-        <meta name="description" content={t("pagesMeta.dashboard.desc")} />
-      </Head>
+      <Head />
 
       <ToadyStatsSection />
       <OverviewSection />

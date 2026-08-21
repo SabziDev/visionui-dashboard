@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
         handle: {
+          pageMeta: {
+            title: "pagesMeta.dashboard.title",
+            desc: "pagesMeta.dashboard.desc",
+          },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.dashboard",
             pagePath: "dashboard",
@@ -39,6 +43,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
+          pageMeta: {
+            title: "pagesMeta.tables.title",
+            desc: "pagesMeta.tables.desc",
+          },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.tables",
             pagePath: "tables",
@@ -53,6 +61,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
+          pageMeta: {
+            title: "pagesMeta.profile.title",
+            desc: "pagesMeta.profile.desc",
+          },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.profile",
             pagePath: "profile",
@@ -64,11 +76,25 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
+
+    handle: {
+      pageMeta: {
+        title: "pagesMeta.notFound.title",
+        desc: "pagesMeta.notFound.desc",
+      },
+    },
   },
 
   {
     path: "*",
     element: <NotFound />,
+
+    handle: {
+      pageMeta: {
+        title: "pagesMeta.notFound.title",
+        desc: "pagesMeta.notFound.desc",
+      },
+    },
   },
 ]);
 
