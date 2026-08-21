@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
 import Preloader from "./components/Preloader/Preloader";
+import pagesMeta from "./data/pages-meta/pages-meta";
 import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
@@ -20,10 +21,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
         handle: {
-          pageMeta: {
-            title: "pagesMeta.dashboard.title",
-            desc: "pagesMeta.dashboard.desc",
-          },
+          pageMeta: { ...pagesMeta.dashboard },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.dashboard",
             pagePath: "dashboard",
@@ -43,10 +41,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageMeta: {
-            title: "pagesMeta.tables.title",
-            desc: "pagesMeta.tables.desc",
-          },
+          pageMeta: { ...pagesMeta.tables },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.tables",
             pagePath: "tables",
@@ -61,10 +56,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageMeta: {
-            title: "pagesMeta.profile.title",
-            desc: "pagesMeta.profile.desc",
-          },
+          pageMeta: { ...pagesMeta.profile },
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.profile",
             pagePath: "profile",
@@ -73,14 +65,12 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/signin",
     element: <Signin />,
     handle: {
-      pageMeta: {
-        title: "pagesMeta.notFound.title",
-        desc: "pagesMeta.notFound.desc",
-      },
+      pageMeta: { ...pagesMeta.signin },
     },
   },
 
@@ -88,10 +78,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
     handle: {
-      pageMeta: {
-        title: "pagesMeta.notFound.title",
-        desc: "pagesMeta.notFound.desc",
-      },
+      pageMeta: { ...pagesMeta.notFound },
     },
   },
 ]);

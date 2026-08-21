@@ -1,11 +1,13 @@
 import { useTranslation } from "react-i18next";
 
+import pagesMeta from "@/data/pages-meta/pages-meta";
+
 const NotFoundDesc = () => {
   const { t } = useTranslation();
 
   return (
     <p className="mb-8 max-w-md text-lg text-gray-300">
-      {t("pagesMeta.notFound.desc")}
+      {t(pagesMeta.notFound.desc)}
     </p>
   );
 };
