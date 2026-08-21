@@ -29,7 +29,7 @@ clean and responsive user interface.
 
 - Authentication
 - Displaying data with interactive charts
-- Dual-language panel
+- Dual-language panel (EN/FA)
 - Skeleton UI Display States
 - Fully responsive design
 
@@ -94,22 +94,22 @@ pnpm dev
 
 ## 📦 Dependencies
 
-| Package                   | Description                              |
-| :------------------------ | :--------------------------------------- |
-| react                     | Core UI library                          |
-| tailwind                  | CSS framework                            |
-| react-router              | Client-side routing                      |
-| tanstack-query            | Server-state management & caching        |
-| axios                     | HTTP API client                          |
-| zod                       | Schema validation                        |
-| react-hook-form           | Form handling & validation               |
-| react-hot-toast           | Toast notifications                      |
-| i18next                   | Multi-language support (Persian/English) |
-| recharts                  | Data visualization charts                |
-| react-indiana-drag-scroll | Drag-to-scroll functionality             |
-| motion                    | Navigation progress bar and more         |
-| react-loading-skeleton    | Skeleton loading placeholders            |
-| react-spinners            | Loading spinners                         |
+| Package                   | Description                       |
+| :------------------------ | :-------------------------------- |
+| react                     | Core UI library                   |
+| tailwind                  | CSS framework                     |
+| react-router              | Client-side routing               |
+| tanstack-query            | Server-state management & caching |
+| axios                     | HTTP API client                   |
+| zod                       | Schema validation                 |
+| react-hook-form           | Form handling & validation        |
+| react-hot-toast           | Toast notifications               |
+| i18next                   | Multi-language support            |
+| recharts                  | Data visualization charts         |
+| react-indiana-drag-scroll | Drag-to-scroll functionality      |
+| motion                    | Animation library                 |
+| react-loading-skeleton    | Skeleton loading placeholders     |
+| react-spinners            | Loading spinners                  |
 
 ---
 
