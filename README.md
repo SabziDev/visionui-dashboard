@@ -49,16 +49,17 @@ clean and responsive user interface.
 
 ```text
 src/
+├── data/
 ├── components/
-├── contexts/
 ├── hooks/
-├── i18n/
-├── layouts/
-├── pages/
 ├── services/
 ├── validators/
-├── routes.jsx
-└── input.css
+├── contexts/
+├── layouts/
+├── pages/
+├── i18n/
+├── input.css
+└── routes.jsx
 ```
 
 ---
