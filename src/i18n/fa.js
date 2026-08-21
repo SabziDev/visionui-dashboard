@@ -1,12 +1,12 @@
 const fa = {
   words: {
+    min: " دقیقه",
     toast: "عملیات با موفقیت انجام شد",
     overview: "نمای کلی",
     h: " ساعت و",
-    min: " دقیقه",
   },
 
-  pagesMeta: {
+  pagesSeo: {
     dashboard: {
       title: "داشبورد Visionui",
       desc: "یک داشبورد برای مدیریت کسب و کار",

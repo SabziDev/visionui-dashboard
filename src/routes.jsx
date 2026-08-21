@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
 import Preloader from "./components/Preloader/Preloader";
-import pagesMeta from "./data/pages-meta/pages-meta";
+import pagesSeo from "./data/pagesSeo/pagesSeo";
 import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
         handle: {
-          pageMeta: { ...pagesMeta.dashboard },
+          seo: pagesSeo.dashboard,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.dashboard",
             pagePath: "dashboard",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageMeta: { ...pagesMeta.tables },
+          seo: pagesSeo.tables,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.tables",
             pagePath: "tables",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          pageMeta: { ...pagesMeta.profile },
+          seo: pagesSeo.profile,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.profile",
             pagePath: "profile",
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
     path: "/signin",
     element: <Signin />,
     handle: {
-      pageMeta: { ...pagesMeta.signin },
+      seo: pagesSeo.signin,
     },
   },
 
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
     handle: {
-      pageMeta: { ...pagesMeta.notFound },
+      seo: pagesSeo.notFound,
     },
   },
 ]);

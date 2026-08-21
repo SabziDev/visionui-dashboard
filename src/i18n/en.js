@@ -1,12 +1,12 @@
 const en = {
   words: {
+    min: "min",
     toast: "Operation completed successfully",
     overview: "OVERVIEW",
     h: "h",
-    min: "min",
   },
 
-  pagesMeta: {
+  pagesSeo: {
     dashboard: {
       title: "Visionui-Dashboard",
       desc: "A dashboard for manage business",
