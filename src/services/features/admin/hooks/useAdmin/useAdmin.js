@@ -9,7 +9,7 @@ const queryKey = ["admins"];
 const useAdminQuery = () => {
   const { data: admins, ...rest } = useQuery({
     queryKey,
-    queryFn: ({ signal }) => getAdminApi({ signal }),
+    queryFn: ({ signal }) => getAdminApi(signal),
   });
 
   return { admin: admins?.[0], ...rest };

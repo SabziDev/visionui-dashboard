@@ -7,7 +7,7 @@ const queryKey = ["authors"];
 const useAuthorsQuery = () => {
   const { data: authors, ...rest } = useQuery({
     queryKey,
-    queryFn: ({ signal }) => getAuthorsApi({ signal }),
+    queryFn: ({ signal }) => getAuthorsApi(signal),
   });
 
   return { authors, ...rest };

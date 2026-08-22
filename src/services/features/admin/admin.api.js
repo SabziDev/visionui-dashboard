@@ -1,7 +1,9 @@
 import api from "@/services/axios/api.instance";
 
-const getAdminApi = async ({ signal }) => {
-  const res = await api.get("/admins", { signal });
+const getAdminApi = async (signal) => {
+  const res = await api.get("/admins", {
+    signal,
+  });
 
   return res.data;
 };

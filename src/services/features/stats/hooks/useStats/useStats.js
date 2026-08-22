@@ -7,7 +7,7 @@ const queryKey = ["stats"];
 const useStatsQuery = () => {
   const { data: stats, ...rest } = useQuery({
     queryKey,
-    queryFn: ({ signal }) => getStatsApi({ signal }),
+    queryFn: ({ signal }) => getStatsApi(signal),
   });
 
   return { stats, ...rest };

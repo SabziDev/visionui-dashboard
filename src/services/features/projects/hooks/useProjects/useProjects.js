@@ -7,7 +7,7 @@ const queryKey = ["projects"];
 const useProjectsQuery = () => {
   const { data: projects, ...rest } = useQuery({
     queryKey,
-    queryFn: ({ signal }) => getProjectsApi({ signal }),
+    queryFn: ({ signal }) => getProjectsApi(signal),
   });
 
   return { projects, ...rest };
