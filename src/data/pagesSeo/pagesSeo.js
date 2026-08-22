@@ -13,8 +13,8 @@ const pagesSeo = {
   },
 
   signin: {
-    title: "pagesSeo.notFound.title",
-    desc: "pagesSeo.notFound.desc",
+    title: "pagesSeo.signin.title",
+    desc: "pagesSeo.signin.desc",
   },
 
   notFound: {

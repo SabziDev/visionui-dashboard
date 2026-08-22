@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import Preloader from "./components/Preloader/Preloader";
 import pagesSeo from "./data/pagesSeo/pagesSeo";
+import Preloader from "./layouts/components/Preloader/Preloader";
 import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
@@ -77,6 +77,11 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
+    hydrateFallbackElement: <Preloader />,
+    errorElement: <AppLoadError />,
+    loader: async () => {
+      await queryClient.prefetchQuery(adminsQueryOpts);
+    },
     handle: {
       seo: pagesSeo.signin,
     },
