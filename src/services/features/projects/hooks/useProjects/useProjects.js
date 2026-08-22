@@ -6,7 +6,7 @@ const queryKey = ["projects"];
 
 const projectsQueryOpts = {
   queryKey,
-  queryFn: ({ signal }) => getProjectsApi(signal),
+  queryFn: getProjectsApi,
 };
 
 const useProjectsQuery = () => {

@@ -6,7 +6,7 @@ const queryKey = ["stats"];
 
 const statsQueryOpts = {
   queryKey,
-  queryFn: ({ signal }) => getStatsApi(signal),
+  queryFn: getStatsApi,
 };
 
 const useStatsQuery = () => {

@@ -10,10 +10,10 @@ const queryKey = ["admins"];
 
 export const adminsQueryOpts = {
   queryKey,
-  queryFn: ({ signal }) => getAdminApi(signal),
+  queryFn: getAdminApi,
 };
 const adminUpdateOpts = {
-  mutationFn: ({ id, data }) => updateAdminApi({ id, data }),
+  mutationFn: updateAdminApi,
 
   onSuccess: (_, { id, data }) =>
     updateCache({ type: "UPDATE", queryKey, payload: { id, data } }),
