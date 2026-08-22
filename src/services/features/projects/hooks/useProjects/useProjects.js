@@ -4,11 +4,13 @@ import { getProjectsApi } from "../../projects.api";
 
 const queryKey = ["projects"];
 
+const projectsQueryOpts = {
+  queryKey,
+  queryFn: ({ signal }) => getProjectsApi(signal),
+};
+
 const useProjectsQuery = () => {
-  const { data: projects, ...rest } = useQuery({
-    queryKey,
-    queryFn: ({ signal }) => getProjectsApi(signal),
-  });
+  const { data: projects, ...rest } = useQuery(projectsQueryOpts);
 
   return { projects, ...rest };
 };

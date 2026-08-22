@@ -7,6 +7,9 @@ import PrivateRoute from "./layouts/PrivateRoute";
 import NotFound from "./pages/NotFound/page";
 import Dashboard from "./pages/private/Dashboard/page";
 import Signin from "./pages/public/Signin/page";
+import AppLoadError from "./services/components/AppLoadError/AppLoadError";
+import { adminsQueryOpts } from "./services/features/admin/hooks/useAdmin/useAdmin";
+import queryClient from "./services/queryClient";
 
 const Profile = lazy(() => import("./pages/private/Profile/page"));
 const Tables = lazy(() => import("./pages/private/Tables/page"));
@@ -15,6 +18,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <PrivateRoute />,
+    hydrateFallbackElement: <Preloader />,
+    errorElement: <AppLoadError />,
+    loader: async () => {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 5000);
+      });
+
+      await queryClient.prefetchQuery(adminsQueryOpts);
+    },
 
     children: [
       {

@@ -1,19 +1,14 @@
 import { use } from "react";
 import { Navigate } from "react-router";
 
-import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
-import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const { admin, isPending, isError } = useAdminQuery();
+  const { admin } = useAdminQuery();
   const { adminId } = use(AuthContext);
-
-  if (isPending) return <Preloader />;
-  if (isError) return <AppLoadError />;
 
   return adminId === admin.id ? (
     <MainLayout />
