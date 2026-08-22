@@ -2,9 +2,11 @@
 
 import queryClient from "../queryClient";
 
-const updateCachedItem = (queryKey, { id, data }) => {
+const updateCachedItem = (queryKey, payload) => {
   queryClient.setQueryData(queryKey, (oldData) =>
-    oldData.map((item) => (item.id === id ? { ...item, ...data } : item)),
+    oldData.map((item) =>
+      item.id === payload.id ? { ...item, ...payload.data } : item,
+    ),
   );
 };
 
