@@ -1,4 +1,4 @@
-import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
+import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import WelcomebackBg from "./components/WelcomebackBg/WelcomebackBg";
 import WelcomebackBtn from "./components/WelcomebackBtn/WelcomebackBtn";

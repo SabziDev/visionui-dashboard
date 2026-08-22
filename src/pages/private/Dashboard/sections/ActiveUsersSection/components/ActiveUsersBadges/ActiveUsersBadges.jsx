@@ -1,6 +1,6 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import { useStatsQuery } from "@/services/hooks/useStats/useStats";
+import { useStatsQuery } from "@/services/features/stats/hooks/useStats/useStats";
 
 import ActiveUsersBadge from "./ActiveUsersBadge/ActiveUsersBadge";
 import ActiveUsersBadgesSkeleton from "./ActiveUsersBadgesSkeleton";
@@ -11,7 +11,7 @@ const ActiveUsersBadges = () => {
   if (isPending) return <ActiveUsersBadgesSkeleton />;
 
   return (
-    <ScrollContainer className="flex-items-center fa:rtl justify-between gap-6">
+    <ScrollContainer className="flex-items-center justify-between gap-6 fa:rtl">
       {stats.generalData.map((stat) => (
         <ActiveUsersBadge key={stat.id} data={stat} />
       ))}

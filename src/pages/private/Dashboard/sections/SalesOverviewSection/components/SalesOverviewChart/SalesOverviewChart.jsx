@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { useStatsQuery } from "@/services/hooks/useStats/useStats";
+import { useStatsQuery } from "@/services/features/stats/hooks/useStats/useStats";
 
 import ChartTooltip from "./ChartTooltip/ChartTooltip";
 import SalesOverviewChartSkeleton from "./SalesOverviewChartSkeleton";

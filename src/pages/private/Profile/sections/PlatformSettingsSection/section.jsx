@@ -1,5 +1,5 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
-import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
+import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import SettingsGroup from "./components/SettingsGroup/SettingsGroup";
 

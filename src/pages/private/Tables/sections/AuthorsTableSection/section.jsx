@@ -1,6 +1,6 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import Table from "@/pages/private/components/Table/Table";
-import { useAuthorsQuery } from "@/services/hooks/useAuthors/useAuthors";
+import { useAuthorsQuery } from "@/services/features/authors/hooks/useAuthors/useAuthors";
 
 const AuthorsTableSection = () => {
   const { authors, isPending } = useAuthorsQuery();

@@ -4,7 +4,7 @@ import { Navigate } from "react-router";
 import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
-import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
+import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import MainLayout from "./MainLayout/MainLayout";
 

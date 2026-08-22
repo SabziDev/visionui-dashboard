@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { LuBox } from "react-icons/lu";
 
-import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
+import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import OverviewProfile from "./components/OverviewProfile/OverviewProfile";
 

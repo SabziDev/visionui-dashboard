@@ -6,7 +6,7 @@ import Preloader from "@/components/Preloader/Preloader";
 import AuthContext from "@/contexts/Auth";
 import Head from "@/layouts/components/Head";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
-import { useAdminQuery } from "@/services/hooks/useAdmin/useAdmin";
+import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";

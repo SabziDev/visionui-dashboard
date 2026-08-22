@@ -1,7 +1,7 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import TableTitleMoreBtn from "@/pages/private/components/Table/components/TableTitleMoreBtn/TableTitleMoreBtn";
 import Table from "@/pages/private/components/Table/Table";
-import { useProjectsQuery } from "@/services/hooks/useProjects/useProjects";
+import { useProjectsQuery } from "@/services/features/projects/hooks/useProjects/useProjects";
 
 const ProjectsTableSection = ({ isShowMoreBtn = false }) => {
   const { projects, isPending } = useProjectsQuery();
