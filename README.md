@@ -69,13 +69,7 @@ src/
 Clone the repository:
 
 ```bash
-git clone https://github.com/SabziDev/visionui-dashboard.git
-```
-
-Go to the project folder:
-
-```bash
-cd visionui-dashboard
+git clone https://github.com/SabziDev/visionui-dashboard.git .
 ```
 
 Install dependencies:
