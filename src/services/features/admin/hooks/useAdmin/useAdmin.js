@@ -1,6 +1,11 @@
 /* eslint-disable @stylistic/padding-line-between-statements */
 
-import { useMutation, useQuery } from "@tanstack/react-query";
+import {
+  mutationOptions,
+  queryOptions,
+  useMutation,
+  useQuery,
+} from "@tanstack/react-query";
 
 import updateCache from "@/services/hooks/updateCache";
 
@@ -8,16 +13,16 @@ import { getAdminApi, updateAdminApi } from "../../admin.api";
 
 const queryKey = ["admins"];
 
-export const adminsQueryOpts = {
+export const adminsQueryOpts = queryOptions({
   queryKey,
   queryFn: getAdminApi,
-};
-const adminUpdateOpts = {
+});
+const adminUpdateOpts = mutationOptions({
   mutationFn: updateAdminApi,
-
-  onSuccess: (_, { id, data }) =>
-    updateCache({ type: "UPDATE", queryKey, payload: { id, data } }),
-};
+  onSuccess: (_, { id, data }) => {
+    updateCache({ type: "UPDATE", queryKey, payload: { id, data } });
+  },
+});
 
 const useAdminQuery = () => {
   const { data: admins, ...rest } = useQuery(adminsQueryOpts);
