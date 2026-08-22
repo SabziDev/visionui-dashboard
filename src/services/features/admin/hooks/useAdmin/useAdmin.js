@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
-import useUpdateCache from "@/services/hooks/useUpdateCache";
+import updateCache from "@/services/hooks/updateCache";
 
 import { getAdminApi, updateAdminApi } from "../../admin.api";
 
@@ -16,14 +16,11 @@ const useAdminQuery = () => {
 };
 
 const useUpdateAdminMutation = () => {
-  const updateCache = useUpdateCache({ type: "UPDATE", queryKey });
-
   const { mutate: updateAdmin, ...rest } = useMutation({
     mutationFn: ({ id, data }) => updateAdminApi({ id, data }),
 
-    onSuccess: (_, { id, data }) => {
-      updateCache({ id, data: { settings: data } });
-    },
+    onSuccess: (_, payload) =>
+      updateCache({ type: "UPDATE", queryKey, payload }),
   });
 
   return { updateAdmin, ...rest };

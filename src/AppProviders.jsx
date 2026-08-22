@@ -1,42 +1,13 @@
-/* eslint-disable unicorn/no-global-object-property-assignment */
-
-import {
-  MutationCache,
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-import toast, { Toaster } from "react-hot-toast";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { i18n } from "./i18n";
-
-const FIVE_MINUTES = 1000 * 60 * 5;
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: FIVE_MINUTES,
-    },
-  },
-
-  queryCache: new QueryCache({
-    onError: (err) =>
-      err.customFlags?.isShowToast !== false &&
-      toast.error(i18n.t(err.message)),
-  }),
-  mutationCache: new MutationCache({
-    onError: (err) =>
-      err.customFlags?.isShowToast !== false &&
-      toast.error(i18n.t(err.message)),
-    onSuccess: () => toast.success(i18n.t("words.toast")),
-  }),
-});
-window.__TANSTACK_QUERY_CLIENT__ = queryClient;
+import queryClient from "./services/queryClient";
 
 const AppProviders = ({ children }) => {
-  const { i18n: i18next } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -44,7 +15,7 @@ const AppProviders = ({ children }) => {
         baseColor="#4B5563"
         highlightColor="#6B7280"
         borderRadius={16}
-        direction={i18next.dir()}
+        direction={i18n.dir()}
         duration={2.2}
       >
         <Toaster
