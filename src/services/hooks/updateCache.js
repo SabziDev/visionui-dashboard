@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+
 import queryClient from "../queryClient";
 
 const updateCachedItem = (queryKey, { id, data }) => {
@@ -10,10 +12,6 @@ const updateCache = ({ type, queryKey, payload }) => {
   switch (type) {
     case "UPDATE": {
       updateCachedItem(queryKey, payload);
-      break;
-    }
-
-    default: {
       break;
     }
   }
