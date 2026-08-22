@@ -21,10 +21,6 @@ const router = createBrowserRouter([
     hydrateFallbackElement: <Preloader />,
     errorElement: <AppLoadError />,
     loader: async () => {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 5000);
-      });
-
       await queryClient.prefetchQuery(adminsQueryOpts);
     },
 
