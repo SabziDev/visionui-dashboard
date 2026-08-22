@@ -1,3 +1,5 @@
+/* eslint-disable @stylistic/padding-line-between-statements */
+
 import api from "@/services/axios/api.instance";
 
 const getAdminApi = async (signal) => {
@@ -7,7 +9,6 @@ const getAdminApi = async (signal) => {
 
   return res.data;
 };
-
 const updateAdminApi = async ({ id, data }) => {
   const res = await api.patch(`/admins/${id}`, {
     settings: data,

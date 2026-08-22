@@ -12,6 +12,7 @@ const updateCache = ({ type, queryKey, payload }) => {
   switch (type) {
     case "UPDATE": {
       updateCachedItem(queryKey, payload);
+
       break;
     }
   }
