@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 
-import useCurrentRouteMeta from "../hooks/useCurrentRouteMeta";
+import useCurrentRouteHandle from "../hooks/useCurrentRouteHandle";
 
 const Head = () => {
-  const { title, desc } = useCurrentRouteMeta("seo");
+  const { title, desc } = useCurrentRouteHandle("seo");
 
   const { t } = useTranslation();
 

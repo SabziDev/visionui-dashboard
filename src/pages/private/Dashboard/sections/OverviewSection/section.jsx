@@ -1,6 +1,6 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import stats from "@/data/stats/stats";
+import stats from "@/data/features/stats/stats";
 
 import ReferralTracking from "./components/ReferralTracking/ReferralTracking";
 import SatisfactionRate from "./components/SatisfactionRate/SatisfactionRate";

@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 
-import useCurrentRouteMeta from "@/layouts/hooks/useCurrentRouteMeta";
+import useCurrentRouteHandle from "@/layouts/hooks/useCurrentRouteHandle";
 
 import Badges from "./components/Badges/Badges";
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 import SearchInput from "./components/SearchInput/SearchInput";
 
 const Header = ({ onShowSidebar }) => {
-  const { pageTitle, pagePath } = useCurrentRouteMeta("breadcrumb");
+  const { pageTitle, pagePath } = useCurrentRouteHandle("breadcrumb");
   const { t } = useTranslation();
 
   return (

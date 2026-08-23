@@ -2,7 +2,7 @@
 
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import projects from "@/data/projects/projects";
+import projects from "@/data/features/projects/projects";
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 
 import ProjectsCard from "./components/ProjectsCard/ProjectsCard";

@@ -2,7 +2,7 @@
 
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import stats from "@/data/stats/stats";
+import stats from "@/data/features/stats/stats";
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import useCounter from "@/pages/private/hooks/useCounter/useCounter";
 

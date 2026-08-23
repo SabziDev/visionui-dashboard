@@ -1,6 +1,6 @@
 import { Bar, BarChart, ResponsiveContainer, YAxis } from "recharts";
 
-import stats from "@/data/stats/stats";
+import stats from "@/data/features/stats/stats";
 
 const ActiveUsersChart = () => {
   return (

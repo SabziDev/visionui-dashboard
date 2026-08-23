@@ -1,10 +1,10 @@
 import { useMatches } from "react-router";
 
-const useCurrentRouteMeta = (metaKey) => {
+const useCurrentRouteHandle = (key) => {
   const urlMatches = useMatches();
   const currentUrlMatch = urlMatches.at(-1);
 
-  return currentUrlMatch.handle?.[metaKey] ?? {};
+  return currentUrlMatch.handle?.[key] ?? {};
 };
 
-export default useCurrentRouteMeta;
+export default useCurrentRouteHandle;
