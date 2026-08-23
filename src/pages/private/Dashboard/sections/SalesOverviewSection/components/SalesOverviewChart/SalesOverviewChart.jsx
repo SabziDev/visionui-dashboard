@@ -9,13 +9,13 @@ import {
   YAxis,
 } from "recharts";
 
-import { useStatsQuery } from "@/services/features/stats/hooks/useStats/useStats";
+import { useGetStats } from "@/services/features/stats/hooks/useStats/useStats";
 
 import ChartTooltip from "./ChartTooltip/ChartTooltip";
 import SalesOverviewChartSkeleton from "./SalesOverviewChartSkeleton";
 
 const SalesOverviewChart = () => {
-  const { stats, isPending } = useStatsQuery();
+  const { stats, isPending } = useGetStats();
   const { t } = useTranslation();
 
   if (isPending) return <SalesOverviewChartSkeleton />;

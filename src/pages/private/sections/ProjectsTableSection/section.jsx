@@ -1,10 +1,10 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import TableTitleMoreBtn from "@/pages/private/components/Table/components/TableTitleMoreBtn/TableTitleMoreBtn";
 import Table from "@/pages/private/components/Table/Table";
-import { useProjectsQuery } from "@/services/features/projects/hooks/useProjects/useProjects";
+import { useGetProjects } from "@/services/features/projects/hooks/useProjects/useProjects";
 
 const ProjectsTableSection = ({ isShowMoreBtn = false }) => {
-  const { projects, isPending } = useProjectsQuery();
+  const { projects, isPending } = useGetProjects();
 
   return (
     <section className="w-full gradient-card pb-2 fa:rtl">

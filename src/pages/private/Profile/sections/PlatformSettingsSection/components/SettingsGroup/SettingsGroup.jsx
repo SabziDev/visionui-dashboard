@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 
 import CheckboxInput from "@/components/CheckboxInput/CheckboxInput";
-import { useUpdateAdminMutation } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useUpdateAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
-  const { updateAdmin } = useUpdateAdminMutation();
+  const { updateAdmin } = useUpdateAdmin();
 
   const updateSetting = (e, setting) => {
     const updatedSettings = {

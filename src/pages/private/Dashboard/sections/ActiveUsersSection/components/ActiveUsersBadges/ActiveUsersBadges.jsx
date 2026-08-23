@@ -1,12 +1,12 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import { useStatsQuery } from "@/services/features/stats/hooks/useStats/useStats";
+import { useGetStats } from "@/services/features/stats/hooks/useStats/useStats";
 
 import ActiveUsersBadge from "./ActiveUsersBadge/ActiveUsersBadge";
 import ActiveUsersBadgesSkeleton from "./ActiveUsersBadgesSkeleton";
 
 const ActiveUsersBadges = () => {
-  const { stats, isPending } = useStatsQuery();
+  const { stats, isPending } = useGetStats();
 
   if (isPending) return <ActiveUsersBadgesSkeleton />;
 

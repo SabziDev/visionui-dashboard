@@ -1,13 +1,13 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 import "react-indiana-drag-scroll/dist/style.css";
 
-import { useStatsQuery } from "@/services/features/stats/hooks/useStats/useStats";
+import { useGetStats } from "@/services/features/stats/hooks/useStats/useStats";
 
 import ToadyStat from "./components/ToadyStat/ToadyStat";
 import TodayStatsSectionSkeleton from "./SectionSkeleton";
 
 const ToadyStatsSection = () => {
-  const { stats, isPending } = useStatsQuery();
+  const { stats, isPending } = useGetStats();
 
   if (isPending) return <TodayStatsSectionSkeleton />;
 

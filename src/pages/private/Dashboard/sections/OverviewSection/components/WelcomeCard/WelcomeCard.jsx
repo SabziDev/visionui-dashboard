@@ -1,4 +1,4 @@
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import WelcomeCardBg from "./WelcomeCardBg/WelcomeCardBg";
 import WelcomeCardBtn from "./WelcomeCardBtn/WelcomeCardBtn";
@@ -6,7 +6,7 @@ import WelcomeCardContent from "./WelcomeCardContent/WelcomeCardContent";
 import WelcomeCardSkeleton from "./WelcomeCardSkeleton";
 
 const WelcomeCard = () => {
-  const { admin, isPending } = useAdminQuery();
+  const { admin, isPending } = useGetAdmin();
 
   if (isPending) return <WelcomeCardSkeleton />;
 

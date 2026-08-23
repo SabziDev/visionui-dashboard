@@ -9,10 +9,10 @@ const authorsQueryOpts = queryOptions({
   queryFn: getAuthorsApi,
 });
 
-const useAuthorsQuery = () => {
+const useGetAuthors = () => {
   const { data: authors, ...rest } = useQuery(authorsQueryOpts);
 
   return { authors, ...rest };
 };
 
-export { useAuthorsQuery };
+export { useGetAuthors };

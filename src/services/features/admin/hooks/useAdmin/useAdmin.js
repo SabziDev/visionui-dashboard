@@ -24,15 +24,15 @@ const adminUpdateOpts = mutationOptions({
   },
 });
 
-const useAdminQuery = () => {
+const useGetAdmin = () => {
   const { data: admins, ...rest } = useQuery(adminsQueryOpts);
 
   return { admin: admins?.[0], ...rest };
 };
-const useUpdateAdminMutation = () => {
+const useUpdateAdmin = () => {
   const { mutate: updateAdmin, ...rest } = useMutation(adminUpdateOpts);
 
   return { updateAdmin, ...rest };
 };
 
-export { useAdminQuery, useUpdateAdminMutation };
+export { useGetAdmin, useUpdateAdmin };

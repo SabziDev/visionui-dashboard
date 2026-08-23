@@ -1,10 +1,10 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import ProfileInfoItem from "./components/ProfileInfoItem/ProfileInfoItem";
 
 const ProfileInfoSection = () => {
-  const { admin, isPending } = useAdminQuery();
+  const { admin, isPending } = useGetAdmin();
 
   return (
     <section className="gradient-card [grid-area:profile] sm:h-95">

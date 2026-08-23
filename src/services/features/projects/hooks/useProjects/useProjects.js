@@ -9,10 +9,10 @@ const projectsQueryOpts = queryOptions({
   queryFn: getProjectsApi,
 });
 
-const useProjectsQuery = () => {
+const useGetProjects = () => {
   const { data: projects, ...rest } = useQuery(projectsQueryOpts);
 
   return { projects, ...rest };
 };
 
-export { useProjectsQuery };
+export { useGetProjects };

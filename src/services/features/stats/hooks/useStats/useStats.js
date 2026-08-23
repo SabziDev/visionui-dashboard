@@ -9,10 +9,10 @@ const statsQueryOpts = queryOptions({
   queryFn: getStatsApi,
 });
 
-const useStatsQuery = () => {
+const useGetStats = () => {
   const { data: stats, ...rest } = useQuery(statsQueryOpts);
 
   return { stats, ...rest };
 };
 
-export { useStatsQuery };
+export { useGetStats };

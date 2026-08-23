@@ -1,9 +1,9 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
 import Table from "@/pages/private/components/Table/Table";
-import { useAuthorsQuery } from "@/services/features/authors/hooks/useAuthors/useAuthors";
+import { useGetAuthors } from "@/services/features/authors/hooks/useAuthors/useAuthors";
 
 const AuthorsTableSection = () => {
-  const { authors, isPending } = useAuthorsQuery();
+  const { authors, isPending } = useGetAuthors();
 
   return (
     <section className="w-full gradient-card pb-2.5">

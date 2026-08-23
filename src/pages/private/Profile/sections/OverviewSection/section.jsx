@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { LuBox } from "react-icons/lu";
 
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import OverviewProfile from "./components/OverviewProfile/OverviewProfile";
 
 const OverviewSection = () => {
-  const { admin, isPending } = useAdminQuery();
+  const { admin, isPending } = useGetAdmin();
 
   const { t } = useTranslation();
 

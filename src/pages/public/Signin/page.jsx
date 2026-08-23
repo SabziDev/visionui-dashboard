@@ -4,13 +4,13 @@ import { Navigate } from "react-router";
 
 import AuthContext from "@/contexts/Auth";
 import Head from "@/layouts/components/Head";
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
 const Signin = () => {
-  const { admin } = useAdminQuery();
+  const { admin } = useGetAdmin();
   const { adminId } = use(AuthContext);
 
   const { t } = useTranslation();

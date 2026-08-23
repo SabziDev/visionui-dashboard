@@ -1,10 +1,10 @@
 import SectionTitle from "@/pages/private/components/SectionTitle/SectionTitle";
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import SettingsGroup from "./components/SettingsGroup/SettingsGroup";
 
 const PlatformSettingsSection = () => {
-  const { admin, isPending } = useAdminQuery();
+  const { admin, isPending } = useGetAdmin();
 
   return (
     <section className="gradient-card fa:rtl">

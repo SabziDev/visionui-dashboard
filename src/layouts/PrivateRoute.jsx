@@ -2,12 +2,12 @@ import { use } from "react";
 import { Navigate } from "react-router";
 
 import AuthContext from "@/contexts/Auth";
-import { useAdminQuery } from "@/services/features/admin/hooks/useAdmin/useAdmin";
+import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const { admin } = useAdminQuery();
+  const { admin } = useGetAdmin();
   const { adminId } = use(AuthContext);
 
   return adminId === admin.id ? (
