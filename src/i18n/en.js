@@ -9,7 +9,7 @@ const en = {
     connection: "Unable to connect to the server",
     abort: "The request took too long",
     invalid: "Invalid request data",
-    access: "Access denied",
+    access: "You do not have permission to access this resource",
     notFound: "The request resource was not found",
     conflict:
       "This request is not compatible with the current state of the data! Please check your information and try again",
@@ -17,7 +17,6 @@ const en = {
     server: "Server error occurred",
     default: "Something went wrong! Please try again",
   },
-
   pagesSeo: {
     dashboard: {
       title: "Visionui-Dashboard",
@@ -45,6 +44,14 @@ const en = {
       title: "Page Not Found",
       desc: "The page you are looking for does not exist or has been moved. Please check the address or go to the home page.",
     },
+  },
+
+  projects: {
+    adobexd: "Chakra Soft UI Version",
+    fixErrors: "Fix Platform Errors",
+    spotify: "Launch our Mobile App",
+    addNewPricingPage: "Add the New Pricing Page",
+    redesign: "Redesign New Online Shop",
   },
 
   layouts: {
@@ -299,14 +306,6 @@ const en = {
 
       btn: "Try Again",
     },
-  },
-
-  projects: {
-    adobexd: "Chakra Soft UI Version",
-    fixErrors: "Fix Platform Errors",
-    spotify: "Launch our Mobile App",
-    addNewPricingPage: "Add the New Pricing Page",
-    redesign: "Redesign New Online Shop",
   },
 };
 
