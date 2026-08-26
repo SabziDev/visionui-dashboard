@@ -36,6 +36,14 @@ const en = {
   },
   errors: {
     connection: "Unable to connect to the server",
+    abort: "The request took too long",
+    invalid: "Invalid request data",
+    access: "Access denied",
+    notFound: "The request resource was not found",
+    conflict:
+      "This request is not compatible with the current state of the data! Please check your information and try again",
+    validation: "The provided data is invalid",
+    server: "Server error occurred",
     default: "Something went wrong! Please try again",
   },
 
