@@ -13,10 +13,6 @@ const errorHandlers = (error) => {
     }
   }
   switch (error.response.status) {
-    case 400: {
-      const invalidError = new Error("errors.invalid");
-      throw invalidError;
-    }
     case 403: {
       const accessError = new Error("errors.access");
       throw accessError;

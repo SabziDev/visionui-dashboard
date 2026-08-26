@@ -8,7 +8,6 @@ const en = {
   errors: {
     connection: "Unable to connect to the server",
     abort: "The request took too long",
-    invalid: "Invalid request data",
     access: "You do not have permission to access this resource",
     notFound: "The request resource was not found",
     conflict:
