@@ -5,6 +5,18 @@ const en = {
     overview: "OVERVIEW",
     h: "h",
   },
+  errors: {
+    connection: "Unable to connect to the server",
+    abort: "The request took too long",
+    invalid: "Invalid request data",
+    access: "Access denied",
+    notFound: "The request resource was not found",
+    conflict:
+      "This request is not compatible with the current state of the data! Please check your information and try again",
+    validation: "The provided data is invalid",
+    server: "Server error occurred",
+    default: "Something went wrong! Please try again",
+  },
 
   pagesSeo: {
     dashboard: {
@@ -33,18 +45,6 @@ const en = {
       title: "Page Not Found",
       desc: "The page you are looking for does not exist or has been moved. Please check the address or go to the home page.",
     },
-  },
-  errors: {
-    connection: "Unable to connect to the server",
-    abort: "The request took too long",
-    invalid: "Invalid request data",
-    access: "Access denied",
-    notFound: "The request resource was not found",
-    conflict:
-      "This request is not compatible with the current state of the data! Please check your information and try again",
-    validation: "The provided data is invalid",
-    server: "Server error occurred",
-    default: "Something went wrong! Please try again",
   },
 
   layouts: {
