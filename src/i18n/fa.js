@@ -1,7 +1,6 @@
 const fa = {
   words: {
     min: " دقیقه",
-    toast: "عملیات با موفقیت انجام شد",
     overview: "نمای کلی",
     h: " ساعت و",
   },
@@ -16,6 +15,7 @@ const fa = {
     server: "خطایی در سرور رخ داده است",
     default: "یه مشکلی پیش آمد! لطفا دوباره تلاش کنید",
   },
+  success: "عملیات با موفقیت انجام شد",
   pagesSeo: {
     dashboard: {
       title: "داشبورد Visionui",

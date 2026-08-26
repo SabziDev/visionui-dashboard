@@ -1,7 +1,6 @@
 const en = {
   words: {
     min: "min",
-    toast: "Operation completed successfully",
     overview: "OVERVIEW",
     h: "h",
   },
@@ -16,6 +15,7 @@ const en = {
     server: "Server error occurred",
     default: "Something went wrong! Please try again",
   },
+  success: "Operation completed successfully",
   pagesSeo: {
     dashboard: {
       title: "Visionui-Dashboard",

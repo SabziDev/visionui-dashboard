@@ -1,42 +1,47 @@
 /* eslint-disable default-case */
 /* eslint-disable @stylistic/padding-line-between-statements */
+/* eslint-disable custom/add-blank-line-before-return */
 
-const errorHandlers = (error) => {
-  switch (error.code) {
+import { toast } from "react-hot-toast";
+
+import { i18n } from "@/i18n";
+
+const errorHandlers = (err) => {
+  switch (err.code) {
     case "ERR_NETWORK": {
-      const connectionError = new Error("errors.connection");
-      throw connectionError;
+      toast.error(i18n.t("errors.connection"));
+      break;
     }
     case "ECONNABORTED": {
-      const connectionError = new Error("errors.abort");
-      throw connectionError;
+      toast.error(i18n.t("errors.abort"));
+      break;
     }
   }
-  switch (error.response.status) {
+  switch (err.response.status) {
     case 403: {
-      const accessError = new Error("errors.access");
-      throw accessError;
+      toast.error(i18n.t("errors.access"));
+      break;
     }
     case 404: {
-      const notFoundError = new Error("errors.notFound");
-      throw notFoundError;
+      toast.error(i18n.t("errors.notFound"));
+      break;
     }
     case 409: {
-      const conflictError = new Error("errors.conflict");
-      throw conflictError;
+      toast.error(i18n.t("errors.conflict"));
+      break;
     }
     case 422: {
-      const validationError = new Error("errors.validation");
-      throw validationError;
+      toast.error(i18n.t("errors.validation"));
+      break;
     }
   }
-  if (error.response.status >= 500) {
-    const serverError = new Error("errors.server");
-    throw serverError;
+  if (err.response.status >= 500) {
+    toast.error(i18n.t("errors.server"));
+    return;
   }
 
-  const defaultError = new Error("errors.default");
-  throw defaultError;
+  // TODO Default-Error
+  toast.error(i18n.t("errors.default"));
 };
 
 export default errorHandlers;
