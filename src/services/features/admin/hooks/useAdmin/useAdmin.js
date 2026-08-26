@@ -20,7 +20,7 @@ export const adminsQueryOpts = queryOptions({
 const adminUpdateOpts = mutationOptions({
   mutationFn: updateAdminApi,
   meta: { successMessage: "success" },
-  onSuccess: (_, payload) => {
+  onSuccess: (_, { ...payload }) => {
     updateCache({ type: "UPDATE", queryKey, payload });
   },
 });
