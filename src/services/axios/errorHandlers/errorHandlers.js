@@ -17,7 +17,7 @@ const errorHandlers = (err) => {
       break;
     }
   }
-  switch (err.response.status) {
+  switch (err.response?.status) {
     case 403: {
       toast.error(i18n.t("errors.access"));
       break;
@@ -35,7 +35,7 @@ const errorHandlers = (err) => {
       break;
     }
   }
-  if (err.response.status >= 500) {
+  if (err.response?.status ?? 0 >= 500) {
     toast.error(i18n.t("errors.server"));
     return;
   }
