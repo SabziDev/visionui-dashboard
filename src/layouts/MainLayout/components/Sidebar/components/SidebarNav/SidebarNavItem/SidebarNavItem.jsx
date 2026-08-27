@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 const SidebarNavItem = ({ children, to, Icon, onCloseSidebar }) => {
   return (
-    <li onClick={onCloseSidebar} className="w-full">
+    <li onClick={() => onCloseSidebar(false)} className="w-full">
       <NavLink
         to={to}
         viewTransition
