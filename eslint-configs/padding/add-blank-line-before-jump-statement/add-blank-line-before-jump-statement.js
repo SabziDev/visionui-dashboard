@@ -1,14 +1,14 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable unicorn/consistent-function-scoping */
 
-const addBlankLineBeforeReturn = {
+const addBlankLineBeforeJumpStatement = {
   rules: {
-    "add-blank-line-before-return": {
+    "add-blank-line-before-jump-statement": {
       meta: {
         type: "layout",
         fixable: "code",
         messages: {
-          missingBlankLine: "Expected a blank line before 'return' statement",
+          missingBlankLine: "Expected a blank line before statement",
         },
         schema: [],
       },
@@ -18,11 +18,14 @@ const addBlankLineBeforeReturn = {
 
         const hasPreviousStatement = (node, parentBody) => {
           const index = parentBody.indexOf(node);
+
           if (index <= 0) return false;
 
           const { type: prevType } = parentBody[index - 1];
 
-          return prevType !== "ReturnStatement";
+          return (
+            prevType !== "ReturnStatement" && prevType !== "BreakStatement"
+          );
         };
 
         const isOnlyStatementInBlock = (node) => {
@@ -37,7 +40,8 @@ const addBlankLineBeforeReturn = {
 
             if (
               statements.length === 1 &&
-              statements[0].type === "ReturnStatement"
+              (statements[0].type === "ReturnStatement" ||
+                statements[0].type === "BreakStatement")
             ) {
               return true;
             }
@@ -49,7 +53,11 @@ const addBlankLineBeforeReturn = {
           ) {
             const { body: arrowBody } = parent;
 
-            return arrowBody.type === "ReturnStatement" && arrowBody === node;
+            return (
+              (arrowBody.type === "ReturnStatement" ||
+                arrowBody.type === "BreakStatement") &&
+              arrowBody === node
+            );
           }
 
           return false;
@@ -59,6 +67,7 @@ const addBlankLineBeforeReturn = {
           const prevToken = sourceCode.getTokenBefore(node, {
             includeComments: true,
           });
+
           if (!prevToken) return true;
 
           const { end: prevEnd } = prevToken.loc;
@@ -84,7 +93,7 @@ const addBlankLineBeforeReturn = {
           return prevToken;
         };
 
-        const needsBlankLineBeforeComment = (returnNode, commentToken) => {
+        const needsBlankLineBeforeComment = (commentToken) => {
           const lastNonComment = getLastNonCommentTokenBefore(commentToken);
 
           if (!lastNonComment) return false;
@@ -103,7 +112,6 @@ const addBlankLineBeforeReturn = {
 
             if (type === "BlockStatement" || type === "Program") {
               return {
-                parentBlock: currentParent,
                 parentBody: currentParent.body,
               };
             }
@@ -111,64 +119,70 @@ const addBlankLineBeforeReturn = {
             currentParent = currentParent.parent;
           }
 
-          return { parentBlock: null, parentBody: null };
+          return {
+            parentBody: null,
+          };
+        };
+
+        const checkStatement = (node) => {
+          if (isOnlyStatementInBlock(node)) {
+            return;
+          }
+
+          const { parentBody } = findParentBlock(node);
+
+          if (!parentBody) return;
+
+          if (!hasPreviousStatement(node, parentBody)) {
+            return;
+          }
+
+          const prevToken = sourceCode.getTokenBefore(node, {
+            includeComments: true,
+          });
+
+          const hasCommentBefore =
+            prevToken &&
+            (prevToken.type === "Line" || prevToken.type === "Block");
+
+          if (hasCommentBefore) {
+            if (needsBlankLineBeforeComment(prevToken)) {
+              context.report({
+                node,
+                messageId: "missingBlankLine",
+                fix: (fixer) => fixer.insertTextBefore(prevToken, "\n"),
+              });
+            }
+
+            return;
+          }
+
+          if (hasBlankLineBefore(node)) {
+            return;
+          }
+
+          const nodeIndex = parentBody.indexOf(node);
+
+          const { type: prevType } = parentBody[nodeIndex - 1] || {};
+
+          if (prevType === "ReturnStatement" || prevType === "BreakStatement") {
+            return;
+          }
+
+          context.report({
+            node,
+            messageId: "missingBlankLine",
+            fix: (fixer) => fixer.insertTextBefore(node, "\n"),
+          });
         };
 
         return {
-          ReturnStatement(node) {
-            if (isOnlyStatementInBlock(node)) {
-              return;
-            }
-
-            const { parentBody } = findParentBlock(node);
-
-            if (!parentBody) return;
-
-            const hasPrev = hasPreviousStatement(node, parentBody);
-
-            if (!hasPrev) return;
-
-            const prevToken = sourceCode.getTokenBefore(node, {
-              includeComments: true,
-            });
-
-            const hasCommentBefore =
-              prevToken &&
-              (prevToken.type === "Line" || prevToken.type === "Block");
-
-            if (hasCommentBefore) {
-              if (needsBlankLineBeforeComment(node, prevToken)) {
-                context.report({
-                  node,
-                  messageId: "missingBlankLine",
-                  fix: (fixer) => fixer.insertTextBefore(prevToken, "\n"),
-                });
-              }
-
-              return;
-            }
-
-            if (hasBlankLineBefore(node)) {
-              return;
-            }
-
-            const nodeIndex = parentBody.indexOf(node);
-            const { type: prevType } = parentBody[nodeIndex - 1] || {};
-
-            if (prevType === "ReturnStatement") {
-              return;
-            }
-
-            context.report({
-              node,
-              messageId: "missingBlankLine",
-              fix: (fixer) => fixer.insertTextBefore(node, "\n"),
-            });
-          },
+          ReturnStatement: checkStatement,
+          BreakStatement: checkStatement,
         };
       },
     },
   },
 };
 
-export default addBlankLineBeforeReturn;
+export default addBlankLineBeforeJumpStatement;

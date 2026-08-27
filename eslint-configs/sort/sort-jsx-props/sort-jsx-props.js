@@ -108,6 +108,7 @@ const sortJsxProps = {
                 }
 
                 isNeedsFix = true;
+
                 break;
               }
             } else {

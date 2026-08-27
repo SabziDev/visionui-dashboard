@@ -148,6 +148,7 @@ const sortObjectProps = {
               }
 
               isNeedsFix = true;
+
               break;
             }
 
@@ -184,6 +185,7 @@ const sortObjectProps = {
               }
 
               isNeedsFix = true;
+
               break;
             }
 
@@ -224,6 +226,7 @@ const sortObjectProps = {
                 }
 
                 isNeedsFix = true;
+
                 break;
               }
 
