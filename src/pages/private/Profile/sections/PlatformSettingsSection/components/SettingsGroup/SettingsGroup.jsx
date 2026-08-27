@@ -19,7 +19,6 @@ const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
     updateAdmin({
       id: data.id,
       data: updatedSettings,
-      settingKey: setting.key,
     });
   };
 

@@ -92,10 +92,10 @@
     view-transition-name: page-content;
   }
   ::view-transition-old(page-content) {
-    animation: page-exit 300ms ease-out both 150ms;
+    animation: page-exit 250ms ease-out both 125ms;
   }
   ::view-transition-new(page-content) {
-    animation: page-enter 300ms ease-out both 300ms;
+    animation: page-enter 250ms ease-out both 250ms;
   }
   @keyframes page-exit {
     from {

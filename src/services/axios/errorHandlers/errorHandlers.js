@@ -2,45 +2,44 @@
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable custom/add-blank-line-before-return */
 
-import { toast } from "react-hot-toast";
-
-import { i18n } from "@/i18n";
-
 const errorHandlers = (err) => {
   switch (err.code) {
     case "ERR_NETWORK": {
-      toast.error(i18n.t("errors.connection"));
-      break;
+      err.message = "errors.connection";
+      return Promise.reject(err);
     }
     case "ECONNABORTED": {
-      toast.error(i18n.t("errors.abort"));
-      break;
+      err.message = "errors.abort";
+      return Promise.reject(err);
     }
-  }
-  switch (err.response?.status) {
-    case 403: {
-      toast.error(i18n.t("errors.access"));
-      break;
-    }
-    case 404: {
-      toast.error(i18n.t("errors.notFound"));
-      break;
-    }
-    case 409: {
-      toast.error(i18n.t("errors.conflict"));
-      break;
-    }
-    case 422: {
-      toast.error(i18n.t("errors.validation"));
-      break;
-    }
-  }
-  if (err.response?.status ?? 0 >= 500) {
-    toast.error(i18n.t("errors.server"));
-    return;
   }
 
-  toast.error(i18n.t("errors.default"));
+  const status = err.response?.status;
+  if (status >= 500) {
+    err.message = "errors.server";
+    return Promise.reject(err);
+  }
+  switch (status) {
+    case 403: {
+      err.message = "errors.access";
+      return Promise.reject(err);
+    }
+    case 404: {
+      err.message = "errors.notFound";
+      return Promise.reject(err);
+    }
+    case 409: {
+      err.message = "errors.conflict";
+      return Promise.reject(err);
+    }
+    case 422: {
+      err.message = "errors.validation";
+      return Promise.reject(err);
+    }
+  }
+
+  err.message = "errors.default";
+  return Promise.reject(err);
 };
 
 export default errorHandlers;

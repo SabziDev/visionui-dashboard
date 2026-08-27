@@ -7,7 +7,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-import updateCache from "@/services/hooks/updateCache";
+import updateCache from "@/services/utils/updateCache";
 
 import { getAdminApi, updateAdminApi } from "../../admin.api";
 

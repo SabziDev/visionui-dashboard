@@ -6,7 +6,7 @@ import { useLocation } from "react-router";
 
 const COLOR = "#0075ff";
 
-const SHOW_DURATION = 0.8;
+const SHOW_DURATION = 0.6;
 const COMPLETE_DURATION = 0.2;
 const HIDE_DELAY = 500;
 const PROGRESS_KEYFRAMES = [
@@ -14,9 +14,6 @@ const PROGRESS_KEYFRAMES = [
 ];
 
 const NavigationProgressBar = () => {
-  const { i18n } = useTranslation();
-  const DIR = i18n.dir();
-
   const [isShow, setIsShow] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const isPageFirstLoadRef = useRef(true);
@@ -24,6 +21,9 @@ const NavigationProgressBar = () => {
   const hideTimeoutRef = useRef(null);
 
   const { pathname } = useLocation();
+
+  const { i18n } = useTranslation();
+  const DIR = i18n.dir();
 
   useEffect(() => {
     if (isPageFirstLoadRef.current) {
