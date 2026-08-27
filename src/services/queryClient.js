@@ -19,20 +19,22 @@ const queryClient = new QueryClient({
   mutationCache: new MutationCache({
     onMutate: (_, mutation) => {
       const toastMeta = mutation.options.meta?.toast;
+
       if (toastMeta?.type !== "LOADING") return;
 
-      const toastMessage = toastMeta?.message ?? "loading";
+      const toastMessage = toastMeta.message ?? "loading";
       const toastId = toast.loading(i18n.t(toastMessage));
       toastIds.set(mutation, toastId);
     },
     onSuccess: (_, __, ___, mutation) => {
       const toastMeta = mutation.options.meta?.toast;
-      const toastId = toastIds.get(mutation);
       const toastMessage = toastMeta?.message ?? "success";
+      const toastId = toastIds.get(mutation);
 
       if (toastMeta?.type === "SUCCESS") toast.success(i18n.t(toastMessage));
       if (toastMeta?.type === "LOADING") {
         toast.success(i18n.t(toastMessage), { id: toastId });
+        toastIds.delete(mutation);
       }
     },
     onError: (_, __, ___, mutation) => {
