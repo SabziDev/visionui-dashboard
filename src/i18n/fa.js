@@ -1,9 +1,13 @@
+/* eslint-disable custom/sort-object-props */
+
 const fa = {
   words: {
     min: " دقیقه",
     overview: "نمای کلی",
     h: " ساعت و",
   },
+  loading: "درحال انجام عملیات...",
+  success: "عملیات با موفقیت انجام شد",
   errors: {
     connection: "خطا در برقراری ارتباط با سرور",
     abort: "درخواست بیش از حد طول کشید",
@@ -15,7 +19,6 @@ const fa = {
     server: "خطایی در سرور رخ داده است",
     default: "یه مشکلی پیش آمد! لطفا دوباره تلاش کنید",
   },
-  success: "عملیات با موفقیت انجام شد",
   pagesSeo: {
     dashboard: {
       title: "داشبورد Visionui",

@@ -40,7 +40,6 @@ const errorHandlers = (err) => {
     return;
   }
 
-  // TODO Default-Error
   toast.error(i18n.t("errors.default"));
 };
 

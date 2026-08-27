@@ -1,9 +1,13 @@
+/* eslint-disable custom/sort-object-props */
+
 const en = {
   words: {
     min: "min",
     overview: "OVERVIEW",
     h: "h",
   },
+  loading: "Performing operation...",
+  success: "The operation was successfully completed",
   errors: {
     connection: "Unable to connect to the server",
     abort: "The request took too long",
@@ -15,7 +19,6 @@ const en = {
     server: "Server error occurred",
     default: "Something went wrong! Please try again",
   },
-  success: "Operation completed successfully",
   pagesSeo: {
     dashboard: {
       title: "Visionui-Dashboard",
