@@ -5,6 +5,7 @@ import mergeDuplicateIdAndClassNameProps from "./eslint-configs/merge/merge-dupl
 import mergeExports from "./eslint-configs/merge/merge-exports/merge-exports.js";
 import noInvalidIdAndClassNameValue from "./eslint-configs/no-invalid/no-invalid-id-and-classname-value/no-invalid-id-and-classname-value.js";
 import noUselessTemplateLiteral from "./eslint-configs/no-useless/no-useless-template-literal/no-useless-template-literal.js";
+import addBlankLineBeforeJumpStatement from "./eslint-configs/padding/add-blank-line-before-jump-statement/add-blank-line-before-jump-statement.js";
 import sortComments from "./eslint-configs/sort/sort-comments/sort-comments.js";
 import sortJsxProps from "./eslint-configs/sort/sort-jsx-props/sort-jsx-props.js";
 import sortObjectProps from "./eslint-configs/sort/sort-object-props/sort-object-props.js";

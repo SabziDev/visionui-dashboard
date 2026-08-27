@@ -1,10 +1,11 @@
 import { use } from "react";
 import { useTranslation } from "react-i18next";
-
-import AuthContext from "@/contexts/Auth";
-import SidebarSettingsItem from "../SidebarSettingsItem";
 import { IoLanguage } from "react-icons/io5";
 import { TbLogout } from "react-icons/tb";
+
+import AuthContext from "@/contexts/Auth";
+
+import SidebarSettingsItem from "../SidebarSettingsItem";
 
 const SidebarSettingsItemMenu = ({ toggleSidebar }) => {
   const { setAdminId } = use(AuthContext);

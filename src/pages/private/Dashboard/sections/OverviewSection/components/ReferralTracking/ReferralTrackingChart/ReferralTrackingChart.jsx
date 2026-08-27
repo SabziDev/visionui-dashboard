@@ -47,7 +47,7 @@ const ReferralTrackingChart = ({ value, counter }) => {
           />
         </RadialBarChart>
 
-        <div className="absolute top-1/2 left-1/2 pb-4 flex-center -translate-1/2 flex-col gap-y-1.5">
+        <div className="absolute top-1/2 left-1/2 flex-center -translate-1/2 flex-col gap-y-1.5 pb-4">
           <span className="font-VazirBold text-5xl">{value / 10}</span>
           <span className="font-VazirMedium text-sm text-gray-400">
             {t("pages.private.dashboard.referralTracking.totalScore")}

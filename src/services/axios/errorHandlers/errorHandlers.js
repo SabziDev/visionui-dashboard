@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 /* eslint-disable @stylistic/padding-line-between-statements */
-/* eslint-disable custom/add-blank-line-before-return */
+/* eslint-disable custom/add-blank-line-before-jump-statement */
 
 const errorHandlers = (err) => {
   switch (err.code) {

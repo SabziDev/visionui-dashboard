@@ -27,7 +27,7 @@ const queryClient = new QueryClient({
       const toastMeta = mutation.options.meta?.toast;
       const toastMessage = toastMeta.message ?? "loading";
 
-      if (toastMeta?.type !== "LOADING") {
+      if (toastMeta?.type === "LOADING") {
         const toastId = toast.loading(i18n.t(toastMessage));
         toastIds.set(mutation, toastId);
       }
