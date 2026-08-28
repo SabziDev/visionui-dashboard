@@ -2,7 +2,7 @@
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable custom/add-blank-line-before-jump-statement */
 
-const errorHandlers = (err) => {
+const errorHandler = (err) => {
   switch (err.code) {
     case "ERR_NETWORK": {
       err.message = "errors.connection";
@@ -42,4 +42,4 @@ const errorHandlers = (err) => {
   return Promise.reject(err);
 };
 
-export default errorHandlers;
+export default errorHandler;

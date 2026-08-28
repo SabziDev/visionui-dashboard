@@ -12,7 +12,7 @@ const en = {
     connection: "Unable to connect to the server",
     abort: "The request took too long",
     access: "You do not have permission to access this resource",
-    notFound: "The request resource was not found",
+    notFound: "The requested information was not found! Please try again",
     conflict:
       "This request is not compatible with the current state of the data! Please check your information and try again",
     validation: "The provided data is invalid",
