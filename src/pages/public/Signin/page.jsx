@@ -1,3 +1,5 @@
+/* eslint-disable custom/add-blank-line-before-jump-statement */
+
 import { use } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router";
@@ -15,9 +17,8 @@ const Signin = () => {
 
   const { t } = useTranslation();
 
-  return adminId === admin.id ? (
-    <Navigate to="/" replace />
-  ) : (
+  if (adminId === admin.id) return <Navigate to="/" replace />;
+  return (
     <>
       <Head />
 

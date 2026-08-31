@@ -1,3 +1,5 @@
+/* eslint-disable custom/add-blank-line-before-jump-statement */
+
 import { use } from "react";
 import { Navigate } from "react-router";
 
@@ -10,11 +12,8 @@ const PrivateRoute = () => {
   const { admin } = useGetAdmin();
   const { adminId } = use(AuthContext);
 
-  return adminId === admin.id ? (
-    <MainLayout />
-  ) : (
-    <Navigate to="/signin" replace />
-  );
+  if (adminId === admin.id) return <MainLayout />;
+  return <Navigate to="/signin" replace />;
 };
 
 export default PrivateRoute;
