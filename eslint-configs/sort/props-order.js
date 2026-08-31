@@ -1,4 +1,4 @@
-const staticPropertiesOrder = [
+const propsOrder = [
   "children",
   "key",
   "id",
@@ -29,6 +29,6 @@ const staticPropertiesOrder = [
   "replace",
   "viewTransition",
 ];
-const eventHandlerOrder = ["onClick", "onChange", "onKeyUp"];
+const eventHandlersOrder = ["onClick", "onChange", "onKeyUp"];
 
-export { eventHandlerOrder, staticPropertiesOrder };
+export { eventHandlersOrder, propsOrder };

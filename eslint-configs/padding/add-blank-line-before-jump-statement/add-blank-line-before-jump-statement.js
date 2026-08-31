@@ -1,6 +1,15 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable unicorn/consistent-function-scoping */
 
+import { supportedJumpStatements } from "./supported-jump-statements.js";
+
+const jumpStatementTypes = {
+  return: "ReturnStatement",
+  break: "BreakStatement",
+  continue: "ContinueStatement",
+  throw: "ThrowStatement",
+};
+
 const addBlankLineBeforeJumpStatement = {
   rules: {
     "add-blank-line-before-jump-statement": {
@@ -16,6 +25,14 @@ const addBlankLineBeforeJumpStatement = {
       create(context) {
         const { sourceCode = context.getSourceCode() } = context;
 
+        const supportedStatementTypes = new Set(
+          supportedJumpStatements.map(
+            (statement) => jumpStatementTypes[statement],
+          ),
+        );
+
+        const isJumpStatement = (type) => supportedStatementTypes.has(type);
+
         const hasPreviousStatement = (node, parentBody) => {
           const index = parentBody.indexOf(node);
 
@@ -23,9 +40,7 @@ const addBlankLineBeforeJumpStatement = {
 
           const { type: prevType } = parentBody[index - 1];
 
-          return (
-            prevType !== "ReturnStatement" && prevType !== "BreakStatement"
-          );
+          return !isJumpStatement(prevType);
         };
 
         const isOnlyStatementInBlock = (node) => {
@@ -40,8 +55,7 @@ const addBlankLineBeforeJumpStatement = {
 
             if (
               statements.length === 1 &&
-              (statements[0].type === "ReturnStatement" ||
-                statements[0].type === "BreakStatement")
+              isJumpStatement(statements[0].type)
             ) {
               return true;
             }
@@ -53,11 +67,7 @@ const addBlankLineBeforeJumpStatement = {
           ) {
             const { body: arrowBody } = parent;
 
-            return (
-              (arrowBody.type === "ReturnStatement" ||
-                arrowBody.type === "BreakStatement") &&
-              arrowBody === node
-            );
+            return isJumpStatement(arrowBody.type) && arrowBody === node;
           }
 
           return false;
@@ -165,7 +175,7 @@ const addBlankLineBeforeJumpStatement = {
 
           const { type: prevType } = parentBody[nodeIndex - 1] || {};
 
-          if (prevType === "ReturnStatement" || prevType === "BreakStatement") {
+          if (isJumpStatement(prevType)) {
             return;
           }
 
@@ -176,10 +186,14 @@ const addBlankLineBeforeJumpStatement = {
           });
         };
 
-        return {
-          ReturnStatement: checkStatement,
-          BreakStatement: checkStatement,
-        };
+        const visitors = Object.fromEntries(
+          supportedJumpStatements.map((statement) => [
+            jumpStatementTypes[statement],
+            checkStatement,
+          ]),
+        );
+
+        return visitors;
       },
     },
   },

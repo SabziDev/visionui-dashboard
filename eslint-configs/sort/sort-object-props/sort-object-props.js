@@ -3,10 +3,7 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable unicorn/consistent-function-scoping */
 
-import {
-  eventHandlerOrder,
-  staticPropertiesOrder,
-} from "../properties-order.js";
+import { eventHandlersOrder, propsOrder } from "../props-order.js";
 
 const sortObjectProps = {
   rules: {
@@ -23,12 +20,12 @@ const sortObjectProps = {
 
       create(context) {
         const { sourceCode } = context;
-        const firstGroupSet = new Set(staticPropertiesOrder);
+        const firstGroupSet = new Set(propsOrder);
 
         const isEventHandler = (name) => /^on[A-Z]/.test(name);
 
         const getEventPriority = (handlerName) => {
-          const index = eventHandlerOrder.indexOf(handlerName);
+          const index = eventHandlersOrder.indexOf(handlerName);
 
           return index === -1 ? 999 : index;
         };
@@ -56,7 +53,7 @@ const sortObjectProps = {
         const sortItems = (items) => {
           if (items.length === 0) return items;
 
-          const firstGroup = staticPropertiesOrder.flatMap((name) =>
+          const firstGroup = propsOrder.flatMap((name) =>
             items.filter((item) => getKeyName(item) === name),
           );
 

@@ -1,10 +1,7 @@
 /* eslint-disable unicorn/no-duplicate-if-branches */
 /* eslint-disable unicorn/consistent-function-scoping */
 
-import {
-  eventHandlerOrder,
-  staticPropertiesOrder,
-} from "../properties-order.js";
+import { eventHandlersOrder, propsOrder } from "../props-order.js";
 
 const sortJsxProps = {
   rules: {
@@ -19,12 +16,12 @@ const sortJsxProps = {
 
       create(context) {
         const { sourceCode } = context;
-        const firstGroupSet = new Set(staticPropertiesOrder);
+        const firstGroupSet = new Set(propsOrder);
 
         const isEventHandler = (attrName) => /^on[A-Z]/.test(attrName);
 
         const getEventPriority = (handlerName) => {
-          const index = eventHandlerOrder.indexOf(handlerName);
+          const index = eventHandlersOrder.indexOf(handlerName);
 
           return index === -1 ? 999 : index;
         };
@@ -43,7 +40,7 @@ const sortJsxProps = {
 
             if (normalAttrs.length === 0 && spreads.length === 0) return;
 
-            const firstGroup = staticPropertiesOrder.flatMap((name) =>
+            const firstGroup = propsOrder.flatMap((name) =>
               normalAttrs.filter((attr) => attr.name.name === name),
             );
 
