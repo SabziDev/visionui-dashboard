@@ -4,7 +4,7 @@ import { use } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router";
 
-import AuthContext from "@/contexts/Auth";
+import AuthContext from "@/contexts/Auth/Auth";
 import Head from "@/layouts/components/Head";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
