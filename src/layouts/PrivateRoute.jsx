@@ -3,7 +3,7 @@
 import { use } from "react";
 import { Navigate } from "react-router";
 
-import AuthContext from "@/contexts/Auth";
+import AuthContext from "@/contexts/Auth/Auth";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
 import MainLayout from "./MainLayout/MainLayout";

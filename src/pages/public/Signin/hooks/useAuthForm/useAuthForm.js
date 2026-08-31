@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import AuthContext from "@/contexts/Auth";
+import AuthContext from "@/contexts/Auth/Auth";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 import loginSchema from "@/validators/loginValidator";
 

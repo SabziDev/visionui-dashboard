@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IoLanguage } from "react-icons/io5";
 import { TbLogout } from "react-icons/tb";
 
-import AuthContext from "@/contexts/Auth";
+import AuthContext from "@/contexts/Auth/Auth";
 
 import SidebarSettingsItem from "../SidebarSettingsItem";
 
