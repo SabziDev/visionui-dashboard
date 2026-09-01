@@ -2,7 +2,7 @@ import { defineConfig } from "@fullstacksjs/eslint-config";
 import unicorn from "eslint-plugin-unicorn";
 
 import mergeDuplicateIdAndClassNameProps from "./eslint-configs/merge/merge-duplicate-id-and-classname-props/index.js";
-import mergeExports from "./eslint-configs/merge/merge-exports/merge-exports.js";
+import mergeExports from "./eslint-configs/merge/merge-exports/index.js";
 import noInvalidIdAndClassNameValue from "./eslint-configs/no-invalid/no-invalid-id-and-classname-value/index.js";
 import noUselessTemplateLiteral from "./eslint-configs/no-useless/no-useless-template-literal/index.js";
 import addBlankLineBeforeJumpStatement from "./eslint-configs/padding/add-blank-line-before-jump-statement/index.js";
