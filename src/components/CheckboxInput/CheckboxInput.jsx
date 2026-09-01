@@ -6,7 +6,7 @@ const CheckboxInput = ({
   id = "",
   title = "",
   register,
-  checked,
+  checked = false,
   isPending,
   onChange,
 }) => {

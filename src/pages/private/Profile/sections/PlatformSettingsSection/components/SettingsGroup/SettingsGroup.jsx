@@ -29,16 +29,18 @@ const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
       <span className="font-VazirMedium text-xs text-gray-400">{t(title)}</span>
 
       <div className="mt-1.5 flex-start flex-col space-y-3">
-        {data.settings[settingsSection].map((setting) => (
-          <CheckboxInput
-            key={setting.key}
-            id={setting.key}
-            title={setting.title}
-            checked={setting.isActive}
-            isPending={isPending}
-            onChange={(e) => updateSetting(e, setting)}
-          />
-        ))}
+        {data.settings[settingsSection].map((setting) => {
+          return (
+            <CheckboxInput
+              key={setting.key}
+              id={setting.key}
+              title={setting.title}
+              checked={setting.isActive}
+              isPending={isPending}
+              onChange={(e) => updateSetting(e, setting)}
+            />
+          );
+        })}
       </div>
     </div>
   );
