@@ -1,14 +1,14 @@
 import { defineConfig } from "@fullstacksjs/eslint-config";
 import unicorn from "eslint-plugin-unicorn";
 
-import mergeDuplicateIdAndClassNameProps from "./eslint-configs/merge/merge-duplicate-id-and-classname-props/index.js";
-import mergeExports from "./eslint-configs/merge/merge-exports/index.js";
-import noInvalidIdAndClassNameValue from "./eslint-configs/no-invalid/no-invalid-id-and-classname-value/index.js";
-import noUselessTemplateLiteral from "./eslint-configs/no-useless/no-useless-template-literal/index.js";
-import addBlankLineBeforeJumpStatement from "./eslint-configs/padding/add-blank-line-before-jump-statement/index.js";
-import sortComments from "./eslint-configs/sort/sort-comments/index.js";
-import sortJsxProps from "./eslint-configs/sort/sort-jsx-props/index.js";
-import sortObjectProps from "./eslint-configs/sort/sort-object-props/index.js";
+import mergeDuplicateIdAndClassNameProps from "./eslint-rules/merge/merge-duplicate-id-and-classname-props/index.js";
+import mergeExports from "./eslint-rules/merge/merge-exports/index.js";
+import noInvalidIdAndClassNameValue from "./eslint-rules/no-invalid/no-invalid-id-and-classname-value/index.js";
+import noUselessTemplateLiteral from "./eslint-rules/no-useless/no-useless-template-literal/index.js";
+import addBlankLineBeforeJumpStatement from "./eslint-rules/padding/add-blank-line-before-jump-statement/index.js";
+import sortComments from "./eslint-rules/sort/sort-comments/index.js";
+import sortJsxProps from "./eslint-rules/sort/sort-jsx-props/index.js";
+import sortObjectProps from "./eslint-rules/sort/sort-object-props/index.js";
 
 const baseRules = {
   "func-style": ["warn", "expression"],
