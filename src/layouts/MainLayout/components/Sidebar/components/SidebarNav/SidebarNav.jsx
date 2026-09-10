@@ -10,7 +10,7 @@ const SidebarNav = ({ onCloseSidebar }) => {
   const { t } = useTranslation();
 
   return (
-    <ul className="flex-center flex-col gap-3 first:mt-0.75">
+    <ul className="flex-center flex-col gap-3 *:first:mt-0.75">
       {sidebar.map((item, i) => (
         <SidebarNavItem
           key={i}
