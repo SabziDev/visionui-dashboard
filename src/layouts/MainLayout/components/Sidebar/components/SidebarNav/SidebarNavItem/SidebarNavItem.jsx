@@ -6,7 +6,6 @@ const SidebarNavItem = ({ children, to, Icon, onCloseSidebar }) => {
     <li onClick={() => onCloseSidebar(false)} className="w-full">
       <NavLink
         to={to}
-        viewTransition
         className={({ isActive }) =>
           clsx([
             "flex-items-center gap-4 rounded-2xl px-4 py-2.5 font-VazirMedium",

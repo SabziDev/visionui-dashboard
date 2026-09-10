@@ -8,14 +8,14 @@ import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
 
 const OverviewSection = () => {
   return (
-    <div className="flex flex-col justify-between gap-6 md:items-center 2xl:flex-row en:ltr fa:rtl">
+    <section className="flex flex-col justify-between gap-6 md:items-center 2xl:flex-row en:ltr fa:rtl">
       <WelcomeCard />
 
       <ScrollContainer className="flex-items-center gap-6 sm:justify-center 2xl:w-full">
         <SatisfactionRate value={stats.satisfactionRate} />
         <ReferralTracking value={stats.referralTracking} />
       </ScrollContainer>
-    </div>
+    </section>
   );
 };
 

@@ -16,7 +16,7 @@ const PROGRESS_KEYFRAMES = [
 const NavigationProgressBar = () => {
   const [isShow, setIsShow] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
-  const isPageFirstLoadRef = useRef(true);
+  const isFirstLoadRef = useRef(true);
   const completeTimeoutRef = useRef(null);
   const hideTimeoutRef = useRef(null);
 
@@ -26,8 +26,8 @@ const NavigationProgressBar = () => {
   const DIR = i18n.dir();
 
   useEffect(() => {
-    if (isPageFirstLoadRef.current) {
-      isPageFirstLoadRef.current = false;
+    if (isFirstLoadRef.current) {
+      isFirstLoadRef.current = false;
 
       return;
     }
@@ -57,7 +57,6 @@ const NavigationProgressBar = () => {
     <AnimatePresence>
       {isShow && (
         <motion.div
-          key={pathname}
           initial={{ scaleX: 0 }}
           animate={{
             scaleX: isCompleted ? 1 : PROGRESS_KEYFRAMES,
