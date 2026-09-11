@@ -1,10 +1,13 @@
+/* eslint-disable unicorn/no-nested-ternary */
+
 import { useTranslation } from "react-i18next";
 
 import Skeleton from "@/components/Skeleton/Skeleton";
 
 const CheckboxInput = ({
+  children,
   id = "",
-  title = "",
+  handelWithRHF,
   register,
   checked = false,
   isPending,
@@ -16,6 +19,19 @@ const CheckboxInput = ({
     <label htmlFor={id} className="flex-center cursor-pointer gap-x-2.5">
       {isPending ? (
         <Skeleton borderRadius={4} className="w-50" />
+      ) : handelWithRHF ? (
+        <>
+          <input
+            id={id}
+            type="checkbox"
+            className="peer sr-only"
+            {...(register && { ...register(id) })}
+          />
+          <div className="flex-items-center h-5 w-10 shrink-0 justify-between rounded-full bg-blue px-1 opacity-50 transition-all peer-checked:ps-5.5 peer-checked:opacity-100 en:ltr fa:rtl">
+            <span className="size-3.5 rounded-full bg-white" />
+          </div>
+          <span className="line-clamp-2 text-sm">{t(children)}</span>
+        </>
       ) : (
         <>
           <input
@@ -29,7 +45,7 @@ const CheckboxInput = ({
           <div className="flex-items-center h-5 w-10 shrink-0 justify-between rounded-full bg-blue px-1 opacity-50 transition-all peer-checked:ps-5.5 peer-checked:opacity-100 en:ltr fa:rtl">
             <span className="size-3.5 rounded-full bg-white" />
           </div>
-          <span className="line-clamp-2 text-sm">{t(title)}</span>
+          <span className="line-clamp-2 text-sm">{t(children)}</span>
         </>
       )}
     </label>

@@ -41,18 +41,15 @@ const Form = () => {
           inputErrors={inputErrors}
           copyTextToClipboard={copyTextToClipboard}
         />
-
         <PasswordInput
           register={register}
           inputErrors={inputErrors}
           copyTextToClipboard={copyTextToClipboard}
         />
 
-        <CheckboxInput
-          id="rememberMe"
-          title="pages.public.signin.form.inputs.rememberMe.label"
-          register={register}
-        />
+        <CheckboxInput id="rememberMe" handelWithRHF register={register}>
+          pages.public.signin.form.inputs.rememberMe.label
+        </CheckboxInput>
 
         <SubmitBtn isSubmitting={isSubmitting} />
       </form>
