@@ -2,43 +2,57 @@
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable custom/add-blank-line-before-jump-statement */
 
+const errMessages = {
+  network: "errors.network",
+  timeout: "errors.timeout",
+  server: "errors.server",
+
+  access: "errors.access",
+  notFound: "errors.notFound",
+  conflict: "errors.conflict",
+  validation: "errors.validation",
+
+  default: "errors.default",
+};
+
 const errorHandler = (err) => {
+  const status = err.response?.status;
+
   switch (err.code) {
     case "ERR_NETWORK": {
-      err.message = "errors.connection";
+      err.message = errMessages.network;
       return Promise.reject(err);
     }
     case "ECONNABORTED": {
-      err.message = "errors.abort";
+      err.message = errMessages.timeout;
       return Promise.reject(err);
     }
   }
-
-  const status = err.response?.status;
   if (status >= 500) {
-    err.message = "errors.server";
+    err.message = errMessages.server;
     return Promise.reject(err);
   }
+
   switch (status) {
     case 403: {
-      err.message = "errors.access";
+      err.message = errMessages.access;
       return Promise.reject(err);
     }
     case 404: {
-      err.message = "errors.notFound";
+      err.message = errMessages.notFound;
       return Promise.reject(err);
     }
     case 409: {
-      err.message = "errors.conflict";
+      err.message = errMessages.conflict;
       return Promise.reject(err);
     }
     case 422: {
-      err.message = "errors.validation";
+      err.message = errMessages.validation;
       return Promise.reject(err);
     }
   }
 
-  err.message = "errors.default";
+  err.message = errMessages.default;
   return Promise.reject(err);
 };
 

@@ -9,15 +9,17 @@ const en = {
   loading: "Performing operation...",
   success: "The operation was successfully completed",
   errors: {
-    connection:
+    network:
       "Server connection error! Check your internet connection and try again",
-    abort: "The request took too long",
+    timeout: "The request took too long",
+    server: "An error occurred on the server! Please try again",
+
     access: "You do not have permission to access this resource",
     notFound: "The requested information was not found! Please try again",
     conflict:
       "This request is not compatible with the current state of the data! Check your information and try again",
     validation: "The provided data is invalid",
-    server: "An error occurred on the server! Please try again",
+
     default: "Something went wrong! Please try again",
   },
   pagesSeo: {
