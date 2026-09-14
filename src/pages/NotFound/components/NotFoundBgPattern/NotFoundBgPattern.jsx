@@ -1,4 +1,4 @@
-const NotFoundBackgroundPattern = () => {
+const NotFoundBgPattern = () => {
   return (
     <div
       className="absolute inset-0 opacity-15"
@@ -15,4 +15,4 @@ const NotFoundBackgroundPattern = () => {
   );
 };
 
-export default NotFoundBackgroundPattern;
+export default NotFoundBgPattern;

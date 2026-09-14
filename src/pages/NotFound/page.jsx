@@ -1,6 +1,6 @@
 import Head from "@/layouts/components/Head";
 
-import NotFoundBackgroundPattern from "./components/NotFoundBackgroundPattern/NotFoundBackgroundPattern";
+import NotFoundBgPattern from "./components/NotFoundBgPattern/NotFoundBgPattern";
 import NotFoundBtn from "./components/NotFoundBtn/NotFoundBtn";
 import NotFoundCode from "./components/NotFoundCode/NotFoundCode";
 import NotFoundDesc from "./components/NotFoundDesc/NotFoundDesc";
@@ -17,7 +17,7 @@ const NotFound = () => (
           "radial-gradient(circle at top right, #000041, #004162, #89a0ae)",
       }}
     >
-      <NotFoundBackgroundPattern />
+      <NotFoundBgPattern />
 
       <NotFoundCode />
 
