@@ -88,9 +88,6 @@
   }
 
   /* View Transitions */
-  #main-root__container {
-    view-transition-name: page-content;
-  }
   ::view-transition-old(page-content) {
     animation: page-exit 250ms ease-out both 125ms;
   }
@@ -124,6 +121,7 @@
     }
   }
 
+  /* Font Faces */
   @font-face {
     font-family: "Vazir-Regular";
     font-display: swap;

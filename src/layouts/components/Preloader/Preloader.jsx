@@ -22,6 +22,7 @@ const Preloader = () => {
         <div className="preloader__pulse" />
       </div>
     ),
+
     document.body,
   );
 };

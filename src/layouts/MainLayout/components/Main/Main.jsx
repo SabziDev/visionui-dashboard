@@ -4,13 +4,13 @@ import TransitionOutlet from "@/layouts/components/TransitionOutlet/TransitionOu
 
 const Main = () => {
   return (
-    <TransitionOutlet>
-      <main id="main-root" className="mt-7.5">
+    <main id="main-root" className="mt-7.5">
+      <TransitionOutlet>
         <div id="main-root__container" className="container *:not-first:mt-6">
           <Outlet />
         </div>
-      </main>
-    </TransitionOutlet>
+      </TransitionOutlet>
+    </main>
   );
 };
 

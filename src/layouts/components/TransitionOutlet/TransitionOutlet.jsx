@@ -17,7 +17,7 @@ const TransitionOutlet = ({ children }) => {
   }, [pathname]);
 
   if (!isRouteChanged) return children;
-  return <ViewTransition>{children}</ViewTransition>;
+  return <ViewTransition name="page-content">{children}</ViewTransition>;
 };
 
 export default TransitionOutlet;
