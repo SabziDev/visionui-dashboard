@@ -40,6 +40,7 @@ clean and responsive user interface.
 - React
 - Tailwind
 - React Router
+- Axios
 - TanStack Query
 - i18n
 
