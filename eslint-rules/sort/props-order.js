@@ -12,6 +12,7 @@ const propsOrder = [
   "name",
   "value",
   "placeholder",
+  "autoComplete",
   "min",
   "max",
   "minLength",
