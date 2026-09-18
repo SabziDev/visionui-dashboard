@@ -7,6 +7,7 @@ const en = {
     h: "h",
   },
   loading: "Performing operation...",
+  loadingPage: "Loading page...",
   success: "The operation was successfully completed",
   errors: {
     network:

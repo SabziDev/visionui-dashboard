@@ -22,7 +22,7 @@ const NavigationProgressBar = () => {
 
   const { pathname } = useLocation();
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const DIR = i18n.dir();
 
   useEffect(() => {
@@ -56,29 +56,35 @@ const NavigationProgressBar = () => {
   return (
     <AnimatePresence>
       {isShow && (
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{
-            scaleX: isCompleted ? 1 : PROGRESS_KEYFRAMES,
-          }}
-          exit={{ opacity: 0 }}
-          transition={{
-            duration: isCompleted ? COMPLETE_DURATION : SHOW_DURATION,
-            ease: "easeOut",
-          }}
-          className={clsx([
-            "fixed z-9999 h-1 w-full",
-            "after:absolute after:top-0 after:h-full after:w-12 after:content-['']",
-            "after:shadow-[0_0_20px_4px_var(--progress-bar-color)]",
-            DIR === "ltr"
-              ? "origin-left after:right-0"
-              : "origin-right after:left-0",
-          ])}
-          style={{
-            "--progress-bar-color": COLOR,
-            backgroundColor: "var(--progress-bar-color)",
-          }}
-        />
+        <>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{
+              scaleX: isCompleted ? 1 : PROGRESS_KEYFRAMES,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: isCompleted ? COMPLETE_DURATION : SHOW_DURATION,
+              ease: "easeOut",
+            }}
+            className={clsx([
+              "fixed z-9999 h-1 w-full",
+              "after:absolute after:top-0 after:h-full after:w-12 after:content-['']",
+              "after:shadow-[0_0_20px_4px_var(--progress-bar-color)]",
+              DIR === "ltr"
+                ? "origin-left after:right-0"
+                : "origin-right after:left-0",
+            ])}
+            style={{
+              "--progress-bar-color": COLOR,
+              backgroundColor: "var(--progress-bar-color)",
+            }}
+          />
+
+          <div role="status" className="sr-only">
+            {t("loadingPage")}
+          </div>
+        </>
       )}
     </AnimatePresence>
   );
