@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable max-depth */
 /* eslint-disable unicorn/consistent-function-scoping */
 /* eslint-disable max-lines-per-function */

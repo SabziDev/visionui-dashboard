@@ -21,7 +21,6 @@ const AppLoadError = () => {
     >
       <AppLoadErrorBgPattern />
 
-      {/* TODO AppLoadError-Component */}
       <AppLoadErrorTitle />
       <AppLoadErrorDesc />
       <AppLoadErrorBtn />

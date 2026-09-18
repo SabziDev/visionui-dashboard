@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-small-switch */
 /* eslint-disable default-case */
 
 import queryClient from "../queryClient";

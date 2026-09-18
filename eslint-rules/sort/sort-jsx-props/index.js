@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-duplicate-if-branches */
 /* eslint-disable unicorn/consistent-function-scoping */
 
 import { eventHandlersOrder, propsOrder } from "../props-order.js";
@@ -91,9 +90,10 @@ const sortJsxProps = {
             const currentOrder = [];
 
             for (const attr of allAttrs) {
-              if (attr.type === "JSXAttribute") {
-                currentOrder.push(attr);
-              } else if (attr.type === "JSXSpreadAttribute") {
+              if (
+                attr.type === "JSXAttribute" ||
+                attr.type === "JSXSpreadAttribute"
+              ) {
                 currentOrder.push(attr);
               }
             }

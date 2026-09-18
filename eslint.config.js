@@ -1,4 +1,5 @@
 import { defineConfig } from "@fullstacksjs/eslint-config";
+import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 
 import mergeDuplicateIdAndClassNameProps from "./eslint-rules/merge/merge-duplicate-id-and-classname-props/index.js";
@@ -9,6 +10,18 @@ import addBlankLineBeforeJumpStatement from "./eslint-rules/padding/add-blank-li
 import sortComments from "./eslint-rules/sort/sort-comments/index.js";
 import sortJsxProps from "./eslint-rules/sort/sort-jsx-props/index.js";
 import sortObjectProps from "./eslint-rules/sort/sort-object-props/index.js";
+
+const plugins = [sonarjs.configs.recommended, unicorn.configs.recommended];
+const pluginsRules = {
+  "unicorn/consistent-function-scoping": "warn",
+
+  "unicorn/filename-case": "off",
+  "unicorn/prefer-global-this": "off",
+  "unicorn/name-replacements": "off",
+  "unicorn/no-array-sort": "off",
+  "unicorn/no-null": "off",
+  "unicorn/default-export-style": "off",
+};
 
 const baseRules = {
   "func-style": ["warn", "expression"],
@@ -32,16 +45,7 @@ const baseRules = {
   "custom/sort-jsx-props": "warn",
   "custom/sort-object-props": "warn",
 };
-const externalPluginsRules = {
-  "unicorn/consistent-function-scoping": "warn",
 
-  "unicorn/filename-case": "off",
-  "unicorn/prefer-global-this": "off",
-  "unicorn/name-replacements": "off",
-  "unicorn/no-array-sort": "off",
-  "unicorn/no-null": "off",
-  "unicorn/default-export-style": "off",
-};
 const customRules = {
   rules: {
     "merge-duplicate-id-and-classname-props":
@@ -74,9 +78,9 @@ const config = defineConfig(
     rules: baseRules,
   },
 
-  unicorn.configs.recommended,
+  plugins,
   {
-    rules: externalPluginsRules,
+    rules: pluginsRules,
   },
 
   {
@@ -88,5 +92,4 @@ const config = defineConfig(
     },
   },
 );
-
 export default config;
