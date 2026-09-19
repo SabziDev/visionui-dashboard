@@ -32,7 +32,6 @@ i18n.on("languageChanged", (lang) => updateLanguage(lang));
 
 i18n.use(initReactI18next).init({
   resources,
-
   lng: language,
 
   interpolation: {

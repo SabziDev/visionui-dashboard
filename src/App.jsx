@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { RouterProvider } from "react-router";
 
-import logDeveloperSignature from "./layouts/components/DeveloperSignature/logDeveloperSignature";
+import "./layouts/components/DeveloperSignature/logDeveloperSignature";
 import router from "./routes";
 
 const removeAppPreloader = () => {
@@ -10,10 +10,7 @@ const removeAppPreloader = () => {
 };
 
 const App = () => {
-  useEffect(() => {
-    logDeveloperSignature();
-    removeAppPreloader();
-  }, []);
+  useEffect(() => removeAppPreloader(), []);
 
   return <RouterProvider router={router} />;
 };

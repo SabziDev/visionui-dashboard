@@ -5,24 +5,24 @@ import { IoCartSharp, IoDocumentTextOutline, IoWallet } from "react-icons/io5";
 
 import useCounter from "@/pages/private/hooks/useCounter/useCounter";
 
+const VALUE_PREFIXES = {
+  MONEY: "$",
+  SALES: "%",
+  CLIENTS: "+",
+};
+const ICONS = {
+  MONEY: IoWallet,
+  USERS: IoIosGlobe,
+  CLIENTS: IoDocumentTextOutline,
+  SALES: IoCartSharp,
+};
+
 const ToadyStat = ({ data }) => {
   const counter = useCounter(data.value.count, 1200);
-
-  const VALUE_PREFIX = {
-    MONEY: "$",
-    SALES: "%",
-    CLIENTS: "+",
-  };
-
-  const ICONS = {
-    MONEY: IoWallet,
-    USERS: IoIosGlobe,
-    CLIENTS: IoDocumentTextOutline,
-    SALES: IoCartSharp,
-  };
-  const Icon = ICONS[data.type];
-
   const { t } = useTranslation();
+
+  const Icon = ICONS[data.type];
+  const valuePrefix = VALUE_PREFIXES[data.type];
 
   return (
     <div className="flex-items-center justify-between gap-4 rounded-2xl bg-[linear-gradient(to_bottom,rgb(6_11_38/30%),rgb(26_31_55/80%))] p-4 en:ltr fa:rtl">
@@ -35,7 +35,7 @@ const ToadyStat = ({ data }) => {
 
         <div className="mt-0.5 flex-items-center min-w-30 gap-1 ltr fa:justify-end">
           <div className="font-VazirBold text-lg">
-            <span>{VALUE_PREFIX[data.type] ?? null}</span>
+            <span>{valuePrefix}</span>
             <span>{counter.toLocaleString()}</span>
           </div>
 
