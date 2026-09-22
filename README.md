@@ -94,8 +94,8 @@ pnpm dev
 | react                     | Core UI library                   |
 | tailwind                  | CSS framework                     |
 | react-router              | Client-side routing               |
-| tanstack-query            | Server-state management & caching |
 | axios                     | HTTP API client                   |
+| tanstack-query            | Server-state management & caching |
 | zod                       | Schema validation                 |
 | react-hook-form           | Form handling & validation        |
 | react-hot-toast           | Toast notifications               |
