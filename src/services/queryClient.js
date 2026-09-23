@@ -18,29 +18,31 @@ const queryClient = new QueryClient({
 
   queryCache: new QueryCache({
     onError: (err) => {
-      if (err.config.customError.isHide !== true) {
-        toast.error(i18n.t(err.config.customError.message ?? err.message));
+      if (err.config.customError?.isShow !== false) {
+        toast.error(i18n.t(err.message));
       }
     },
   }),
   mutationCache: new MutationCache({
     onMutate: (_, mutation) => {
-      const toastMeta = mutation.options.meta?.toast;
-      const toastMessage = toastMeta.message ?? "loading";
+      const status = mutation.options.meta?.customStatus;
+      const message = status?.loadingMessage ?? "loading";
 
-      if (toastMeta?.type === "LOADING") {
-        const toastId = toast.loading(i18n.t(toastMessage));
+      if (status?.type === "LOADING") {
+        const toastId = toast.loading(i18n.t(message));
         toastIds.set(mutation, toastId);
       }
     },
     onSuccess: (_, __, ___, mutation) => {
-      const toastMeta = mutation.options.meta?.toast;
-      const toastMessage = toastMeta?.message ?? "success";
+      const status = mutation.options.meta?.customStatus;
+      const message = status?.successMessage ?? "success";
       const toastId = toastIds.get(mutation);
 
-      if (toastMeta?.type === "SUCCESS") toast.success(i18n.t(toastMessage));
-      if (toastMeta?.type === "LOADING") {
-        toast.success(i18n.t(toastMessage), { id: toastId });
+      if (status?.type === "SUCCESS") {
+        toast.success(i18n.t(message));
+      }
+      if (status?.type === "LOADING") {
+        toast.success(i18n.t(message), { id: toastId });
         toastIds.delete(mutation);
       }
     },
@@ -50,8 +52,8 @@ const queryClient = new QueryClient({
       if (toastId) {
         toast.error(i18n.t(err.message), { id: toastId });
         toastIds.delete(mutation);
-      } else if (err.config.customError.isHide !== true) {
-        toast.error(i18n.t(err.config.customError.message ?? err.message));
+      } else if (err.config.customError?.isShow !== false) {
+        toast.error(i18n.t(err.message));
       }
     },
   }),

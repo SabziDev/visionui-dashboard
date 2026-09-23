@@ -16,43 +16,43 @@ const errMessages = {
 };
 
 const errorHandler = (err) => {
+  let message = errMessages.default;
   const status = err.response?.status;
 
   switch (err.code) {
     case "ERR_NETWORK": {
-      err.message = errMessages.network;
-      return Promise.reject(err);
+      message = errMessages.network;
+      break;
     }
     case "ECONNABORTED": {
-      err.message = errMessages.timeout;
-      return Promise.reject(err);
+      message = errMessages.timeout;
+      break;
     }
   }
   if (status >= 500) {
-    err.message = errMessages.server;
-    return Promise.reject(err);
+    message = errMessages.server;
   }
 
   switch (status) {
     case 403: {
-      err.message = errMessages.access;
-      return Promise.reject(err);
+      message = errMessages.access;
+      break;
     }
     case 404: {
-      err.message = errMessages.notFound;
-      return Promise.reject(err);
+      message = errMessages.notFound;
+      break;
     }
     case 409: {
-      err.message = errMessages.conflict;
-      return Promise.reject(err);
+      message = errMessages.conflict;
+      break;
     }
     case 422: {
-      err.message = errMessages.validation;
-      return Promise.reject(err);
+      message = errMessages.validation;
+      break;
     }
   }
 
-  err.message = errMessages.default;
+  err.message = err.config.customError?.message ?? message;
   return Promise.reject(err);
 };
 
