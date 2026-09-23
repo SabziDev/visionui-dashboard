@@ -1,5 +1,6 @@
-/* eslint-disable sonarjs/cognitive-complexity */
-/* eslint-disable unicorn/no-unreadable-for-of-expression */
+/* eslint-disable sonarjs/super-linear-regex */
+/* eslint-disable no-shadow */
+/* eslint-disable unicorn/no-array-callback-reference */
 /* eslint-disable unicorn/consistent-function-scoping */
 
 const mergeExports = {
@@ -10,101 +11,102 @@ const mergeExports = {
         fixable: "code",
         messages: {
           mergeExports:
-            "Combine and sort consecutive named exports into a single export statement",
+            "Combine and move exports into a single export block at the end of the file",
         },
       },
 
       create(context) {
+        const { sourceCode } = context;
+
         const isNamedExport = (node) =>
           node?.type === "ExportNamedDeclaration" &&
           !node.source &&
           !node.declaration &&
-          node.specifiers?.length;
+          node.specifiers?.length > 0;
 
         const isDefaultExport = (node) =>
           node?.type === "ExportDefaultDeclaration";
 
+        const isExport = (node) => isNamedExport(node) || isDefaultExport(node);
+
+        const getExportedName = (specifier) =>
+          specifier.exported.name ?? specifier.exported.value;
+
         return {
-          Program(node) {
-            const { body } = node;
-            const sourceCode = context.sourceCode || context.getSourceCode();
-            let start = 0;
+          Program(program) {
+            const { body } = program;
 
-            while (start < body.length) {
-              if (!isNamedExport(body[start])) {
-                start += 1;
+            const exportNodes = body.filter(isExport);
 
-                continue;
-              }
-
-              let end = start;
-
-              while (end + 1 < body.length && isNamedExport(body[end + 1])) {
-                end += 1;
-              }
-
-              if (start === end) {
-                start += 1;
-
-                continue;
-              }
-
-              const specifiers = [];
-
-              for (let i = start; i <= end; i++) {
-                for (const { exported } of body[i].specifiers) {
-                  specifiers.push(exported.name);
-                }
-              }
-
-              const startRange = body[start].range[0];
-              const endRange = body[end].range[1];
-
-              context.report({
-                node: body[start],
-                messageId: "mergeExports",
-                fix: (fixer) =>
-                  fixer.replaceTextRange(
-                    startRange,
-                    endRange,
-                    `export { ${specifiers.join(", ")} };`,
-                  ),
-              });
-
-              start = end + 1;
+            if (exportNodes.length === 0) {
+              return;
             }
 
-            let defaultExportNode = null;
-            let defaultExportIndex = -1;
+            const namedExports = exportNodes.filter(isNamedExport);
+            const defaultExport = exportNodes.find(isDefaultExport);
 
-            for (const [i, element] of body.entries()) {
-              if (!isDefaultExport(element)) {
-                continue;
-              }
+            const specifiers = namedExports
+              .flatMap(({ specifiers }) => specifiers)
+              .map((specifier) => ({
+                name: getExportedName(specifier),
+                text: sourceCode.getText(specifier),
+              }))
+              .sort((a, b) => a.name.localeCompare(b.name));
 
-              defaultExportNode = element;
-              defaultExportIndex = i;
+            const mergedNamedExport =
+              specifiers.length > 0
+                ? `export { ${specifiers.map(({ text }) => text).join(", ")} };`
+                : "";
 
-              break;
+            const defaultExportText = defaultExport
+              ? sourceCode.getText(defaultExport)
+              : "";
+
+            const exportBlock = [mergedNamedExport, defaultExportText]
+              .filter(Boolean)
+              .join("\n");
+
+            /*
+             * Remove ONLY the export statements.
+             *
+             * Everything else stays byte-for-byte untouched:
+             * - comments
+             * - blank lines
+             * - indentation
+             * - normal statements
+             * - imports
+             */
+            const exportRanges = exportNodes
+              .map(({ range }) => range)
+              .sort((a, b) => b[0] - a[0]);
+
+            let remainingCode = sourceCode.text;
+
+            for (const [start, end] of exportRanges) {
+              remainingCode =
+                remainingCode.slice(0, start) + remainingCode.slice(end);
             }
 
-            if (defaultExportNode && defaultExportIndex !== body.length - 1) {
-              const defaultCode = sourceCode.getText(defaultExportNode);
-              const lastNode = body.at(-1);
+            /*
+             * Only clean the whitespace at the END of the original file.
+             * Nothing else is reformatted.
+             */
+            const content = remainingCode.replace(/\s+$/, "");
 
-              context.report({
-                node: defaultExportNode,
-                messageId: "mergeExports",
-                fix(fixer) {
-                  const fixes = [
-                    fixer.remove(defaultExportNode),
-                    fixer.insertTextAfter(lastNode, `\n${defaultCode}`),
-                  ];
+            const expectedCode = `${content}\n\n${exportBlock}\n`;
 
-                  return fixes;
-                },
-              });
+            if (sourceCode.text === expectedCode) {
+              return;
             }
+
+            context.report({
+              node: exportNodes[0],
+              messageId: "mergeExports",
+
+              fix(fixer) {
+                return fixer.replaceText(program, expectedCode);
+              },
+            });
           },
         };
       },
