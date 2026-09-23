@@ -18,8 +18,8 @@ const queryClient = new QueryClient({
 
   queryCache: new QueryCache({
     onError: (err) => {
-      if (err.config.customFlags?.isShowGlobalErrorToast !== false) {
-        toast.error(i18n.t(err.message));
+      if (err.config.customError.isHide !== true) {
+        toast.error(i18n.t(err.config.customError.message ?? err.message));
       }
     },
   }),
@@ -50,8 +50,8 @@ const queryClient = new QueryClient({
       if (toastId) {
         toast.error(i18n.t(err.message), { id: toastId });
         toastIds.delete(mutation);
-      } else if (err.config.customFlags?.isShowGlobalErrorToast !== false) {
-        toast.error(i18n.t(err.message));
+      } else if (err.config.customError.isHide !== true) {
+        toast.error(i18n.t(err.config.customError.message ?? err.message));
       }
     },
   }),
