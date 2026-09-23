@@ -18,7 +18,8 @@ const errMessages = {
 const errorHandler = (err) => {
   const status = err.response?.status;
   err.customFlags = {
-    isShowToast: err.config.customFlags?.isShowToast ?? true,
+    isShowGlobalErrorToast:
+      err.config.customFlags?.isShowGlobalErrorToast ?? true,
   };
 
   switch (err.code) {

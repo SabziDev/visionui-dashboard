@@ -18,7 +18,9 @@ const queryClient = new QueryClient({
 
   queryCache: new QueryCache({
     onError: (err) => {
-      if (err.customFlags.isShowToast) toast.error(i18n.t(err.message));
+      if (err.customFlags.isShowGlobalErrorToast) {
+        toast.error(i18n.t(err.message));
+      }
     },
   }),
   mutationCache: new MutationCache({
@@ -48,7 +50,7 @@ const queryClient = new QueryClient({
       if (toastId) {
         toast.error(i18n.t(err.message), { id: toastId });
         toastIds.delete(mutation);
-      } else if (err.customFlags.isShowToast) {
+      } else if (err.customFlags.isShowGlobalErrorToast) {
         toast.error(i18n.t(err.message));
       }
     },
