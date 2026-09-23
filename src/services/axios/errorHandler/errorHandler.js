@@ -17,10 +17,6 @@ const errMessages = {
 
 const errorHandler = (err) => {
   const status = err.response?.status;
-  err.customFlags = {
-    isShowGlobalErrorToast:
-      err.config.customFlags?.isShowGlobalErrorToast ?? true,
-  };
 
   switch (err.code) {
     case "ERR_NETWORK": {
