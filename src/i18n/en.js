@@ -32,10 +32,6 @@ const en = {
       title: "Tables",
       desc: "Tables",
     },
-    billing: {
-      title: "Billing",
-      desc: "Billing",
-    },
     profile: {
       title: "Admin-Profile",
       desc: "Admin-Profile",

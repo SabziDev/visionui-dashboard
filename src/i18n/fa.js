@@ -31,10 +31,6 @@ const fa = {
       title: "جداول",
       desc: "جداول",
     },
-    billing: {
-      title: "صورت حساب",
-      desc: "صورت حساب",
-    },
     profile: {
       title: "پروفایل ادمین",
       desc: "پروفایل ادمین",
