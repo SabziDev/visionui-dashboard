@@ -24,8 +24,8 @@ const language = supportedLanguages.includes(initialLanguage)
 
 const updateLanguage = (lang) => {
   localStorage.setItem("lang", lang);
-  document.documentElement.lang = lang;
   document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  document.documentElement.lang = lang;
 };
 
 i18n.on("languageChanged", (lang) => updateLanguage(lang));
