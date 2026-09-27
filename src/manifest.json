@@ -11,7 +11,7 @@
   "name": "VISION UI Dashboard",
   "description": "A dashboard for manage business",
   "theme_color": "#0075ff",
-  "background_color": "#060b26",
+  "background_color": "#0075ff",
   "shortcuts": [
     {
       "url": "/",
