@@ -25,17 +25,6 @@ clean and responsive user interface.
 
 ---
 
-## ✨ Features
-
-- Progressive Web App (PWA) with Web App Manifest, Service Worker caching, and offline capabilities
-- Authentication
-- Displaying data with interactive charts
-- Dual-language panel (EN/FA)
-- Skeleton UI Display States
-- Fully responsive design
-
----
-
 ## ⚙️ Technologies
 
 - React
@@ -45,6 +34,17 @@ clean and responsive user interface.
 - TanStack Query
 - i18n
 - PWA
+
+---
+
+## ✨ Features
+
+- Progressive Web App (PWA) with Web App Manifest, Service Worker caching, and offline capabilities
+- Authentication
+- Displaying data with interactive charts
+- Dual-language panel (EN/FA)
+- Skeleton UI Display States
+- Fully responsive design
 
 ---
 
