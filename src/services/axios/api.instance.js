@@ -8,7 +8,7 @@ import errorHandler from "./errorHandler/errorHandler";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 5000,
+  timeout: 10_000,
 });
 api.interceptors.response.use(null, errorHandler);
 
