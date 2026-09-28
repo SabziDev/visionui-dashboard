@@ -26,7 +26,7 @@ const en = {
   pagesSeo: {
     dashboard: {
       title: "Visionui-Dashboard",
-      desc: "A dashboard for manage business",
+      desc: "A dashboard for managing your business",
     },
     tables: {
       title: "Tables",

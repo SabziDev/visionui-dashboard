@@ -25,7 +25,7 @@ const fa = {
   pagesSeo: {
     dashboard: {
       title: "داشبورد Visionui",
-      desc: "یک داشبورد برای مدیریت کسب و کار",
+      desc: "یک داشبورد برای مدیریت کسب و کار شما",
     },
     tables: {
       title: "جداول",
