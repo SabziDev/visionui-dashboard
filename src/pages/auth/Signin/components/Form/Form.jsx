@@ -47,7 +47,7 @@ const Form = () => {
           copyTextToClipboard={copyTextToClipboard}
         />
 
-        <CheckboxInput id="rememberMe" handelWithRHF register={register}>
+        <CheckboxInput handelWithRHF={{ name: "rememberMe", register }}>
           pages.public.signin.form.inputs.rememberMe.label
         </CheckboxInput>
 

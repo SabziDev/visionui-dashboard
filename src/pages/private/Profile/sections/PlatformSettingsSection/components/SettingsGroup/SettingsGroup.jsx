@@ -33,7 +33,6 @@ const SettingsGroup = ({ data, title, settingsSection, isPending }) => {
           return (
             <CheckboxInput
               key={setting.key}
-              id={setting.key}
               checked={setting.isActive}
               isPending={isPending}
               onChange={(e) => updateSetting(e, setting)}
