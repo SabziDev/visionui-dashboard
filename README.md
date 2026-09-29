@@ -9,18 +9,8 @@ clean and responsive user interface.
 
 <div align="center">
   <img src="./docs/images/screenshot.webp" alt="Vision-Ui screenshot" height="450" width="100%"/>
-</div>
 
-<div align="center">
-  <span>
-    🔗 GitHub: 
-    <a href="https://github.com/SabziDev/visionui-dashboard">LINK</a>
-  </span>
-  <span>|</span>
-  <span>
-    🔗 Demo: 
-    <a href="https://sabzidev-visionui-dashboard.vercel.app">LINK</a>
-  </span>
+[GITHUB](https://github.com/SabziDev/visionui-dashboard) | [DEMO](https://sabzidev-visionui-dashboard.vercel.app)
 </div>
 
 ---
