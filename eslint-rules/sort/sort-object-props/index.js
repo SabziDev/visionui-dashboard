@@ -1,5 +1,4 @@
 /* eslint-disable unicorn/prefer-includes-over-repeated-comparisons */
-/* eslint-disable unicorn/no-break-in-nested-loop */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable unicorn/consistent-function-scoping */
 
@@ -15,6 +14,7 @@ const sortObjectProps = {
           wrongOrder: "Object properties should be ordered!",
           wrongDestructure: "Destructured properties should be ordered!",
           wrongParams: "Function parameters should be ordered!",
+          wrongTypeProperties: "Type properties should be ordered!",
         },
       },
 
@@ -32,14 +32,18 @@ const sortObjectProps = {
 
         const getKeyName = (prop) => {
           if (!prop) return "";
-          if (prop.type === "Property") {
+
+          if (
+            prop.type === "Property" ||
+            prop.type === "TSPropertySignature" ||
+            prop.type === "TSMethodSignature" ||
+            prop.type === "TSCallSignatureDeclaration" ||
+            prop.type === "TSConstructSignatureDeclaration"
+          ) {
             return prop.key?.name || prop.key?.value || "";
           }
-          if (prop.type === "Identifier") {
-            return prop.name;
-          }
 
-          return "";
+          return prop.type === "Identifier" ? prop.name : "";
         };
 
         const isSpread = (item) => {
@@ -47,6 +51,16 @@ const sortObjectProps = {
             item.type === "SpreadElement" ||
             item.type === "RestElement" ||
             item.type === "ExperimentalRestProperty"
+          );
+        };
+
+        const isTypeMember = (item) => {
+          return (
+            item.type === "TSPropertySignature" ||
+            item.type === "TSMethodSignature" ||
+            item.type === "TSCallSignatureDeclaration" ||
+            item.type === "TSConstructSignatureDeclaration" ||
+            item.type === "TSIndexSignature"
           );
         };
 
@@ -76,9 +90,10 @@ const sortObjectProps = {
             .sort((a, b) => {
               const priorityA = getEventPriority(getKeyName(a));
               const priorityB = getEventPriority(getKeyName(b));
-              if (priorityA === 999 && priorityB === 999) return 0;
 
-              return priorityA - priorityB;
+              return priorityA === 999 && priorityB === 999
+                ? 0
+                : priorityA - priorityB;
             });
 
           const classStyle = items
@@ -90,10 +105,12 @@ const sortObjectProps = {
             .sort((a, b) => {
               const nameA = getKeyName(a);
               const nameB = getKeyName(b);
-              if (nameA === "className" && nameB === "style") return -1;
-              if (nameA === "style" && nameB === "className") return 1;
 
-              return 0;
+              if (nameA === "className" && nameB === "style") {
+                return -1;
+              }
+
+              return nameA === "style" && nameB === "className" ? 1 : 0;
             });
 
           return [
@@ -112,6 +129,7 @@ const sortObjectProps = {
             if (isSpread(prop)) {
               if (currentChunk.length > 0) {
                 const sortedChunk = sortItems(currentChunk);
+
                 result.push(...sortedChunk);
                 currentChunk = [];
               }
@@ -124,145 +142,169 @@ const sortObjectProps = {
 
           if (currentChunk.length > 0) {
             const sortedChunk = sortItems(currentChunk);
+
             result.push(...sortedChunk);
           }
 
           return result;
         };
 
+        const sortTypeMembers = (members) => {
+          if (members.length <= 1) return members;
+
+          const sortableMembers = members.filter(
+            (member) => !isSpread(member) && isTypeMember(member),
+          );
+
+          const otherMembers = members.filter(
+            (member) => !sortableMembers.includes(member),
+          );
+
+          const sortedMembers = sortItems(sortableMembers);
+
+          return [...sortedMembers, ...otherMembers];
+        };
+
+        const areItemsDifferent = (current, sorted) => {
+          if (current.length !== sorted.length) {
+            return true;
+          }
+
+          for (const [i, item] of current.entries()) {
+            if (item === sorted[i]) {
+              continue;
+            }
+
+            return true;
+          }
+
+          return false;
+        };
+
+        const buildObjectText = (items) => {
+          return `{ ${items
+            .map((item) => sourceCode.getText(item))
+            .join(", ")} }`;
+        };
+
+        const buildTypeMembersText = (members) => {
+          return members.map((member) => sourceCode.getText(member)).join("\n");
+        };
+
+        const processObjectPattern = (node, messageId) => {
+          const { properties } = node;
+
+          if (!properties || properties.length <= 1) return;
+
+          const sorted = sortPropertiesWithSpreadBarriers(properties);
+
+          if (!areItemsDifferent(properties, sorted)) return;
+
+          const firstProperty = properties[0];
+          const lastProperty = properties.at(-1);
+
+          const start = firstProperty.range[0];
+          const end = lastProperty.range[1];
+
+          context.report({
+            node,
+            messageId,
+            fix(fixer) {
+              const sortedText = sorted
+                .map((property) => sourceCode.getText(property))
+                .join(", ");
+
+              return fixer.replaceTextRange([start, end], sortedText);
+            },
+          });
+        };
+
+        const processFunctionParams = (node) => {
+          const { params } = node;
+
+          if (!params || params.length === 0) return;
+
+          for (const param of params) {
+            if (param.type !== "ObjectPattern") {
+              continue;
+            }
+
+            processObjectPattern(param, "wrongParams");
+          }
+        };
+
+        const processTypeMembers = (node, messageId) => {
+          const members = node.body ?? node.members;
+
+          if (!members || members.length <= 1) return;
+
+          const sorted = sortTypeMembers(members);
+
+          if (!areItemsDifferent(members, sorted)) return;
+
+          const firstMember = members[0];
+          const lastMember = members.at(-1);
+
+          const start = firstMember.range[0];
+          const end = lastMember.range[1];
+
+          context.report({
+            node,
+            messageId,
+            fix(fixer) {
+              const sortedText = buildTypeMembersText(sorted);
+
+              return fixer.replaceTextRange([start, end], sortedText);
+            },
+          });
+        };
+
         return {
           ObjectExpression(node) {
             const { properties } = node;
+
             if (properties.length <= 1) return;
 
             const sorted = sortPropertiesWithSpreadBarriers(properties);
 
-            let isNeedsFix = false;
-
-            for (const [i, prop] of properties.entries()) {
-              if (prop === sorted[i]) {
-                continue;
-              }
-
-              isNeedsFix = true;
-
-              break;
-            }
-
-            if (!isNeedsFix) return;
+            if (!areItemsDifferent(properties, sorted)) return;
 
             context.report({
               node,
               messageId: "wrongOrder",
               fix(fixer) {
-                const sortedText = sorted
-                  .map((p) => sourceCode.getText(p))
-                  .join(", ");
+                const sortedText = buildObjectText(sorted);
 
-                return fixer.replaceText(node, `{ ${sortedText} }`);
+                return fixer.replaceText(node, sortedText);
               },
             });
           },
 
           ObjectPattern(node) {
-            const { properties } = node;
-            if (!properties || properties.length <= 1) return;
+            processObjectPattern(node, "wrongDestructure");
+          },
 
-            const nonSpreads = properties.filter((p) => !isSpread(p));
-            const spreads = properties.filter((p) => isSpread(p));
+          TSTypeLiteral(node) {
+            processTypeMembers(node, "wrongTypeProperties");
+          },
 
-            const sortedNonSpreads = sortItems(nonSpreads);
-            const sorted = [...sortedNonSpreads, ...spreads];
+          TSInterfaceBody(node) {
+            processTypeMembers(node, "wrongTypeProperties");
+          },
 
-            let isNeedsFix = false;
-
-            for (const [i, prop] of properties.entries()) {
-              if (prop === sorted[i]) {
-                continue;
-              }
-
-              isNeedsFix = true;
-
-              break;
+          TSTypeAliasDeclaration(node) {
+            if (node.typeAnnotation?.type !== "TSTypeLiteral") {
+              return;
             }
 
-            if (!isNeedsFix) return;
-
-            context.report({
-              node,
-              messageId: "wrongDestructure",
-              fix(fixer) {
-                const sortedText = sorted
-                  .map((p) => sourceCode.getText(p))
-                  .join(", ");
-
-                return fixer.replaceText(node, `{ ${sortedText} }`);
-              },
-            });
+            processTypeMembers(node.typeAnnotation, "wrongTypeProperties");
           },
 
-          processFunctionParams(node) {
-            const { params } = node;
-            if (!params || params.length === 0) return;
+          FunctionDeclaration: processFunctionParams,
 
-            for (const param of params) {
-              if (param.type !== "ObjectPattern") {
-                continue;
-              }
+          FunctionExpression: processFunctionParams,
 
-              const nonSpreads = param.properties.filter((p) => !isSpread(p));
-              const spreads = param.properties.filter((p) => isSpread(p));
-              const sortedNonSpreads = sortItems(nonSpreads);
-              const sortedProps = [...sortedNonSpreads, ...spreads];
-
-              let isNeedsFix = false;
-
-              for (const [i, prop] of param.properties.entries()) {
-                if (prop === sortedProps[i]) {
-                  continue;
-                }
-
-                isNeedsFix = true;
-
-                break;
-              }
-
-              if (isNeedsFix) {
-                context.report({
-                  node: param,
-                  messageId: "wrongParams",
-                  fix(fixer) {
-                    const propsText = sortedProps
-                      .map((p) => sourceCode.getText(p))
-                      .join(", ");
-
-                    return fixer.replaceText(param, `{ ${propsText} }`);
-                  },
-                });
-              }
-            }
-          },
-
-          FunctionDeclaration: (node) => {
-            if (!node.params || node.params.length <= 1) return;
-            sortObjectProps.rules["sort-object-props"]
-              .create(context)
-              .processFunctionParams(node);
-          },
-
-          FunctionExpression: (node) => {
-            if (!node.params || node.params.length <= 1) return;
-            sortObjectProps.rules["sort-object-props"]
-              .create(context)
-              .processFunctionParams(node);
-          },
-
-          ArrowFunctionExpression: (node) => {
-            if (!node.params || node.params.length <= 1) return;
-            sortObjectProps.rules["sort-object-props"]
-              .create(context)
-              .processFunctionParams(node);
-          },
+          ArrowFunctionExpression: processFunctionParams,
         };
       },
     },

@@ -49,22 +49,21 @@ const sortJsxProps = {
                 const priorityA = getEventPriority(a.name.name);
                 const priorityB = getEventPriority(b.name.name);
 
-                if (priorityA === 999 && priorityB === 999) {
-                  return 0;
-                }
-
-                return priorityA - priorityB;
+                return priorityA === 999 && priorityB === 999
+                  ? 0
+                  : priorityA - priorityB;
               });
 
             const classStyle = normalAttrs
               .filter((attr) => ["className", "style"].includes(attr.name.name))
               .sort((a, b) => {
-                if (a.name.name === "className" && b.name.name === "style")
+                if (a.name.name === "className" && b.name.name === "style") {
                   return -1;
-                if (a.name.name === "style" && b.name.name === "className")
-                  return 1;
+                }
 
-                return 0;
+                return a.name.name === "style" && b.name.name === "className"
+                  ? 1
+                  : 0;
               });
 
             const otherProps = normalAttrs.filter((attr) => {
@@ -86,7 +85,6 @@ const sortJsxProps = {
             ];
 
             let isNeedsFix = false;
-
             const currentOrder = [];
 
             for (const attr of allAttrs) {

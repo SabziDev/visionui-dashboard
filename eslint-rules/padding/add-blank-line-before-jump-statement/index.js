@@ -141,9 +141,7 @@ const addBlankLineBeforeJumpStatement = {
 
           const { parentBody } = findParentBlock(node);
 
-          if (!parentBody) return;
-
-          if (!hasPreviousStatement(node, parentBody)) {
+          if (!parentBody || !hasPreviousStatement(node, parentBody)) {
             return;
           }
 

@@ -25,14 +25,10 @@ const mergeDuplicateIdAndClassNameProps = {
             return value.value;
           }
 
-          if (
-            value.type === "JSXExpressionContainer" &&
+          return value.type === "JSXExpressionContainer" &&
             value.expression.type === "Literal"
-          ) {
-            return value.expression.value;
-          }
-
-          return null;
+            ? value.expression.value
+            : null;
         };
 
         return {

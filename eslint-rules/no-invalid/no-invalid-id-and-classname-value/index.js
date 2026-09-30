@@ -154,11 +154,11 @@ const noInvalidIdAndClassNameValue = {
                   ? "singleItemArray"
                   : "invalid",
               fix: (fixer) => {
-                if (invalidElementIndex === -2) {
-                  return fixer.remove(node);
-                }
-
-                if (invalidElementIndex === -1 || !isArrayExpression) {
+                if (
+                  invalidElementIndex === -2 ||
+                  invalidElementIndex === -1 ||
+                  !isArrayExpression
+                ) {
                   return fixer.remove(node);
                 }
 
