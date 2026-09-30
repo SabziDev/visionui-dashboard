@@ -11,7 +11,7 @@ const en = {
   success: "The operation was successfully completed",
   errors: {
     network:
-      "Server connection error! Check your internet connection and try again",
+      "Server connection error, Check your internet connection and try again",
     timeout: "The request took too long",
     server: "An error occurred on the server! Please try again",
 

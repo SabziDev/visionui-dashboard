@@ -10,7 +10,7 @@ const limitInCache = (key, size) => {
 };
 
 // Service Worker Codes
-const cacheVersion = 10;
+const cacheVersion = 40;
 
 const activeCaches = {
   static: `static-v${cacheVersion}`,
@@ -80,7 +80,7 @@ self.addEventListener("fetch", (event) => {
               });
             })
             .catch((error) => {
-              return caches.match("/notFound");
+              // return caches.match("/notFound");
             });
     }),
   );
