@@ -1,3 +1,8 @@
-const supportedJumpStatements = ["return", "break", "continue", "throw"];
+const supportedJumpStatements = [
+  "ReturnStatement",
+  "BreakStatement",
+  "ContinueStatement",
+  "ThrowStatement",
+];
 
 export { supportedJumpStatements };

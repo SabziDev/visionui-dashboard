@@ -3,13 +3,6 @@
 
 import { supportedJumpStatements } from "./supported-jump-statements.js";
 
-const jumpStatementTypes = {
-  return: "ReturnStatement",
-  break: "BreakStatement",
-  continue: "ContinueStatement",
-  throw: "ThrowStatement",
-};
-
 const addBlankLineBeforeJumpStatement = {
   rules: {
     "add-blank-line-before-jump-statement": {
@@ -25,11 +18,7 @@ const addBlankLineBeforeJumpStatement = {
       create(context) {
         const { sourceCode = context.getSourceCode() } = context;
 
-        const supportedStatementTypes = new Set(
-          supportedJumpStatements.map(
-            (statement) => jumpStatementTypes[statement],
-          ),
-        );
+        const supportedStatementTypes = new Set(supportedJumpStatements);
 
         const isJumpStatement = (type) => supportedStatementTypes.has(type);
 
@@ -185,8 +174,8 @@ const addBlankLineBeforeJumpStatement = {
         };
 
         const visitors = Object.fromEntries(
-          supportedJumpStatements.map((statement) => [
-            jumpStatementTypes[statement],
+          supportedJumpStatements.map((statementType) => [
+            statementType,
             checkStatement,
           ]),
         );
