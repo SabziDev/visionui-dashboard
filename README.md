@@ -106,4 +106,4 @@ Developed by **ABOLFAZL SABZMOHAMMADI**
 
 GitHub: [github.com/SabziDev](https://github.com/SabziDev)
 <br />
-Website: [SabziDev.com](https://Sabzi.Dev)
+Website: [Sabzi.Dev](https://Sabzi.Dev)
