@@ -10,7 +10,7 @@ const limitInCache = (key, size) => {
 };
 
 // Service Worker Codes
-const cacheVersion = 2;
+const cacheVersion = 10;
 
 const activeCaches = {
   static: `static-v${cacheVersion}`,

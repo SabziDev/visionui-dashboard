@@ -11,9 +11,10 @@ const Sidebar = ({ isShowSidebar, toggleSidebar }) => {
   return (
     <>
       <Overlay
-        isShow={isShowSidebar}
+        isOpen={isShowSidebar}
+        hideAt="lg"
+        lockScroll
         onClose={toggleSidebar}
-        className="lg:hidden"
       />
 
       <aside

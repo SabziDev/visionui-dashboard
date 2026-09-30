@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import useToggle from "@/hooks/useToggle";
 
 import LayoutBase from "../components/LayoutBase";
@@ -11,12 +9,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 const MainLayout = () => {
   const [isShowSidebar, toggleSidebar] = useToggle(false);
-
-  useEffect(() => {
-    if (isShowSidebar) document.body.classList.add("max-lg:overflow-hidden");
-
-    return () => document.body.classList.remove("max-lg:overflow-hidden");
-  }, [isShowSidebar]);
 
   return (
     <>
