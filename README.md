@@ -102,8 +102,8 @@ pnpm dev
 
 ## 👨‍💻 Developer
 
-Frontend Created by **ABOLFAZL SABZMOHAMMADI**
+Developed by **ABOLFAZL SABZMOHAMMADI**
 
 GitHub: [github.com/SabziDev](https://github.com/SabziDev)
 <br />
-Website: [SabziDev.com](https://SabziDev.com)
+Website: [SabziDev.com](https://Sabzi.Dev)

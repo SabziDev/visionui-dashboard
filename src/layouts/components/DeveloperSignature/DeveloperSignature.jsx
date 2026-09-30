@@ -1,6 +1,6 @@
 const DeveloperSignature = () => (
   <a
-    href="https://SabziDev.com"
+    href="https://Sabzi.Dev"
     target="_blank"
     rel="noreferrer noopener"
     className="font-sans"
