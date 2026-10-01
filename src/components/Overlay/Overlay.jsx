@@ -28,7 +28,7 @@ const OVERLAY_BREAKPOINTS_CLASSES = {
 };
 
 const Overlay = ({
-  isOpen,
+  isShow,
   hideAt,
   lockScroll = false,
   onClose,
@@ -37,19 +37,19 @@ const Overlay = ({
   const overlayClass = hideAt ? OVERLAY_BREAKPOINTS_CLASSES[hideAt] : undefined;
 
   useHotkey("Escape", onClose, {
-    enabled: isOpen,
+    enabled: isShow,
   });
   useEffect(() => {
     if (!lockScroll) return;
 
     const scrollLockClassName = overlayClass?.lockScroll ?? "overflow-hidden";
 
-    if (isOpen) document.body.classList.add(scrollLockClassName);
+    if (isShow) document.body.classList.add(scrollLockClassName);
     return () => document.body.classList.remove(scrollLockClassName);
-  }, [isOpen, lockScroll, overlayClass?.lockScroll]);
+  }, [isShow, lockScroll, overlayClass?.lockScroll]);
 
   return (
-    isOpen && (
+    isShow && (
       <div
         onClick={onClose}
         className={clsx(

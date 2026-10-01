@@ -11,7 +11,7 @@ const Sidebar = ({ isShowSidebar, toggleSidebar }) => {
   return (
     <>
       <Overlay
-        isOpen={isShowSidebar}
+        isShow={isShowSidebar}
         hideAt="lg"
         lockScroll
         onClose={toggleSidebar}
