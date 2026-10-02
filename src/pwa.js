@@ -175,7 +175,7 @@ const pwaConfig = {
       "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg}",
     ],
     runtimeCaching: [
-      createResourceCache("images", "gif|svg|jpeg|jpg|png|webp", 100),
+      createResourceCache("images", "gif|svg|ico|jpeg|jpg|png|webp", 100),
       createResourceCache("videos", "mp4|webm", 10),
       createResourceCache("audios", "mp3|wav|ogg", 20),
 
