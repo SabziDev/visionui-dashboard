@@ -10,7 +10,7 @@ const SidebarNeedHelp = () => {
         src="/images/shapes/layouts/main/sidebar/need-help-bg.webp"
         alt="halo-shape"
         loading="lazy"
-        className="absolute inset-0 -z-1 select-none"
+        className="absolute inset-0 -z-1 size-full select-none"
       />
 
       <div className="flex-center size-9 rounded-xl bg-white">
