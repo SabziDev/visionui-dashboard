@@ -172,12 +172,12 @@ const pwaConfig = {
   },
   workbox: {
     globPatterns: [
-      "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg}",
+      "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg,opus}",
     ],
     runtimeCaching: [
       createResourceCache("images", "gif|svg|ico|jpeg|jpg|png|webp", 100),
       createResourceCache("videos", "mp4|webm", 10),
-      createResourceCache("audios", "mp3|wav|ogg", 20),
+      createResourceCache("audios", "mp3|wav|ogg|opus", 20),
 
       {
         urlPattern: new RegExp(`^${API_BASE_URL}/.*$`),
