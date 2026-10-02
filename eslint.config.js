@@ -22,7 +22,6 @@ const pluginsRules = {
   "unicorn/no-null": "off",
   "unicorn/default-export-style": "off",
 };
-
 const baseRules = {
   "func-style": ["warn", "expression"],
   quotes: [
@@ -45,7 +44,6 @@ const baseRules = {
   "custom/sort-jsx-props": "warn",
   "custom/sort-object-props": "warn",
 };
-
 const customRules = {
   rules: {
     "merge-duplicate-id-and-classname-props":
@@ -80,14 +78,6 @@ const config = defineConfig(
   {
     rules: pluginsRules,
   },
-
-  {
-    files: ["src/routes.{jsx,tsx}"],
-    rules: {
-      "react-refresh/only-export-components": "off",
-
-      "custom/sort-object-props": "off",
-    },
-  },
 );
+
 export default config;

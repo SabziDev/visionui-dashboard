@@ -34,6 +34,11 @@
   :root {
     @apply scroll-smooth [interpolate-size:allow-keywords];
   }
+  *,
+  *::before,
+  *::after {
+    @apply transition-discrete;
+  }
   html {
     @apply selection:bg-navy selection:text-blue firefox:scrollbar-thumb-blue;
   }

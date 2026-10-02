@@ -2,7 +2,10 @@ import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 import simpleHtmlPlugin from "vite-plugin-simple-html";
+
+import pwaConfig from "./src/pwa.js";
 
 export default defineConfig({
   server: {
@@ -22,8 +25,9 @@ export default defineConfig({
     babel({
       presets: [reactCompilerPreset()],
     }),
-
     tailwindcss(),
+
+    VitePWA(pwaConfig),
 
     simpleHtmlPlugin({
       minify: true,
