@@ -172,7 +172,7 @@ const pwaConfig = {
   },
   workbox: {
     globPatterns: [
-      "**/*.{html,css,js,ttf,woff,woff2,gif,svg,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg}",
+      "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg}",
     ],
     runtimeCaching: [
       createResourceCache("images", "gif|svg|jpeg|jpg|png|webp", 100),
