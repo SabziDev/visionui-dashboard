@@ -60,8 +60,8 @@ const useAuthForm = () => {
       toast.error(t("pages.public.signin.loggingToast"), {
         id: toastId,
       });
-      await new Promise(() => {
-        null;
+      await new Promise((resolve) => {
+        setTimeout(resolve, 3000);
       });
     }
   };
