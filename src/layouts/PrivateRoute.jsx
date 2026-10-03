@@ -12,8 +12,8 @@ const PrivateRoute = () => {
   const { admin } = useGetAdmin();
   const { adminId } = use(AuthContext);
 
-  if (adminId === admin.id) return <MainLayout />;
-  return <Navigate to="/signin" replace />;
+  if (adminId !== admin?.id) return <Navigate to="/signin" replace />;
+  return <MainLayout />;
 };
 
 export default PrivateRoute;

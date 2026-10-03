@@ -1,26 +1,24 @@
+/* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable camelcase */
 /* eslint-disable custom/sort-object-props */
 
 import { API_BASE_URL } from "./data/constants.js";
 
-const createUrlPattern = (baseUrl) => {
-  const escapedUrl = baseUrl.replaceAll(/[$(-+.?[-^{|}]/g, String.raw`\$&`);
+const STATIC_CACHE_PATTERNS = [
+  "**/*.{html,css,js}",
+  "**/*.{ttf,woff,woff2}",
+  "**/*.{jpeg,jpg,png,webp,gif,svg,ico}",
+  "**/*.{mp4,webm}",
+  "**/*.{mp3,wav,ogg,opus}",
+];
 
-  return new RegExp(`^${escapedUrl}/.*$`);
+const createApiUrlMatcher = (baseUrl) => {
+  const escapedBaseUrl = baseUrl.replaceAll(/[$(-+.?[-^{|}]/g, String.raw`\$&`);
+
+  return new RegExp(`^${escapedBaseUrl}/.*$`);
 };
-
-const createAssetsRoute = (name, fileExtensions, maxEntries) => ({
-  urlPattern: new RegExp(String.raw`\.(?:${fileExtensions.join("|")})$`, "i"),
-  handler: "CacheFirst",
-  options: {
-    cacheName: `${name}-runtime-cache`,
-    expiration: {
-      maxEntries,
-    },
-  },
-});
-const createApiRoute = (method) => ({
-  urlPattern: createUrlPattern(API_BASE_URL),
+const createApiRuntimeRoute = (method) => ({
+  urlPattern: createApiUrlMatcher(API_BASE_URL),
   handler: method === "GET" ? "NetworkFirst" : "NetworkOnly",
   method,
   options:
@@ -37,6 +35,27 @@ const createApiRoute = (method) => ({
           },
         },
 });
+
+const createAssetsRuntimeRoute = (destination, maxEntries) => {
+  const DESTINATION_MATCHERS = {
+    image: ({ request }) => request.destination === "image",
+    video: ({ request }) => request.destination === "video",
+    audio: ({ request }) => request.destination === "audio",
+  };
+
+  return {
+    urlPattern: DESTINATION_MATCHERS[destination],
+
+    handler: "CacheFirst",
+
+    options: {
+      cacheName: `${destination}s-runtime-cache`,
+      expiration: {
+        maxEntries,
+      },
+    },
+  };
+};
 
 /** @type {import("vite-plugin-pwa").VitePWAOptions} */
 const pwaConfig = {
@@ -179,23 +198,19 @@ const pwaConfig = {
     ],
   },
   workbox: {
-    globPatterns: [
-      "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg,opus}",
-    ],
-    runtimeCaching: [
-      createAssetsRoute(
-        "images",
-        ["gif", "svg", "ico", "jpeg", "jpg", "png", "webp"],
-        100,
-      ),
-      createAssetsRoute("videos", ["mp4", "webm"], 10),
-      createAssetsRoute("audios", ["mp3", "wav", "ogg", "opus"], 20),
+    navigationPreload: true,
 
-      createApiRoute("GET"),
-      createApiRoute("POST"),
-      createApiRoute("PUT"),
-      createApiRoute("PATCH"),
-      createApiRoute("DELETE"),
+    globPatterns: STATIC_CACHE_PATTERNS,
+    runtimeCaching: [
+      createAssetsRuntimeRoute("image", 100),
+      createAssetsRuntimeRoute("video", 10),
+      createAssetsRuntimeRoute("audio", 20),
+
+      createApiRuntimeRoute("GET"),
+      createApiRuntimeRoute("POST"),
+      createApiRuntimeRoute("PUT"),
+      createApiRuntimeRoute("PATCH"),
+      createApiRuntimeRoute("DELETE"),
     ],
   },
 };

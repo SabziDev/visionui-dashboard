@@ -5,7 +5,7 @@ const PWAInstallPopupCloseBtn = ({ handleClose }) => {
     <button
       type="button"
       onClick={handleClose}
-      className="absolute inset-e-0.5 top-0.5 text-white/60 transition-colors hover:text-white/80"
+      className="absolute inset-e-0.75 top-0.75 text-white/60 transition-colors hover:text-white/80"
     >
       <IoClose className="size-5" />
     </button>

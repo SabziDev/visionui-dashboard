@@ -17,7 +17,7 @@ const Signin = () => {
 
   const { t } = useTranslation();
 
-  if (adminId === admin.id) return <Navigate to="/" replace />;
+  if (adminId === admin?.id) return <Navigate to="/" replace />;
   return (
     <>
       <Head />

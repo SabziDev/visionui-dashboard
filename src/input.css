@@ -40,7 +40,7 @@
     @apply transition-discrete;
   }
   html {
-    @apply selection:bg-navy selection:text-blue firefox:scrollbar-thumb-blue;
+    @apply firefox:scrollbar-thumb-blue selection:bg-navy selection:text-blue;
   }
   *:not(html) {
     @apply firefox:scrollbar-thin firefox:scrollbar-thumb-blue;
@@ -57,15 +57,11 @@
   *:not(html) ::-webkit-scrollbar-thumb {
     @apply bg-blue rounded-full;
   }
-  html::-webkit-scrollbar-thumb:hover {
-    @apply bg-blue/80;
-  }
+  html::-webkit-scrollbar-thumb:hover,
   *:not(html) ::-webkit-scrollbar-thumb:hover {
     @apply bg-blue/80;
   }
-  html::-webkit-scrollbar-corner {
-    @apply bg-transparent;
-  }
+  html::-webkit-scrollbar-corner,
   *:not(html) ::-webkit-scrollbar-corner {
     @apply bg-transparent;
   }
