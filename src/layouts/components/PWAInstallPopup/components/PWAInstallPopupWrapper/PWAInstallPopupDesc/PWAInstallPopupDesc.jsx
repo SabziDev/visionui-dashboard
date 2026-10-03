@@ -5,7 +5,7 @@ const PWAInstallPopupDesc = () => {
 
   return (
     <p className="text-xs text-white/60">
-      {t("layouts.pwaInstallBanner.desc")}{" "}
+      {t("layouts.pwaInstallBanner.desc")}
     </p>
   );
 };
