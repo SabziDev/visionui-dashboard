@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import PWAInstallPopupGradientLine from "./components/PWAInstallPopupGradientLine/PWAInstallPopupGradientLine";
 import PWAInstallPopupBtn from "./components/PWAInstallPopupBtn/PWAInstallPopupBtn";
 import PWAInstallPopupCloseBtn from "./components/PWAInstallPopupCloseBtn/PWAInstallPopupCloseBtn";
 import PWAInstallPopupDesc from "./components/PWAInstallPopupDesc/PWAInstallPopupDesc";
+import PWAInstallPopupGradientLine from "./components/PWAInstallPopupGradientLine/PWAInstallPopupGradientLine";
 import PWAInstallPopupIcon from "./components/PWAInstallPopupIcon/PWAInstallPopupIcon";
 import PWAInstallPopupTitle from "./components/PWAInstallPopupTitle/PWAInstallPopupTitle";
 
@@ -36,7 +36,7 @@ const PWAInstallPopup = () => {
     };
   }, []);
 
-  if ( !isVisible) return null;
+  if (!deferredPrompt || !isVisible) return null;
 
   const handleInstall = async () => {
     if (!deferredPrompt) return;
