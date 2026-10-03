@@ -13,12 +13,12 @@ const TRANSITION = {
 
 const AnimatedOutlet = () => {
   const outlet = useOutlet();
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={location.pathname}
+        key={pathname}
         variants={VARIANTS}
         initial="initial"
         animate="animate"
