@@ -12,8 +12,7 @@ const PWAInstallPopup = () => {
   };
 
   return (
-    isShow &&
-    installPrompt && (
+    isShow && (
       <PWAInstallPopupWrapper
         closePopup={closePopup}
         installPrompt={installPrompt}
