@@ -4,9 +4,7 @@ const PWAInstallBannerTitle = () => {
   const { t } = useTranslation();
 
   return (
-    <h6 className="text-sm font-bold text-white">
-      {t("layouts.pwaInstallBanner.title")}
-    </h6>
+    <h6 className="text-sm font-bold">{t("layouts.pwaInstallBanner.title")}</h6>
   );
 };
 

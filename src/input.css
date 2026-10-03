@@ -92,40 +92,6 @@
     @apply cursor-pointer;
   }
 
-  /* View Transitions */
-  ::view-transition-old(.page) {
-    animation: page-exit 250ms ease-out both 125ms;
-  }
-  ::view-transition-new(.page) {
-    animation: page-enter 250ms ease-out both 250ms;
-  }
-  @keyframes page-exit {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-
-    to {
-      opacity: 0;
-      transform: translateY(-15px);
-      filter: blur(2px);
-    }
-  }
-  @keyframes page-enter {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-      filter: blur(4px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-  }
-
   /* Font Faces */
   @font-face {
     font-family: "Vazir-Regular";

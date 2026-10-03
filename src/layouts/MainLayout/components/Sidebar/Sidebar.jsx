@@ -18,12 +18,12 @@ const Sidebar = ({ isShowSidebar, toggleSidebar }) => {
       />
 
       <aside
-        className={clsx([
-          "fixed z-100 m-2.5 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-250 2xl:w-70",
+        className={clsx(
+          "fixed z-100 flex-items-center h-[calc(100dvh-20px)] w-65 flex-col rounded-2xl bg-navy p-2 py-9 transition-[translate,opacity] duration-250 2xl:w-70",
           isShowSidebar
             ? "max-lg:translate-x-0 max-lg:opacity-100"
             : "max-lg:opacity-0 en:max-lg:-translate-x-full fa:max-lg:translate-x-full",
-        ])}
+        )}
       >
         <SidebarTitle onCloseSidebar={toggleSidebar} />
 

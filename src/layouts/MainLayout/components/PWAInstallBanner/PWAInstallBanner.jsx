@@ -39,23 +39,25 @@ const PWAInstallBanner = () => {
   const handleInstall = async () => {
     if (!deferredPrompt) return;
 
-    const { outcome } = await deferredPrompt.userChoice;
-
     setIsInstalling(true);
+
     deferredPrompt.prompt();
+
+    const { outcome } = await deferredPrompt.userChoice;
 
     if (outcome === "accepted") {
       setDeferredPrompt(null);
     }
+
     setIsInstalling(false);
   };
 
   return (
-    <div className="fixed inset-e-4 bottom-4 z-50 mx-auto max-w-md overflow-hidden rounded-2xl border border-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl bg-primary-gradient sm:inset-e-6 sm:w-full">
-      <div className="relative flex-items-center gap-3">
+    <div className="fixed inset-e-0 bottom-0 z-100 m-2.5 overflow-hidden rounded-2xl border border-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl bg-primary-gradient">
+      <div className="flex-items-center gap-3">
         <PWAInstallBannerIcon />
 
-        <div className="min-w-0 flex-1">
+        <div className="flex-1 space-y-1">
           <PWAInstallBannerTitle />
           <PWAInstallBannerDesc />
         </div>

@@ -2,7 +2,7 @@ import DeveloperSignature from "@/layouts/components/DeveloperSignature/Develope
 
 const Footer = () => {
   return (
-    <footer className="container mt-7.5 mb-2.5">
+    <footer className="container">
       <DeveloperSignature />
     </footer>
   );
