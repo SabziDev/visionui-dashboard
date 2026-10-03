@@ -8,9 +8,6 @@ import simpleHtmlPlugin from "vite-plugin-simple-html";
 import pwaConfig from "./src/pwa.js";
 
 export default defineConfig({
-  build: {
-    sourcemap: true,
-  },
   server: {
     host: true,
     allowedHosts: ["pc-abolfazl"],

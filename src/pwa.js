@@ -11,6 +11,11 @@ const STATIC_CACHE_PATTERNS = [
   "**/*.{mp4,webm}",
   "**/*.{mp3,wav,ogg,opus}",
 ];
+const DESTINATION_MATCHERS = {
+  image: ({ request }) => request.destination === "image",
+  video: ({ request }) => request.destination === "video",
+  audio: ({ request }) => request.destination === "audio",
+};
 
 const createApiUrlMatcher = (baseUrl) => {
   const escapedBaseUrl = baseUrl.replaceAll(/[$(-+.?[-^{|}]/g, String.raw`\$&`);
@@ -35,19 +40,10 @@ const createApiRuntimeRoute = (method) => ({
           },
         },
 });
-
 const createAssetsRuntimeRoute = (destination, maxEntries) => {
-  const DESTINATION_MATCHERS = {
-    image: ({ request }) => request.destination === "image",
-    video: ({ request }) => request.destination === "video",
-    audio: ({ request }) => request.destination === "audio",
-  };
-
   return {
     urlPattern: DESTINATION_MATCHERS[destination],
-
     handler: "CacheFirst",
-
     options: {
       cacheName: `${destination}s-runtime-cache`,
       expiration: {
