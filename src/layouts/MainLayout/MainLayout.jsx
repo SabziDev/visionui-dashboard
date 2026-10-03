@@ -5,6 +5,7 @@ import Bg from "./components/Bg/Bg";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import PWAInstallBanner from "./components/PWAInstallBanner/PWAInstallBanner";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 const MainLayout = () => {
@@ -24,6 +25,7 @@ const MainLayout = () => {
           <Footer />
         </div>
       </div>
+      <PWAInstallBanner />
     </>
   );
 };

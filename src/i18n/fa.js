@@ -68,7 +68,6 @@ const fa = {
         profile: "پروفایل",
       },
     },
-
     sidebar: {
       title: "پنل VISION UI",
 
@@ -90,6 +89,13 @@ const fa = {
         desc: "لطفا مستندات ما را بررسی کنید.",
         btn: "مستندات",
       },
+    },
+
+    pwaInstallBanner: {
+      title: "نصب VISION UI",
+      desc: "تجربه‌ای سریع‌تر، شبیه به یک اپلیکیشن.",
+      installBtn: "نصب",
+      installingBtn: "درحال نصب...",
     },
   },
   pages: {

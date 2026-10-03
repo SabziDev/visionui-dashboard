@@ -3,8 +3,14 @@
 
 import { API_BASE_URL } from "./data/constants.js";
 
-const createResourceCache = (name, fileExtensions, maxEntries) => ({
-  urlPattern: new RegExp(String.raw`\.(?:${fileExtensions})$`, "i"),
+const createUrlPattern = (baseUrl) => {
+  const escapedUrl = baseUrl.replaceAll(/[$(-+.?[-^{|}]/g, String.raw`\$&`);
+
+  return new RegExp(`^${escapedUrl}/.*$`);
+};
+
+const createAssetsRoute = (name, fileExtensions, maxEntries) => ({
+  urlPattern: new RegExp(String.raw`\.(?:${fileExtensions.join("|")})$`, "i"),
   handler: "CacheFirst",
   options: {
     cacheName: `${name}-runtime-cache`,
@@ -13,18 +19,23 @@ const createResourceCache = (name, fileExtensions, maxEntries) => ({
     },
   },
 });
-const createApiBackgroundSync = (method) => ({
-  urlPattern: new RegExp(`^${API_BASE_URL}/.*$`),
-  handler: "NetworkOnly",
+const createApiRoute = (method) => ({
+  urlPattern: createUrlPattern(API_BASE_URL),
+  handler: method === "GET" ? "NetworkFirst" : "NetworkOnly",
   method,
-  options: {
-    backgroundSync: {
-      name: `api-${method.toLowerCase()}-queue`,
-      options: {
-        maxRetentionTime: 24 * 60,
-      },
-    },
-  },
+  options:
+    method === "GET"
+      ? {
+          cacheName: "api-runtime-cache",
+        }
+      : {
+          backgroundSync: {
+            name: `api-${method.toLowerCase()}-queue`,
+            options: {
+              maxRetentionTime: 24 * 60,
+            },
+          },
+        },
 });
 
 /** @type {import("vite-plugin-pwa").VitePWAOptions} */
@@ -52,8 +63,8 @@ const pwaConfig = {
         icons: [
           {
             type: "image/webp",
-            src: "/images/pwa/icons/icon-96x96.webp",
-            sizes: "96x96",
+            src: "/images/pwa/icons/icon-192x192.webp",
+            sizes: "192x192",
             purpose: "maskable",
           },
         ],
@@ -66,8 +77,8 @@ const pwaConfig = {
         icons: [
           {
             type: "image/webp",
-            src: "/images/pwa/icons/icon-96x96.webp",
-            sizes: "96x96",
+            src: "/images/pwa/icons/icon-192x192.webp",
+            sizes: "192x192",
             purpose: "maskable",
           },
         ],
@@ -80,8 +91,8 @@ const pwaConfig = {
         icons: [
           {
             type: "image/webp",
-            src: "/images/pwa/icons/icon-96x96.webp",
-            sizes: "96x96",
+            src: "/images/pwa/icons/icon-192x192.webp",
+            sizes: "192x192",
             purpose: "maskable",
           },
         ],
@@ -175,22 +186,19 @@ const pwaConfig = {
       "**/*.{html,css,js,ttf,woff,woff2,gif,svg,ico,jpeg,jpg,png,webp,mp4,webm,mp3,wav,ogg,opus}",
     ],
     runtimeCaching: [
-      createResourceCache("images", "gif|svg|ico|jpeg|jpg|png|webp", 100),
-      createResourceCache("videos", "mp4|webm", 10),
-      createResourceCache("audios", "mp3|wav|ogg|opus", 20),
+      createAssetsRoute(
+        "images",
+        ["gif", "svg", "ico", "jpeg", "jpg", "png", "webp"],
+        100,
+      ),
+      createAssetsRoute("videos", ["mp4", "webm"], 10),
+      createAssetsRoute("audios", ["mp3", "wav", "ogg", "opus"], 20),
 
-      {
-        urlPattern: new RegExp(`^${API_BASE_URL}/.*$`),
-        handler: "NetworkFirst",
-        method: "GET",
-        options: {
-          cacheName: "api-runtime-cache",
-        },
-      },
-      createApiBackgroundSync("POST"),
-      createApiBackgroundSync("PUT"),
-      createApiBackgroundSync("PATCH"),
-      createApiBackgroundSync("DELETE"),
+      createApiRoute("GET"),
+      createApiRoute("POST"),
+      createApiRoute("PUT"),
+      createApiRoute("PATCH"),
+      createApiRoute("DELETE"),
     ],
   },
 };

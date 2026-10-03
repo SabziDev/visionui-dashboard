@@ -69,7 +69,6 @@ const en = {
         profile: "Profile",
       },
     },
-
     sidebar: {
       title: "VISION UI PANEL",
 
@@ -91,6 +90,13 @@ const en = {
         desc: "Please check our docs",
         btn: "DOCUMENTATION",
       },
+    },
+
+    pwaInstallBanner: {
+      title: "Install VISION UI",
+      desc: "Get a faster, app-like experience.",
+      installBtn: "Install",
+      installingBtn: "Install...",
     },
   },
   pages: {
