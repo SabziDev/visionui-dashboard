@@ -10,58 +10,49 @@ import PWAInstallPopupIcon from "./components/PWAInstallPopupIcon/PWAInstallPopu
 import PWAInstallPopupTitle from "./components/PWAInstallPopupTitle/PWAInstallPopupTitle";
 
 const PWAInstallPopup = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
+  const [isShow, setIsShow] = useState(true);
+  const [installPrompt, setInstallPrompt] = useState(null);
 
   useEffect(() => {
-    const handleBeforeInstallPrompt = (e) => {
+    const handleInstallPrompt = (e) => {
       e.preventDefault();
-      setDeferredPrompt(e);
+      setInstallPrompt(e);
     };
-    const handleAppInstalled = () => setDeferredPrompt(null);
+    const handleInstallComplete = () => setInstallPrompt(null);
 
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    window.addEventListener("appinstalled", handleAppInstalled);
+    window.addEventListener("beforeinstallprompt", handleInstallPrompt);
+    window.addEventListener("appinstalled", handleInstallComplete);
 
     return () => {
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt,
-      );
-      window.removeEventListener("appinstalled", handleAppInstalled);
+      window.removeEventListener("beforeinstallprompt", handleInstallPrompt);
+      window.removeEventListener("appinstalled", handleInstallComplete);
     };
   }, []);
 
-  if (!deferredPrompt || !isVisible) return null;
+  if (!installPrompt || !isShow) return null;
 
-  const handleInstall = async () => {
-    if (!deferredPrompt) return;
+  const installPWA = async () => {
+    installPrompt.prompt();
 
-    deferredPrompt.prompt();
-
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") setDeferredPrompt(null);
+    const { outcome } = await installPrompt.userChoice;
+    if (outcome === "accepted") setInstallPrompt(null);
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-100 m-2.5 overflow-hidden rounded-2xl border border-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl bg-primary-gradient sm:inset-s-auto sm:inset-e-0">
+    <div className="fixed inset-x-0 bottom-0 z-100 m-2.5 overflow-hidden rounded-2xl border border-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl select-none bg-primary-gradient sm:inset-s-auto sm:inset-e-0">
+      <PWAInstallPopupCloseBtn handleClose={() => setIsShow(false)} />
+
       <div className="flex-items-center gap-3">
         <PWAInstallPopupIcon />
-
         <div className="flex-1 space-y-1">
           <PWAInstallPopupTitle />
           <PWAInstallPopupDesc />
         </div>
 
-        <PWAInstallPopupBtn handleInstall={handleInstall} />
+        <PWAInstallPopupBtn installPWA={installPWA} />
       </div>
 
       <PWAInstallPopupGradientLine />
-      <PWAInstallPopupCloseBtn handleClose={handleClose} />
     </div>
   );
 };

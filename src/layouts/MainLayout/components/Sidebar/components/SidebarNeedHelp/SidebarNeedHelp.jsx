@@ -5,12 +5,12 @@ const SidebarNeedHelp = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative mx-auto mt-6 h-44 w-55 rounded-2xl p-4">
+    <div className="relative mx-auto mt-6 h-44 w-55 rounded-2xl p-4 select-none">
       <img
         src="/images/shapes/layouts/main/sidebar/need-help-bg.webp"
         alt="halo-shape"
         loading="lazy"
-        className="absolute inset-0 -z-1 size-full select-none"
+        className="absolute inset-0 -z-1 size-full"
       />
 
       <div className="flex-center size-9 rounded-xl bg-white">

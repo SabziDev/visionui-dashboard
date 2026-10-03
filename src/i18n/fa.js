@@ -92,7 +92,7 @@ const fa = {
     },
 
     pwaInstallBanner: {
-      title: "نصب VISION UI?",
+      title: "نصب VISION UI؟",
       desc: "تجربه‌ای سریع‌تر، شبیه به یک اپلیکیشن.",
       btn: "نصب",
     },

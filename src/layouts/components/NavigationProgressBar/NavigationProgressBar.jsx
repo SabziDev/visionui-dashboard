@@ -67,14 +67,12 @@ const NavigationProgressBar = () => {
               duration: isCompleted ? COMPLETE_DURATION : SHOW_DURATION,
               ease: "easeOut",
             }}
-            className={clsx([
-              "fixed z-9999 h-1 w-full",
-              "after:absolute after:top-0 after:h-full after:w-12 after:content-['']",
-              "after:shadow-[0_0_20px_4px_var(--progress-bar-color)]",
+            className={clsx(
+              "fixed top-0 z-9999 h-1 w-full after:absolute after:top-0 after:h-full after:w-12 after:shadow-[0_0_20px_4px_var(--progress-bar-color)] after:content-['']",
               DIR === "ltr"
                 ? "origin-left after:right-0"
                 : "origin-right after:left-0",
-            ])}
+            )}
             style={{
               "--progress-bar-color": COLOR,
               backgroundColor: "var(--progress-bar-color)",
