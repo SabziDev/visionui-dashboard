@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { RouterProvider } from "react-router";
 
 import "./layouts/components/DeveloperSignature/logDeveloperSignature";
-import PWAInstallBanner from "./layouts/MainLayout/components/PWAInstallBanner/PWAInstallBanner";
+import PWAInstallPopup from "./layouts/MainLayout/components/PWAInstallPopup/PWAInstallPopup";
 import router from "./routes";
 
 const removeAppPreloader = () => {
@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <>
-      <PWAInstallBanner />
+      <PWAInstallPopup />
       <RouterProvider router={router} />
     </>
   );

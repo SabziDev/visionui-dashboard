@@ -9,6 +9,7 @@ const PasswordInput = ({ register, inputErrors, copyTextToClipboard }) => {
       <input
         type="password"
         placeholder={t("pages.public.signin.form.inputs.password.placeholder")}
+        autoComplete="current-password"
         className={clsx([
           "mb-2.5 w-full rounded-[20px] border-2 px-5 py-4",
           inputErrors.password ? "border-red-500 ring-red-500" : "border-blue",

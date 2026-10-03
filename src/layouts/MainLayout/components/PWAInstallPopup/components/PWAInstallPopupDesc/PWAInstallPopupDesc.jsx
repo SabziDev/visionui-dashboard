@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const PWAInstallBannerDesc = () => {
+const PWAInstallPopupDesc = () => {
   const { t } = useTranslation();
 
   return (
@@ -10,4 +10,4 @@ const PWAInstallBannerDesc = () => {
   );
 };
 
-export default PWAInstallBannerDesc;
+export default PWAInstallPopupDesc;

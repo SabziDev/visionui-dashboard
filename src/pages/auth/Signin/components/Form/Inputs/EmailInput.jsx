@@ -9,6 +9,7 @@ const EmailInput = ({ register, inputErrors, copyTextToClipboard }) => {
       <input
         type="email"
         placeholder={t("pages.public.signin.form.inputs.email.placeholder")}
+        autoComplete="email"
         className={clsx([
           "mb-2.5 w-full rounded-[20px] border-2 px-5 py-4",
           inputErrors.email ? "border-red-500 ring-red-500" : "border-blue",

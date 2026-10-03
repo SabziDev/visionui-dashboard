@@ -92,10 +92,9 @@ const fa = {
     },
 
     pwaInstallBanner: {
-      title: "نصب VISION UI",
+      title: "نصب VISION UI?",
       desc: "تجربه‌ای سریع‌تر، شبیه به یک اپلیکیشن.",
-      installBtn: "نصب",
-      installingBtn: "درحال نصب...",
+      btn: "نصب",
     },
   },
   pages: {

@@ -93,10 +93,9 @@ const en = {
     },
 
     pwaInstallBanner: {
-      title: "Install VISION UI",
+      title: "Install VISION UI?",
       desc: "Get a faster, app-like experience.",
-      installBtn: "Install",
-      installingBtn: "Install...",
+      btn: "Install",
     },
   },
   pages: {
