@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import AuthContext from "@/contexts/Auth/Auth";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
-import loginSchema from "@/validators/loginValidator";
+import signinSchema from "@/validators/signinValidator";
 
 const useAuthForm = () => {
   const { setAdminId } = use(AuthContext);
@@ -25,7 +25,7 @@ const useAuthForm = () => {
       rememberMe: true,
     },
 
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(signinSchema),
   });
 
   const { t } = useTranslation();

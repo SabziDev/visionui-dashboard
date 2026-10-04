@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-const loginSchema = z.object({
+const signinSchema = z.object({
   email: z
     .string({ error: "ایمیل باید یک متن باشد!" })
     .trim()
@@ -18,4 +18,4 @@ const loginSchema = z.object({
   rememberMe: z.boolean(),
 });
 
-export default loginSchema;
+export default signinSchema;
