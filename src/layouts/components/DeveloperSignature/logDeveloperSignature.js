@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 console.log(
-  "\n\n\n%c🛠️ Built pixel by pixel by %cAbolfazl Sabzmohammadi %c💚\n\n%c┌─────────────────────────────────────┐\n%c  🌐 My Personal Website (resume) 👇  \n%c        https://Sabzi.Dev  \n%c└─────────────────────────────────────┘\n\n\n",
+  "\n\n\n%c🛠️ Built pixel by pixel by %cAbolfazl Sabzmohammadi %c💚\n\n%c┌─────────────────────────────────────┐\n%c  🌐 My Personal Website (portfolio) 👇  \n%c        https://Sabzi.Dev  \n%c└─────────────────────────────────────┘\n\n\n",
   "color: #10b981; font-size: 20px;",
   "color: #059669; font-size: 22px; font-weight: bold; background: #ecfdf5; padding: 4px 8px 4px 20px; border-radius: 8px;",
   "font-size: 18px;",
