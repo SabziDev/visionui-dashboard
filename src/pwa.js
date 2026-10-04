@@ -1,3 +1,5 @@
+/* eslint-disable regexp/sort-character-class-elements */
+/* eslint-disable unicorn/prefer-string-raw */
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable camelcase */
 /* eslint-disable custom/sort-object-props */
@@ -18,9 +20,9 @@ const DESTINATION_MATCHERS = {
 };
 
 const createApiUrlMatcher = (baseUrl) => {
-  const escapedBaseUrl = baseUrl.replaceAll(/[$(-+.?[-^{|}]/g, String.raw`\$&`);
+  const escapedBaseUrl = baseUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-  return new RegExp(`^${escapedBaseUrl}/.*$`);
+  return new RegExp(`^${escapedBaseUrl}/`);
 };
 const createApiRuntimeRoute = (method) => ({
   urlPattern: createApiUrlMatcher(API_BASE_URL),
