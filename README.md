@@ -81,24 +81,23 @@ pnpm dev
 
 ## 📦 Dependencies
 
-| Package                   | Description                                 |
-| :------------------------ | :------------------------------------------ |
-| react                     | Core UI library                             |
-| tailwind                  | CSS framework                               |
-| react-router              | Client-side routing                         |
-| axios                     | HTTP API client                             |
-| tanstack-query            | Server-state management & caching           |
-| zod                       | Schema validation                           |
-| react-hook-form           | Form handling & validation                  |
-| react-hot-toast           | Toast notifications                         |
-| i18next                   | Multi-language support                      |
-| recharts                  | Data visualization charts                   |
-| react-indiana-drag-scroll | Drag-to-scroll functionality                |
-| motion                    | Animation library                           |
-| react-loading-skeleton    | Skeleton loading placeholders               |
-| react-spinners            | Loading spinners                            |
-| vite-plugin-pwa           | PWA integration for Vite                    |
-| workBox                   | Service worker caching & offline strategies |
+| Package                   | Description                                   |
+| :------------------------ | :-------------------------------------------- |
+| react                     | Core UI library                               |
+| tailwind                  | CSS framework                                 |
+| react-router              | Client-side routing                           |
+| axios                     | HTTP API client                               |
+| tanstack-query            | Server-state management & caching             |
+| zod                       | Schema validation                             |
+| react-hook-form           | Form handling & validation                    |
+| react-hot-toast           | Toast notifications                           |
+| i18next                   | Multi-language support                        |
+| recharts                  | Data visualization charts                     |
+| react-indiana-drag-scroll | Drag-to-scroll functionality                  |
+| motion                    | Animation library                             |
+| react-loading-skeleton    | Skeleton loading placeholders                 |
+| react-spinners            | Loading spinners                              |
+| vite-plugin-pwa & workBox | PWA, service worker caching & offline support |
 
 ---
 
