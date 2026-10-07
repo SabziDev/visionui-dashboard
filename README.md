@@ -1,6 +1,6 @@
 # 🎯 Dashboard - VISION UI
 
-A modern web application dashboard built with React, JavaScript and Tailwind with a
+A modern web dashboard built with React, JavaScript and Tailwind, featuring a
 clean and responsive user interface.
 
 ---
