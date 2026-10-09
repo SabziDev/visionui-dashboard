@@ -1,4 +1,4 @@
-/* eslint-disable custom/sort-object-props */
+/* eslint-disable @sabzidev/sort-object-props */
 
 const en = {
   words: {

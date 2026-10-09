@@ -1,27 +1,8 @@
 import { defineConfig } from "@fullstacksjs/eslint-config";
+import sabzidev from "@sabzidev/eslint-rules";
 import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 
-import mergeDuplicateIdAndClassNameProps from "./eslint-rules/merge/merge-duplicate-id-and-classname-props/index.js";
-import mergeExports from "./eslint-rules/merge/merge-exports/index.js";
-import noInvalidIdAndClassNameValue from "./eslint-rules/no-invalid/no-invalid-id-and-classname-value/index.js";
-import noUselessTemplateLiteral from "./eslint-rules/no-useless/no-useless-template-literal/index.js";
-import addBlankLineBeforeJumpStatement from "./eslint-rules/padding/add-blank-line-before-jump-statement/index.js";
-import sortComments from "./eslint-rules/sort/sort-comments/index.js";
-import sortJsxProps from "./eslint-rules/sort/sort-jsx-props/index.js";
-import sortObjectProps from "./eslint-rules/sort/sort-object-props/index.js";
-
-const plugins = [sonarjs.configs.recommended, unicorn.configs.recommended];
-const pluginsRules = {
-  "unicorn/consistent-function-scoping": "warn",
-
-  "unicorn/filename-case": "off",
-  "unicorn/prefer-global-this": "off",
-  "unicorn/name-replacements": "off",
-  "unicorn/no-array-sort": "off",
-  "unicorn/no-null": "off",
-  "unicorn/default-export-style": "off",
-};
 const baseRules = {
   "func-style": ["warn", "expression"],
   quotes: [
@@ -31,53 +12,32 @@ const baseRules = {
   ],
   eqeqeq: ["error", "always"],
   "no-console": "warn",
+};
+const plugins = [
+  sabzidev.configs.recommended,
+  sonarjs.configs.recommended,
+  unicorn.configs.recommended,
+];
+const pluginsRules = {
+  "unicorn/filename-case": "off",
+  "unicorn/prefer-global-this": "off",
+  "unicorn/name-replacements": "off",
+  "unicorn/no-array-sort": "off",
+  "unicorn/no-null": "off",
+  "unicorn/default-export-style": "off",
 
   "jsx-a11y/click-events-have-key-events": "off",
   "jsx-a11y/no-noninteractive-element-interactions": "off",
-
-  "custom/merge-duplicate-id-and-classname-props": "warn",
-  "custom/merge-exports": "warn",
-  "custom/no-invalid-id-and-classname-value": "error",
-  "custom/no-useless-template-literal": "warn",
-  "custom/add-blank-line-before-jump-statement": "warn",
-  "custom/sort-comments": "warn",
-  "custom/sort-jsx-props": "warn",
-  "custom/sort-object-props": "warn",
-};
-const customRules = {
-  rules: {
-    "merge-duplicate-id-and-classname-props":
-      mergeDuplicateIdAndClassNameProps.rules[
-        "merge-duplicate-id-and-classname-props"
-      ],
-    "merge-exports": mergeExports.rules["merge-exports"],
-    "no-invalid-id-and-classname-value":
-      noInvalidIdAndClassNameValue.rules["no-invalid-id-and-classname-value"],
-    "no-useless-template-literal":
-      noUselessTemplateLiteral.rules["no-useless-template-literal"],
-    "add-blank-line-before-jump-statement":
-      addBlankLineBeforeJumpStatement.rules[
-        "add-blank-line-before-jump-statement"
-      ],
-    "sort-comments": sortComments.rules["sort-comments"],
-    "sort-jsx-props": sortJsxProps.rules["sort-jsx-props"],
-    "sort-object-props": sortObjectProps.rules["sort-object-props"],
-  },
 };
 
 const config = defineConfig(
   {
     tailwind: { entryPoint: "./src/input.css" },
-    plugins: {
-      custom: customRules,
-    },
     rules: baseRules,
   },
 
   plugins,
-  {
-    rules: pluginsRules,
-  },
+  { rules: pluginsRules },
 );
 
 export default config;

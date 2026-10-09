@@ -1,4 +1,4 @@
-/* eslint-disable custom/add-blank-line-before-jump-statement */
+/* eslint-disable @sabzidev/padding-before-jump-statement */
 
 import { use } from "react";
 import { useTranslation } from "react-i18next";

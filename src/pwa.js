@@ -2,7 +2,7 @@
 /* eslint-disable unicorn/prefer-string-raw */
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable camelcase */
-/* eslint-disable custom/sort-object-props */
+/* eslint-disable @sabzidev/sort-object-props */
 
 import { API_BASE_URL } from "./data/constants.js";
 

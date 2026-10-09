@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 /* eslint-disable @stylistic/padding-line-between-statements */
-/* eslint-disable custom/add-blank-line-before-jump-statement */
+/* eslint-disable @sabzidev/padding-before-jump-statement */
 
 const errMessages = {
   network: "errors.network",
