@@ -36,6 +36,7 @@
   "devDependencies": {
     "@fullstacksjs/eslint-config": "^14.7.0",
     "@rolldown/plugin-babel": "^0.2.3",
+    "@sabzidev/eslint-rules": "^1.0.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
