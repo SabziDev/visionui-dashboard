@@ -105,6 +105,5 @@ pnpm dev
 
 Developed by **ABOLFAZL SABZMOHAMMADI**
 
-GitHub: [github.com/SabziDev](https://github.com/SabziDev)
-<br />
-Website: [Sabzi.Dev](https://Sabzi.Dev)
+- GitHub: [github.com/SabziDev](https://github.com/SabziDev)
+- Website: [Sabzi.Dev](https://Sabzi.Dev)
