@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable @sabzidev/sort-object-props */
+/* eslint-disable @sabzidev/sort-props */
 
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";

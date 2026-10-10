@@ -1,4 +1,4 @@
-/* eslint-disable @sabzidev/sort-object-props */
+/* eslint-disable @sabzidev/sort-props */
 
 const fa = {
   words: {

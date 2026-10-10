@@ -5,4 +5,4 @@ minimumReleaseAgeExclude:
   - react-dom@19.3.0
   - react@19.3.0
   - scheduler@0.28.0
-  - '@sabzidev/eslint-rules@1.0.0 || 1.0.5'
+  - '@sabzidev/eslint-rules@1.0.0 || 1.0.5 || 1.0.7 || 1.0.8 || 1.0.9'

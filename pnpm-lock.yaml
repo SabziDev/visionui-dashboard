@@ -79,8 +79,8 @@ importers:
         specifier: ^0.2.3
         version: 0.2.3(@babel/core@8.0.1)(@babel/runtime@7.29.7)(rolldown@1.2.1)(vite@8.2.0(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       '@sabzidev/eslint-rules':
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.9
+        version: 1.0.9
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.18
@@ -1693,8 +1693,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sabzidev/eslint-rules@1.0.5':
-    resolution: {integrity: sha512-dDdzV1YYc34pZfHl+5ShoWcmtbGUpiiX7IxzuGl/k0z5kfhxIKzzkfd/M/uyA8gWKLzPPPJXmmOGwNY6itnURA==}
+  '@sabzidev/eslint-rules@1.0.9':
+    resolution: {integrity: sha512-9zhsERZRVfI6LHAZRKH3Hiu0xhXg6PByLKod8ypfOM7Slyyyp5mVnUimNboNKDLsEGO40m0CiDNCMNnOKfUtAA==}
 
   '@sonarsource/analyzer-commons-configurations@2.31.0-5284':
     resolution: {integrity: sha512-ruk3blMs9BE9RNSp9LPpWZAIjxJmq4Cp00E3cELIHz7Kym3WxdWGRlKOMYLRQ5tJg/de7jN5AtEElY3bGIfTcw==}
@@ -6078,7 +6078,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.63.6':
     optional: true
 
-  '@sabzidev/eslint-rules@1.0.5': {}
+  '@sabzidev/eslint-rules@1.0.9': {}
 
   '@sonarsource/analyzer-commons-configurations@2.31.0-5284': {}
 
