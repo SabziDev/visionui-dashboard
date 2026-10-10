@@ -2,7 +2,7 @@
 /* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable @sabzidev/padding-before-jump-statement */
 
-const errMessages = {
+const errorMessages = {
   network: "errors.network",
   timeout: "errors.timeout",
   server: "errors.server",
@@ -16,38 +16,38 @@ const errMessages = {
 };
 
 const errorHandler = (err) => {
-  let message = errMessages.default;
+  let message = errorMessages.default;
   const status = err.response?.status;
 
   switch (err.code) {
     case "ERR_NETWORK": {
-      message = errMessages.network;
+      message = errorMessages.network;
       break;
     }
     case "ECONNABORTED": {
-      message = errMessages.timeout;
+      message = errorMessages.timeout;
       break;
     }
   }
   if (status >= 500) {
-    message = errMessages.server;
+    message = errorMessages.server;
   }
 
   switch (status) {
     case 403: {
-      message = errMessages.access;
+      message = errorMessages.access;
       break;
     }
     case 404: {
-      message = errMessages.notFound;
+      message = errorMessages.notFound;
       break;
     }
     case 409: {
-      message = errMessages.conflict;
+      message = errorMessages.conflict;
       break;
     }
     case 422: {
-      message = errMessages.validation;
+      message = errorMessages.validation;
       break;
     }
   }

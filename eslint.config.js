@@ -20,10 +20,25 @@ const plugins = [
 ];
 const pluginsRules = {
   "unicorn/filename-case": "off",
-  "unicorn/prefer-global-this": "off",
-  "unicorn/name-replacements": "off",
-  "unicorn/no-array-sort": "off",
+  "unicorn/name-replacements": [
+    "error",
+    {
+      replacements: {
+        prop: false,
+        props: false,
+        param: false,
+        params: false,
+        ref: false,
+        refs: false,
+        prev: false,
+        e: false,
+        res: false,
+        err: false,
+      },
+    },
+  ],
   "unicorn/no-null": "off",
+  "unicorn/prefer-global-this": "off",
   "unicorn/default-export-style": "off",
 
   "jsx-a11y/click-events-have-key-events": "off",
@@ -31,10 +46,7 @@ const pluginsRules = {
 };
 
 const config = defineConfig(
-  {
-    tailwind: { entryPoint: "./src/input.css" },
-    rules: baseRules,
-  },
+  { rules: baseRules, tailwind: { entryPoint: "./src/input.css" } },
 
   plugins,
   { rules: pluginsRules },
