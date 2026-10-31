@@ -2,7 +2,7 @@
 
 import { createContext } from "react";
 
-import useCookie from "@/hooks/useCookie";
+import useCookie from "@/hooks/storage/useCookie";
 
 const AuthContext = createContext(null);
 AuthContext.displayName = "AuthContext";
