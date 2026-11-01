@@ -11,7 +11,7 @@ import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 import BgImg from "./components/BgImg/BgImg";
 import Form from "./components/Form/Form";
 
-const Signin = () => {
+const SigninPage = () => {
   const { admin } = useGetAdmin();
   const { adminId } = use(AuthContext);
 
@@ -45,4 +45,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default SigninPage;

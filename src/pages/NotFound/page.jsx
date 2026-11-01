@@ -6,7 +6,7 @@ import NotFoundCode from "./components/NotFoundCode/NotFoundCode";
 import NotFoundDesc from "./components/NotFoundDesc/NotFoundDesc";
 import NotFoundTitle from "./components/NotFoundTitle/NotFoundTitle";
 
-const NotFound = () => (
+const NotFoundPage = () => (
   <>
     <Head />
 
@@ -28,4 +28,4 @@ const NotFound = () => (
   </>
 );
 
-export default NotFound;
+export default NotFoundPage;

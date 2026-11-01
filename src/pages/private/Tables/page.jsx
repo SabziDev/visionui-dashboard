@@ -3,7 +3,7 @@ import Head from "@/layouts/components/Head";
 import ProjectsTableSection from "../sections/ProjectsTableSection/section";
 import AuthorsTableSection from "./sections/AuthorsTableSection/section";
 
-const Tables = () => {
+const TablesPage = () => {
   return (
     <>
       <Head />
@@ -16,4 +16,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default TablesPage;

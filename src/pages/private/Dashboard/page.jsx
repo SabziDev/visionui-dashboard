@@ -6,7 +6,7 @@ import OverviewSection from "./sections/OverviewSection/section";
 import SalesOverviewSection from "./sections/SalesOverviewSection/section";
 import ToadyStatsSection from "./sections/ToadyStatsSection/section";
 
-const Dashboard = () => {
+const DashboardPage = () => {
   return (
     <>
       <Head />
@@ -22,4 +22,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

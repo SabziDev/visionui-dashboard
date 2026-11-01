@@ -7,15 +7,15 @@ import { createBrowserRouter, Navigate } from "react-router";
 import pagesSeo from "./data/pagesSeo/pagesSeo";
 import Preloader from "./layouts/components/Preloader/Preloader";
 import PrivateRoute from "./layouts/PrivateRoute";
-import Signin from "./pages/auth/Signin/page";
-import NotFound from "./pages/NotFound/page";
-import Dashboard from "./pages/private/Dashboard/page";
+import SigninPage from "./pages/auth/Signin/page";
+import NotFoundPage from "./pages/NotFound/page";
+import DashboardPage from "./pages/private/Dashboard/page";
 import AppLoadError from "./services/components/AppLoadError/AppLoadError";
-import { adminsQueryOpts } from "./services/features/admin/hooks/useAdmin/useAdmin";
+import { adminsQueryOpts as adminsQueryOptions } from "./services/features/admin/hooks/useAdmin/useAdmin";
 import queryClient from "./services/queryClient";
 
-const Profile = lazy(() => import("./pages/private/Profile/page"));
-const Tables = lazy(() => import("./pages/private/Tables/page"));
+const ProfilePage = lazy(() => import("./pages/private/Profile/page"));
+const TablesPage = lazy(() => import("./pages/private/Tables/page"));
 
 const router = createBrowserRouter([
   {
@@ -24,13 +24,13 @@ const router = createBrowserRouter([
     hydrateFallbackElement: <Preloader />,
     errorElement: <AppLoadError />,
     loader: async () => {
-      await queryClient.prefetchQuery(adminsQueryOpts);
+      await queryClient.prefetchQuery(adminsQueryOptions);
     },
 
     children: [
       {
         index: true,
-        element: <Dashboard />,
+        element: <DashboardPage />,
         handle: {
           seo: pagesSeo.dashboard,
           breadcrumb: {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         path: "tables",
         element: (
           <Suspense fallback={<Preloader />}>
-            <Tables />
+            <TablesPage />
           </Suspense>
         ),
         handle: {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         path: "profile",
         element: (
           <Suspense fallback={<Preloader />}>
-            <Profile />
+            <ProfilePage />
           </Suspense>
         ),
         handle: {
@@ -79,11 +79,11 @@ const router = createBrowserRouter([
 
   {
     path: "/signin",
-    element: <Signin />,
+    element: <SigninPage />,
     hydrateFallbackElement: <Preloader />,
     errorElement: <AppLoadError />,
     loader: async () => {
-      await queryClient.prefetchQuery(adminsQueryOpts);
+      await queryClient.prefetchQuery(adminsQueryOptions);
     },
     handle: {
       seo: pagesSeo.signin,
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
 
   {
     path: "*",
-    element: <NotFound />,
+    element: <NotFoundPage />,
     handle: {
       seo: pagesSeo.notFound,
     },

@@ -7,7 +7,7 @@ import ProfileInfoSection from "./sections/ProfileInfoSection/section";
 import ProjectsSection from "./sections/ProjectsSection/section";
 import WelcomebackSection from "./sections/WelcomebackSection/section";
 
-const Profile = () => {
+const ProfilePage = () => {
   return (
     <>
       <Head />
@@ -26,4 +26,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;
