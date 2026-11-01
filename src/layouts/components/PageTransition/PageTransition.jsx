@@ -11,7 +11,7 @@ const TRANSITION = {
   ease: "easeOut",
 };
 
-const AnimatedOutlet = () => {
+const PageTransition = () => {
   const outlet = useOutlet();
   const { pathname } = useLocation();
 
@@ -31,4 +31,4 @@ const AnimatedOutlet = () => {
   );
 };
 
-export default AnimatedOutlet;
+export default PageTransition;
