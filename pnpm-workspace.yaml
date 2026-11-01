@@ -1,6 +1,6 @@
 allowBuilds:
-  esbuild: true
-  unrs-resolver: true
+  esbuild: false
+  unrs-resolver: false
 minimumReleaseAgeExclude:
   - react-dom@19.3.0
   - react@19.3.0
