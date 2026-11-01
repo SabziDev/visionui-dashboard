@@ -23,7 +23,7 @@ const en = {
 
     default: "Something went wrong! Please try again",
   },
-  pagesSeo: {
+  metadata: {
     dashboard: {
       title: "Visionui-Dashboard",
       desc: "A dashboard for managing your business",

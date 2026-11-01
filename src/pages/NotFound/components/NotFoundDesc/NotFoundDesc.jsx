@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 
-import pagesSeo from "@/data/pagesSeo/pagesSeo";
+import metadata from "@/data/metadata/metadata";
 
 const NotFoundDesc = () => {
   const { t } = useTranslation();
 
   return (
     <p className="mb-8 max-w-md text-lg text-gray-300">
-      {t(pagesSeo.notFound.desc)}
+      {t(metadata.notFound.desc)}
     </p>
   );
 };

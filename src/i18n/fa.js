@@ -22,7 +22,7 @@ const fa = {
 
     default: "یه مشکلی پیش آمد! لطفا دوباره تلاش کنید",
   },
-  pagesSeo: {
+  metadata: {
     dashboard: {
       title: "داشبورد Visionui",
       desc: "یک داشبورد برای مدیریت کسب و کار شما",

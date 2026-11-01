@@ -4,7 +4,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import pagesSeo from "./data/pagesSeo/pagesSeo";
+import metadata from "./data/metadata/metadata";
 import Preloader from "./layouts/components/Preloader/Preloader";
 import PrivateRoute from "./layouts/PrivateRoute";
 import SigninPage from "./pages/auth/Signin/page";
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         index: true,
         element: <DashboardPage />,
         handle: {
-          seo: pagesSeo.dashboard,
+          seo: metadata.dashboard,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.dashboard",
             pagePath: "dashboard",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          seo: pagesSeo.tables,
+          seo: metadata.tables,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.tables",
             pagePath: "tables",
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         handle: {
-          seo: pagesSeo.profile,
+          seo: metadata.profile,
           breadcrumb: {
             pageTitle: "layouts.header.pagesTitle.profile",
             pagePath: "profile",
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
       await queryClient.prefetchQuery(adminsQueryOptions);
     },
     handle: {
-      seo: pagesSeo.signin,
+      seo: metadata.signin,
     },
   },
 
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFoundPage />,
     handle: {
-      seo: pagesSeo.notFound,
+      seo: metadata.notFound,
     },
   },
 ]);
