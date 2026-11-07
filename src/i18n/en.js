@@ -309,7 +309,7 @@ const en = {
   components: {
     appLoadError: {
       title: "Something went wrong",
-      desc: "Please refresh the page",
+      desc: "Please try again or refresh the page",
 
       btn: "Try Again",
     },
