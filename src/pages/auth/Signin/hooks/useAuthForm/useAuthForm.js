@@ -42,7 +42,9 @@ const useAuthForm = () => {
         const SIX_MONTHS = 60 * 60 * 24 * 30 * 6;
         setAdminId({
           value: admin.id,
-          maxAge: SIX_MONTHS,
+          options: {
+            maxAge: SIX_MONTHS,
+          },
         });
       } else {
         setAdminId({

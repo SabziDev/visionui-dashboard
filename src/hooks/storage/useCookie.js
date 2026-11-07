@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const useCookie = ({ key = "", defaultValue = null }) => {
+const useCookie = ({ key, defaultValue }) => {
   const [storedValue, setStoredValue] = useState(() => {
     const cookieValue = document.cookie
       .split("; ")
@@ -14,24 +14,27 @@ const useCookie = ({ key = "", defaultValue = null }) => {
       : defaultValue;
   });
 
-  const setValue = ({ value, ...options }) => {
+  const setValue = ({ value, options }) => {
     const cookieValue = encodeURIComponent(JSON.stringify(value));
 
     let cookie = `${key}=${cookieValue}`;
 
     const cookieOptions = [
-      ["path", options.path],
-      ["domain", options.domain],
-      ["max-age", options.maxAge],
-      ["samesite", options.sameSite],
-      ["secure", options.secure],
+      ["path", options?.path],
+      ["domain", options?.domain],
+      ["samesite", options?.sameSite],
+      ["secure", options?.secure],
+      ["partitioned", options?.partitioned],
+      ["max-age", options?.maxAge],
     ];
 
     for (const [optionKey, optionValue] of cookieOptions) {
-      if (!optionValue) continue;
+      if (optionValue === undefined) continue;
 
       cookie +=
-        optionKey === "secure" ? "; secure" : `; ${optionKey}=${optionValue}`;
+        optionValue === true
+          ? `; ${optionKey}`
+          : `; ${optionKey}=${optionValue}`;
     }
 
     document.cookie = cookie;
