@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable unicorn/no-document-cookie */
 
 import { useState } from "react";
@@ -9,14 +10,22 @@ const useCookie = ({ key, defaultValue }) => {
       .find((cookie) => cookie.startsWith(`${key}=`))
       ?.slice(key.length + 1);
 
-    return cookieValue
-      ? JSON.parse(decodeURIComponent(cookieValue))
-      : defaultValue;
+    if (!cookieValue) return defaultValue;
+    const decodedValue = decodeURIComponent(cookieValue);
+
+    try {
+      return typeof defaultValue === "string"
+        ? decodedValue
+        : JSON.parse(decodedValue);
+    } catch {
+      return defaultValue;
+    }
   });
 
   const setValue = ({ value, options }) => {
-    const cookieValue = encodeURIComponent(JSON.stringify(value));
-
+    const serializedValue =
+      typeof value === "string" ? value : JSON.stringify(value);
+    const cookieValue = encodeURIComponent(serializedValue);
     let cookie = `${key}=${cookieValue}`;
 
     const cookieOptions = [
@@ -27,7 +36,6 @@ const useCookie = ({ key, defaultValue }) => {
       ["partitioned", options?.partitioned],
       ["max-age", options?.maxAge],
     ];
-
     for (const [optionKey, optionValue] of cookieOptions) {
       if (optionValue === undefined) continue;
 
@@ -38,7 +46,6 @@ const useCookie = ({ key, defaultValue }) => {
     }
 
     document.cookie = cookie;
-
     setStoredValue(value);
   };
 
