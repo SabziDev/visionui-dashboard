@@ -14,9 +14,12 @@ const useCookie = ({ key, defaultValue }) => {
     const decodedValue = decodeURIComponent(cookieValue);
 
     try {
-      return typeof defaultValue === "string"
-        ? decodedValue
-        : JSON.parse(decodedValue);
+      const parsedValue =
+        typeof defaultValue === "string"
+          ? decodedValue
+          : JSON.parse(decodedValue);
+
+      return parsedValue;
     } catch {
       return defaultValue;
     }
