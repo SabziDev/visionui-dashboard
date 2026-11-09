@@ -4,14 +4,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable @sabzidev/sort-props */
 
-import { loadEnv } from "vite";
-
-const env = loadEnv(
-  process.env.NODE_ENV ?? "development",
-  process.cwd(),
-  "VITE_",
-);
-const API_BASE_URL = env.VITE_API_BASE_URL;
+import { API_BASE_URL } from "./data/constants";
 
 const STATIC_CACHE_PATTERNS = [
   "**/*.{html,css,js}",
