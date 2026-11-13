@@ -1,8 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable @sabzidev/sort-props */
 
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, Navigate } from "react-router";
+import { createBrowserRouter } from "react-router";
 
 import metadata from "./data/metadata/metadata";
 import Preloader from "./layouts/components/Preloader/Preloader";
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
             pagePath: "dashboard",
           },
         },
-      },
-      {
-        path: "dashboard",
-        element: <Navigate to="/" replace />,
       },
 
       {
