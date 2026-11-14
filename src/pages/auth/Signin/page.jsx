@@ -1,10 +1,9 @@
 /* eslint-disable @sabzidev/padding-before-jump-statement */
 
-import { use } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router";
 
-import AuthContext from "@/contexts/Auth/Auth";
+import { useAuth } from "@/contexts/Auth/Auth";
 import Head from "@/layouts/components/Head";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 
@@ -13,7 +12,7 @@ import Form from "./components/Form/Form";
 
 const SigninPage = () => {
   const { admin } = useGetAdmin();
-  const { adminId } = use(AuthContext);
+  const { adminId } = useAuth();
 
   const { t } = useTranslation();
 

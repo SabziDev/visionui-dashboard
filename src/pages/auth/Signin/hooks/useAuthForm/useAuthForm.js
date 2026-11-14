@@ -1,15 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { use } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import AuthContext from "@/contexts/Auth/Auth";
+import { useAuth } from "@/contexts/Auth/Auth";
 import { useGetAdmin } from "@/services/features/admin/hooks/useAdmin/useAdmin";
 import signinSchema from "@/validators/signinValidator";
 
 const useAuthForm = () => {
-  const { setAdminId } = use(AuthContext);
+  const { setAdminId } = useAuth();
 
   const { admin } = useGetAdmin();
 

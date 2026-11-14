@@ -1,6 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable @stylistic/padding-line-between-statements */
 /* eslint-disable @eslint-react/no-unstable-context-value */
 
-import { createContext } from "react";
+import { createContext, use } from "react";
 
 import useCookie from "@/hooks/storage/useCookie";
 
@@ -15,6 +17,14 @@ const AuthContextProvider = ({ children }) => {
 
   return <AuthContext value={{ adminId, setAdminId }}>{children}</AuthContext>;
 };
+const useAuth = () => {
+  const context = use(AuthContext);
 
-export { AuthContextProvider };
-export default AuthContext;
+  if (!context) {
+    throw new Error("This hook(context) must be used within its provider!");
+  }
+
+  return context;
+};
+
+export { AuthContextProvider, useAuth };
